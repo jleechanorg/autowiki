@@ -1,0 +1,149 @@
+{
+  "results": [
+    {
+      "query_num": 1,
+      "query": "What is the current state of solid-state batteries?",
+      "mode": "single",
+      "tokens": 1134,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 4537
+    },
+    {
+      "query_num": 1,
+      "query": "What is the current state of solid-state batteries?",
+      "mode": "fixed",
+      "tokens": 2365,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 9462
+    },
+    {
+      "query_num": 1,
+      "query": "What is the current state of solid-state batteries?",
+      "mode": "gnn",
+      "tokens": 2220,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 8882
+    },
+    {
+      "query_num": 2,
+      "query": "Explain the key challenges in quantum computing in 2026",
+      "mode": "single",
+      "tokens": 2538,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 10154
+    },
+    {
+      "query_num": 2,
+      "query": "Explain the key challenges in quantum computing in 2026",
+      "mode": "fixed",
+      "tokens": 1980,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 7921
+    },
+    {
+      "query_num": 2,
+      "query": "Explain the key challenges in quantum computing in 2026",
+      "mode": "gnn",
+      "tokens": 2342,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 9370
+    },
+    {
+      "query_num": 3,
+      "query": "What are the main approaches to nuclear fusion?",
+      "mode": "single",
+      "tokens": 1356,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 5424
+    },
+    {
+      "query_num": 3,
+      "query": "What are the main approaches to nuclear fusion?",
+      "mode": "fixed",
+      "tokens": 1833,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 10.0,
+        "efficiency": 10.0,
+        "overall": 10.0
+      },
+      "quality_score": 10.0,
+      "output_length": 7334
+    },
+    {
+      "query_num": 3,
+      "query": "What are the main approaches to nuclear fusion?",
+      "mode": "gnn",
+      "tokens": 2026,
+      "scores": {
+        "factual_accuracy": 10.0,
+        "comprehensiveness": 10.0,
+        "clarity": 10.0,
+        "usefulness": 2.1,
+        "efficiency": 10.0,
+        "overall": 8.815
+      },
+      "quality_score": 8.815,
+      "output_length": 8104
+    }
+  ],
+  "timestamp": "2026-04-20T13:53:03.071546"
+}

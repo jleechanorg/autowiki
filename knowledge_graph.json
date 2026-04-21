@@ -1,0 +1,531 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "research_output",
+      "query": "Solid-state batteries 2026",
+      "timestamp": "2026-04-20T07:39:26.413333",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_073926"
+    },
+    {
+      "type": "concept",
+      "id": "solid-state"
+    },
+    {
+      "type": "research_output",
+      "query": "Current state and 2027-2030 commercialization timeline for solid-state batteries",
+      "timestamp": "2026-04-20T07:42:01.762955",
+      "quality_score": 8.7,
+      "mode": "fixed",
+      "id": "research_20260420_074201"
+    },
+    {
+      "type": "concept",
+      "id": "commercialization"
+    },
+    {
+      "type": "research_output",
+      "query": "Current state and 2027-2030 commercialization timeline for solid-state batteries",
+      "timestamp": "2026-04-20T07:42:02.276797",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_074202"
+    },
+    {
+      "type": "research_output",
+      "query": "Battery tech 2026",
+      "timestamp": "2026-04-20T07:42:20.800410",
+      "quality_score": 8.7,
+      "mode": "fixed",
+      "id": "research_20260420_074220"
+    },
+    {
+      "type": "concept",
+      "id": "battery"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T07:42:21.849679",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_074221"
+    },
+    {
+      "type": "research_output",
+      "query": "Battery tech 2026",
+      "timestamp": "2026-04-20T07:42:51.839820",
+      "quality_score": 8.7,
+      "mode": "fixed",
+      "id": "research_20260420_074251"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T07:42:52.855305",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_074252"
+    },
+    {
+      "type": "research_output",
+      "query": "Current state and 2027-2030 commercialization timeline for solid-state batteries",
+      "timestamp": "2026-04-20T03:56:53.538655",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_035653"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T03:57:05.650171",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_035705"
+    },
+    {
+      "type": "research_output",
+      "query": "Current state and 2027-2030 commercialization timeline for solid-state batteries",
+      "timestamp": "2026-04-20T04:01:06.689022",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_040106"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T04:01:20.764997",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_040120"
+    },
+    {
+      "type": "research_output",
+      "query": "Current state and 2027-2030 commercialization timeline for solid-state batteries",
+      "timestamp": "2026-04-20T04:26:16.637953",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_042616"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T01:30:47.972459",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_013047"
+    },
+    {
+      "type": "research_output",
+      "query": "Current state and 2027-2030 commercialization timeline for solid-state batteries",
+      "timestamp": "2026-04-20T01:41:59.395354",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_014159"
+    },
+    {
+      "type": "research_output",
+      "query": "Current state and 2027-2030 commercialization timeline for solid-state batteries",
+      "timestamp": "2026-04-20T02:21:07.592369",
+      "quality_score": 9.1,
+      "mode": "gnn",
+      "id": "research_20260420_022107"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T12:22:01.792285",
+      "quality_score": 9.4,
+      "mode": "gnn",
+      "id": "research_20260420_122201"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T12:25:48.815897",
+      "quality_score": 9.4,
+      "mode": "gnn",
+      "id": "research_20260420_122548"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T12:26:12.032724",
+      "quality_score": 9.4,
+      "mode": "gnn",
+      "id": "research_20260420_122612"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T12:37:29.965122",
+      "quality_score": 9.4,
+      "mode": "gnn",
+      "id": "research_20260420_123729"
+    },
+    {
+      "type": "research_output",
+      "query": "What is the current state of solid-state batteries?",
+      "timestamp": "2026-04-20T12:53:19.319671",
+      "quality_score": 9.2,
+      "mode": "fixed",
+      "id": "research_20260420_125319"
+    },
+    {
+      "type": "research_output",
+      "query": "What is the current state of solid-state batteries?",
+      "timestamp": "2026-04-20T13:07:00.067135",
+      "quality_score": 9.4,
+      "mode": "gnn",
+      "id": "research_20260420_130700"
+    },
+    {
+      "type": "research_output",
+      "query": "Explain the key challenges in quantum computing in 2026",
+      "timestamp": "2026-04-20T13:19:45.048866",
+      "quality_score": 9.2,
+      "mode": "fixed",
+      "id": "research_20260420_131945"
+    },
+    {
+      "type": "research_output",
+      "query": "Explain the key challenges in quantum computing in 2026",
+      "timestamp": "2026-04-20T13:29:41.330286",
+      "quality_score": 9.4,
+      "mode": "gnn",
+      "id": "research_20260420_132941"
+    },
+    {
+      "type": "research_output",
+      "query": "What are the main approaches to nuclear fusion?",
+      "timestamp": "2026-04-20T13:41:56.685906",
+      "quality_score": 9.2,
+      "mode": "fixed",
+      "id": "research_20260420_134156"
+    },
+    {
+      "type": "research_output",
+      "query": "What are the main approaches to nuclear fusion?",
+      "timestamp": "2026-04-20T13:52:32.408946",
+      "quality_score": 9.4,
+      "mode": "gnn",
+      "id": "research_20260420_135232"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T13:53:12.129390",
+      "quality_score": 8.5,
+      "mode": "gnn",
+      "id": "research_20260420_135312"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T13:53:44.138807",
+      "quality_score": 8.9405,
+      "mode": "gnn",
+      "id": "research_20260420_135344"
+    }
+  ],
+  "edges": [
+    {
+      "relation": "about",
+      "source": "research_20260420_073926",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074201",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074201",
+      "target": "commercialization",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074202",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074202",
+      "target": "commercialization",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074220",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074221",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074251",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_074252",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_035653",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_035653",
+      "target": "solid-state",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_035653",
+      "target": "commercialization",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_035653",
+      "target": "commercialization",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_035705",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_035705",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_040106",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_040106",
+      "target": "solid-state",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_040106",
+      "target": "commercialization",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_040106",
+      "target": "commercialization",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_040120",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_040120",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_042616",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_042616",
+      "target": "solid-state",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_042616",
+      "target": "commercialization",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_042616",
+      "target": "commercialization",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_013047",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_013047",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_014159",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_014159",
+      "target": "solid-state",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_014159",
+      "target": "commercialization",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_014159",
+      "target": "commercialization",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_022107",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_022107",
+      "target": "solid-state",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_022107",
+      "target": "commercialization",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_022107",
+      "target": "commercialization",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_122201",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_122201",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_122548",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_122548",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_122612",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_122612",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_123729",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_123729",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_125319",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_130700",
+      "target": "solid-state",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_135312",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_135312",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_135344",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_135344",
+      "target": "battery",
+      "key": 1
+    }
+  ]
+}
