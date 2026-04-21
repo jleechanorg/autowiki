@@ -62,38 +62,48 @@ BASE_URL = os.environ["MINIMAX_BASE_URL"]
 MODEL = "minimax-m2.7"
 
 
-def call_minimax(messages: list, system: str = "", max_tokens: int = 4096, timeout: int = 180) -> str:
-    """Call MiniMax /v1/messages endpoint directly."""
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json",
-        "anthropic-version": "2023-06-01",
-    }
-    body = {
-        "model": MODEL,
-        "messages": messages,
-        "max_tokens": max_tokens,
-    }
-    if system:
-        body["system"] = system
-    try:
-        resp = httpx.post(
-            f"{BASE_URL}/v1/messages",
-            headers=headers,
-            json=body,
-            timeout=timeout,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        content = data.get("content", [])
-        if isinstance(content, list):
-            for block in content:
-                if block.get("type") == "text":
-                    return block["text"]
-            return str(content[0]) if content else ""
-        return str(content)
-    except Exception as e:
-        return f"[API Error] {str(e)}"
+def call_minimax(messages: list, system: str = "", max_tokens: int = 4096, timeout: int = 180, max_retries: int = 3) -> str:
+    """Call MiniMax /v1/messages endpoint with exponential backoff retry."""
+    base_delay = 1.0
+    max_delay = 30.0
+    for attempt in range(max_retries):
+        headers = {
+            "Authorization": f"Bearer {API_KEY}",
+            "Content-Type": "application/json",
+            "anthropic-version": "2023-06-01",
+        }
+        body = {
+            "model": MODEL,
+            "messages": messages,
+            "max_tokens": max_tokens,
+        }
+        if system:
+            body["system"] = system
+        try:
+            resp = httpx.post(
+                f"{BASE_URL}/v1/messages",
+                headers=headers,
+                json=body,
+                timeout=timeout,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            content = data.get("content", [])
+            if isinstance(content, list):
+                for block in content:
+                    if block.get("type") == "text":
+                        return block["text"]
+                return str(content[0]) if content else ""
+            return str(content)
+        except Exception as e:
+            if attempt < max_retries - 1:
+                delay = min(base_delay * (2 ** attempt), max_delay)
+                ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                log(f"[RETRY] attempt {attempt + 1}/{max_retries} failed: {e} — waiting {delay:.1f}s")
+                time.sleep(delay)
+            else:
+                return f"[API Error] {str(e)}"
+    return "[API Error] Max retries exceeded"
 
 
 def run_single_mode(query: str) -> Tuple[str, int]:
