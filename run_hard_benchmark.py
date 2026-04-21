@@ -305,22 +305,28 @@ OUTPUT A:
 OUTPUT B:
 {output_b[:3000]}
 
-Compare on these dimensions (score A and B separately 1-10):
-1. Factual Accuracy (are claims supported?)
-2. Comprehensiveness (coverage of the topic?)
-3. Clarity (well-structured and readable?)
-4. Usefulness (actionable insights?)
-5. Specificity (concrete numbers, examples?)
+SCORING DIMENSIONS (100 pts total):
+1. Accuracy & Uncertainty (15pts): Accurate + explicitly flags thin evidence, identifies source contradictions
+2. Coverage Breadth & Depth (20pts): All subtopics + edge cases + counterarguments + open questions
+3. Insight & Originality (25pts) [HEAVIEST]: Non-obvious relationships synthesized across sources
+4. Evidence Chain Quality (15pts): Primary sourcing + explicit evidence→inference→conclusion chain
+5. Actionability (15pts): Specific with owner + conditions + verification criteria
+6. Structure & Readability (10pts): Executive summary + value-add tables + clear hierarchy
 
-For each dimension, declare a winner (A or B or TIE).
-End with an overall winner declaration.
+CRITICAL: 5 = BASELINE FLOOR (meets minimum). 8 = EXCEPTIONAL (does something NON-OBVIOUS).
+If an output only meets the baseline, it scores 5 — NOT higher.
+If both outputs are within 0.5 overall, declare a TIE and explain why.
 
 Format your response exactly as:
 DIMENSION_SCORES:
-A: [score] / B: [score] / Winner: [A/B/TIE]
-... (repeat for each dimension)
-OVERALL: Winner: [A/B/TIE] with scores A=[X]/10 vs B=[Y]/10
-RATIONALE: [2-3 sentences explaining the decision]"""
+Accuracy: A=[score] B=[score] Winner:[A/B/TIE]
+Coverage: A=[score] B=[score] Winner:[A/B/TIE]
+Insight: A=[score] B=[score] Winner:[A/B/TIE]
+Evidence: A=[score] B=[score] Winner:[A/B/TIE]
+Actionability: A=[score] B=[score] Winner:[A/B/TIE]
+Structure: A=[score] B=[score] Winner:[A/B/TIE]
+OVERALL: A=(total)/10 vs B=(total)/10 — Winner: [A/B/TIE]
+RATIONALE: (specific behavioral reasons for the decision)"""
 
     system = """You are a world-class research evaluator. Be honest and critical.
 Give higher scores only for genuinely superior outputs. Don't default to high scores."""
@@ -333,30 +339,27 @@ Give higher scores only for genuinely superior outputs. Don't default to high sc
 
 
 def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, Any]:
-    """Parse pairwise comparison result with robust regex patterns."""
+    """Parse pairwise comparison result with robust regex patterns.
+    Updated to 6-dimension rubric: accuracy, coverage, insight, evidence, actionability, structure."""
     result = {
-        "scores_a": {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0},
-        "scores_b": {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0},
-        "winners": {"factual": "TIE", "comprehensive": "TIE", "clarity": "TIE", "useful": "TIE", "specific": "TIE", "overall": "TIE"},
+        "scores_a": {"accuracy": 5.0, "coverage": 5.0, "insight": 5.0, "evidence": 5.0, "actionability": 5.0, "structure": 5.0},
+        "scores_b": {"accuracy": 5.0, "coverage": 5.0, "insight": 5.0, "evidence": 5.0, "actionability": 5.0, "structure": 5.0},
+        "winners": {"accuracy": "TIE", "coverage": "TIE", "insight": "TIE", "evidence": "TIE", "actionability": "TIE", "structure": "TIE", "overall": "TIE"},
         "overall_score_a": 5.0,
         "overall_score_b": 5.0,
         "rationale": "",
     }
 
     # Extract overall scores - handle multiple formats and scales (/10 or /50):
-    # "A=5/10 vs B=6/10", "A=N/A/10 vs B=8.4/10", "A=5/50 vs B=37/50"
-    # "Winner: B with scores A=0/10 vs B=8.4/10"
-    overall_match = re.search(r'A=(N/?A|\d+(?:\.\d+)?)/(?:10|50)\s*vs\.?\s*B=(N/?A|\d+(?:\.\d+)?)/(?:10|50)', raw, re.IGNORECASE | re.DOTALL)
+    # "A=5/10 vs B=6/10", "A=N/A/10 vs B=8.4/10", "A=(total)/10 vs B=(total)/10"
+    overall_match = re.search(r'A=\(?(\d+(?:\.\d+)?)\)?/(?:10|50)\s*vs\.?\s*B=\(?(\d+(?:\.\d+)?)\)?/(?:10|50)', raw, re.IGNORECASE | re.DOTALL)
     if overall_match:
-        score_a_str = overall_match.group(1)
-        score_b_str = overall_match.group(2)
-        result["overall_score_a"] = 0.0 if score_a_str.upper() in ('N/A',) else float(score_a_str)
-        result["overall_score_b"] = 0.0 if score_b_str.upper() in ('N/A',) else float(score_b_str)
+        result["overall_score_a"] = float(overall_match.group(1))
+        result["overall_score_b"] = float(overall_match.group(2))
 
     # Extract overall winner from OVERALL: or Winner: line
     overall_winner_match = re.search(r'OVERALL:.*?Winner:\s*([ABTIE]+)', raw, re.IGNORECASE | re.DOTALL)
     if not overall_winner_match:
-        # Also check for "Winner: B with scores A=..."
         overall_winner_match = re.search(r'Winner:\s*([ABTIE]+)', raw, re.IGNORECASE | re.DOTALL)
     if overall_winner_match:
         result["winners"]["overall"] = overall_winner_match.group(1).upper()
@@ -366,19 +369,15 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
     if rat_match:
         result["rationale"] = rat_match.group(1).strip()[:300]
 
-    # Extract individual dimension winners - handle N/A, parenthetical scores, etc.
-    dim_names = ["factual", "comprehensive", "clarity", "useful", "specific"]
+    # Extract individual dimension winners
+    # Pattern: "Accuracy: A=[score] B=[score] Winner:[A/B/TIE]"
+    dim_names = ["accuracy", "coverage", "insight", "evidence", "actionability", "structure"]
     for dim in dim_names:
-        # Pattern handles: "A: 7 / B: 6 / Winner: A", "A: N/A / B: 8 / Winner: B"
-        # Also handles: "A: 7 (winner) / B: 6"
-        dim_pattern = rf'{dim}.*?A:\s*(\d+(?:\.\d+)?|N/?A).*?B:\s*(\d+(?:\.\d+)?|N/?A).*?Winner:\s*([ABTIE]+)'
+        dim_pattern = rf'{dim}.*?A=\(?(\d+(?:\.\d+)?)\)?.*?B=\(?(\d+(?:\.\d+)?)\)?.*?Winner:\s*([ABTIE]+)'
         match = re.search(dim_pattern, raw, re.IGNORECASE)
         if match:
-            score_a_str = match.group(1)
-            score_b_str = match.group(2)
-            # Handle N/A
-            result["scores_a"][dim] = 0.0 if score_a_str.upper() in ('N/A', 'N/A') else float(score_a_str)
-            result["scores_b"][dim] = 0.0 if score_b_str.upper() in ('N/A', 'N/A') else float(score_b_str)
+            result["scores_a"][dim] = float(match.group(1))
+            result["scores_b"][dim] = float(match.group(2))
             result["winners"][dim] = match.group(3).upper()
 
     return result
@@ -420,7 +419,8 @@ def _is_error_output(output: str) -> tuple[bool, str]:
 
 
 def score_single_output(output: str, query: str) -> Dict[str, float]:
-    """Score a single output on absolute scale (1-10 per dimension)."""
+    """Score a single output on absolute scale (1-10 per dimension).
+    Updated to 6-dimension rubric (100 pts)."""
     # Check for error outputs BEFORE calling LLM
     is_error, error_type = _is_error_output(output)
     if is_error:
@@ -428,11 +428,12 @@ def score_single_output(output: str, query: str) -> Dict[str, float]:
             "error_flag": True,
             "error_type": error_type,
             "overall": 0.0,
-            "factual": 0.0,
-            "comprehensive": 0.0,
-            "clarity": 0.0,
-            "useful": 0.0,
-            "specific": 0.0,
+            "accuracy": 0.0,
+            "coverage": 0.0,
+            "insight": 0.0,
+            "evidence": 0.0,
+            "actionability": 0.0,
+            "structure": 0.0,
         }
 
     prompt = f"""Score this research output honestly on a 1-10 scale.
@@ -442,34 +443,41 @@ QUERY: {query[:200]}
 OUTPUT:
 {output[:3500]}
 
-Score each dimension (BE HONEST - don't default to high scores):
-- Factual Accuracy (1-10): Are claims specific and supported?
-- Comprehensiveness (1-10): Is coverage thorough?
-- Clarity (1-10): Is it well-organized?
-- Usefulness (1-10): Are there actionable insights?
-- Specificity (1-10): Are there concrete numbers and examples?
+SCORING SCALE (100 pts total):
+1. Accuracy & Uncertainty (15pts): 5=All accurate no fabricated citations. 8=Accurate + explicitly flags thin evidence, identifies source contradictions.
+2. Coverage Breadth & Depth (20pts): 5=Covers all subtopics surface level. 8=All subtopics + edge cases + counterarguments + open questions.
+3. Insight & Originality (25pts) [HEAVIEST]: 5=Logical connections appropriate conclusions. 8=Non-obvious relationships synthesized across sources.
+4. Evidence Chain Quality (15pts): 5=Cites sources supports claims. 8=Primary sourcing + explicit evidence→inference→conclusion chain.
+5. Actionability (15pts): 5=Vague recommendations. 8=Specific with owner + conditions + verification criteria.
+6. Structure & Readability (10pts): 5=Clear baseline section headers. 8=Executive summary + value-add tables + clear hierarchy.
+
+CRITICAL: 5 = BASELINE FLOOR (meets minimum). 8 = EXCEPTIONAL (does something NON-OBVIOUS).
+If output only meets the baseline, it scores 5 — NOT higher.
 
 Respond with EXACTLY this format (one number per line):
-FACTUAL: [score]
-COMPREHENSIVE: [score]
-CLARITY: [score]
-USEFUL: [score]
-SPECIFIC: [score]"""
+ACCURACY: [score]
+COVERAGE: [score]
+INSIGHT: [score]
+EVIDENCE: [score]
+ACTIONABILITY: [score]
+STRUCTURE: [score]"""
 
-    system = """You are a strict evaluator. A 5/10 is average. Only give 9-10 for truly exceptional work.
+    system = """You are a strict evaluator. A 5/10 is baseline FLOOR (meets minimum).
+Only give 8+ for outputs that do something NON-OBVIOUS.
 Be critical and specific about what held the score back."""
 
     result = call_minimax([{"role": "user", "content": prompt}], system=system, max_tokens=512, timeout=180)
 
-    # Parse scores
-    scores = {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0, "overall": 5.0}
+    # Parse scores — default to 5.0 (baseline floor) if parse fails
+    scores = {"accuracy": 5.0, "coverage": 5.0, "insight": 5.0, "evidence": 5.0, "actionability": 5.0, "structure": 5.0, "overall": 5.0}
 
     patterns = {
-        "factual": r"FACTUAL:\s*(\d+(?:\.\d+)?)",
-        "comprehensive": r"COMPREHENSIVE:\s*(\d+(?:\.\d+)?)",
-        "clarity": r"CLARITY:\s*(\d+(?:\.\d+)?)",
-        "useful": r"USEFUL:\s*(\d+(?:\.\d+)?)",
-        "specific": r"SPECIFIC:\s*(\d+(?:\.\d+)?)",
+        "accuracy": r"ACCURACY:\s*(\d+(?:\.\d+)?)",
+        "coverage": r"COVERAGE:\s*(\d+(?:\.\d+)?)",
+        "insight": r"INSIGHT:\s*(\d+(?:\.\d+)?)",
+        "evidence": r"EVIDENCE:\s*(\d+(?:\.\d+)?)",
+        "actionability": r"ACTIONABILITY:\s*(\d+(?:\.\d+)?)",
+        "structure": r"STRUCTURE:\s*(\d+(?:\.\d+)?)",
     }
 
     for dim, pat in patterns.items():
@@ -477,9 +485,10 @@ Be critical and specific about what held the score back."""
         if match:
             scores[dim] = min(10.0, max(1.0, float(match.group(1))))
 
-    # Weighted overall
-    weights = {"factual": 0.30, "comprehensive": 0.25, "clarity": 0.20, "useful": 0.15, "specific": 0.10}
-    scores["overall"] = sum(scores[d] * weights[d] for d in weights)
+    # Overall = average of dimension scores (0-10 scale), not weighted
+    dimension_scores = [scores["accuracy"], scores["coverage"], scores["insight"],
+                        scores["evidence"], scores["actionability"], scores["structure"]]
+    scores["overall"] = round(sum(dimension_scores) / len(dimension_scores), 2)
 
     return scores
 
