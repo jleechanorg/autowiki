@@ -1,0 +1,2 @@
+# API key redacted. Log LLM request/response pairs here for diagnosis.
+# Format: one JSON object per line: {"query_num": N, "mode": "X", "request": "...", "response": "..."}

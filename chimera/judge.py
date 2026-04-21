@@ -4,7 +4,7 @@ Provides multi-dimensional scoring with explanations.
 """
 
 import re
-from typing import Dict, Any
+from typing import Dict, Any, Tuple
 from .agents.base import BaseAgent, AgentConfig
 
 # Rubric weights
@@ -15,6 +15,33 @@ RUBRIC_WEIGHTS = {
     "usefulness": 0.15,
     "efficiency": 0.10,
 }
+
+
+def _is_error_output(output: str) -> Tuple[bool, str]:
+    """Check if output is an API/system error, not a valid response.
+    Returns (is_error, error_type).
+    """
+    error_patterns = [
+        (r'\[API Error\]', 'api_error'),
+        (r'\btimeout\b', 'timeout'),
+        (r'\b529\b', 'service_unavailable'),
+        (r'rate limit', 'rate_limit'),
+        (r'connection error', 'connection_error'),
+        (r'upstream error', 'upstream_error'),
+        (r'service unavailable', 'service_unavailable'),
+        (r'too many requests', 'rate_limit'),
+        (r'\b429\b', 'rate_limit'),
+        (r'internal server error', 'server_error'),
+        (r'\b500\b', 'server_error'),
+        (r'\b502\b', 'server_error'),
+        (r'\b503\b', 'server_error'),
+        (r'\b504\b', 'server_error'),
+        (r'\[Error\]', 'error'),
+    ]
+    for pattern, error_type in error_patterns:
+        if re.search(pattern, output, re.IGNORECASE):
+            return True, error_type
+    return False, ""
 
 
 class AIJudge(BaseAgent):
@@ -68,6 +95,23 @@ You are calibrated against human expert raters (target: >85% correlation)."""
 
     def score(self, output: str, reference: str = None) -> Dict[str, Any]:
         """Score a research output using real LLM judgment."""
+        # Check for error outputs BEFORE calling LLM
+        is_error, error_type = _is_error_output(output)
+        if is_error:
+            return {
+                "raw_judgment": f"[Error detected - {error_type}]",
+                "overall_score": 0.0,
+                "is_error": True,
+                "error_type": error_type,
+                "dimensions": {
+                    "factual_accuracy": 0.0,
+                    "comprehensiveness": 0.0,
+                    "clarity": 0.0,
+                    "usefulness": 0.0,
+                    "efficiency": 0.0,
+                }
+            }
+
         prompt = f"""Score the following research output on a 1-10 scale for each dimension.
 
 Output to evaluate:
@@ -107,6 +151,41 @@ Finally: Overall Score (weighted average) and Top 3 improvements."""
 
     def compare(self, output_a: str, output_b: str, label_a: str = "A", label_b: str = "B") -> Dict:
         """Pairwise comparison (more reliable than absolute scoring)."""
+        # Check both outputs for errors first
+        is_error_a, error_type_a = _is_error_output(output_a)
+        is_error_b, error_type_b = _is_error_output(output_b)
+
+        # If both are errors, it's a tie
+        if is_error_a and is_error_b:
+            return {
+                "comparison": "[Both outputs are errors]",
+                "winner": "TIE",
+                "error_a": True,
+                "error_b": True,
+                "error_type_a": error_type_a,
+                "error_type_b": error_type_b,
+            }
+
+        # If one is an error, the valid one wins automatically
+        if is_error_a:
+            return {
+                "comparison": f"[Output {label_a} is an error: {error_type_a}]",
+                "winner": label_b,
+                "error_a": True,
+                "error_b": False,
+                "error_type_a": error_type_a,
+                "error_type_b": None,
+            }
+        if is_error_b:
+            return {
+                "comparison": f"[Output {label_b} is an error: {error_type_b}]",
+                "winner": label_a,
+                "error_a": False,
+                "error_b": True,
+                "error_type_a": None,
+                "error_type_b": error_type_b,
+            }
+
         prompt = f"""Compare Output {label_a} vs Output {label_b}.
 
 {label_a}:

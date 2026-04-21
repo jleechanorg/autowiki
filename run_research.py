@@ -9,12 +9,12 @@ import sys
 import json
 from datetime import datetime
 
-# Set up environment for MiniMax
-os.environ["MINIMAX_API_KEY"] = "sk-cp-Rg64VbM5FkwJrZkiTYazH3PXihEFIaY4ohU5r-zg-aAyPN60puG0IaWTQ9AJXdbGpzTlqcozbsIEhpquqkg3GA9qTeN-C_SXTJsOSYWQhPuFhIPPuULgs1I"
-os.environ["MINIMAX_BASE_URL"] = "https://api.minimax.io/anthropic"
+# Set up environment for MiniMax — use env vars, do not hardcode credentials
+os.environ.setdefault("MINIMAX_API_KEY", os.environ.get("MINIMAX_API_KEY", ""))
+os.environ.setdefault("MINIMAX_BASE_URL", "https://api.minimax.io/anthropic")
 
 # Add chimera to path
-sys.path.insert(0, "/Users/jleechan/Downloads/chimera")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from chimera.orchestrator import SwarmOrchestrator
 from chimera.utils import load_llm_client
@@ -24,7 +24,7 @@ What are the most promising approaches to achieving nuclear fusion energy in 202
 Include technical challenges, timelines, and key players.
 """
 
-OUTPUT_FILE = "/Users/jleechan/Downloads/chimera/research_report_fusion_2026.md"
+OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "research_report_fusion_2026.md")
 
 def run_chimera_research():
     """Run the full Chimera 22-agent pipeline on fusion energy research."""

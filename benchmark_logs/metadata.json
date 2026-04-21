@@ -1,0 +1,11 @@
+{
+  "run_id": "hard-benchmark-2026-04-20",
+  "git_commit": "a11e11c4a8a1dbad46150097538c9051f8cb231e",
+  "git_branch": "main",
+  "run_timestamp": "2026-04-20T22:59:28-07:00",
+  "model": "minimax-m2.7",
+  "timeout_seconds": 180,
+  "retry_attempts": 3,
+  "benchmark_queries": 15,
+  "modes_tested": ["single", "fixed", "gnn"]
+}

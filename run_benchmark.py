@@ -11,11 +11,11 @@ import re
 from datetime import datetime
 from typing import Dict, Any, List
 
-# Set up environment for MiniMax
-os.environ["MINIMAX_API_KEY"] = "sk-cp-Rg64VbM5FkwJrZkiTYazH3PXihEFIaY4ohU5r-zg-aAyPN60puG0IaWTQ9AJXdbGpzTlqcozbsIEhpquqkg3GA9qTeN-C_SXTJsOSYWQhPuFhIPPuULgs1I"
-os.environ["MINIMAX_BASE_URL"] = "https://api.minimax.io/anthropic"
+# Set up environment for MiniMax — use env vars, do not hardcode credentials
+os.environ.setdefault("MINIMAX_API_KEY", os.environ.get("MINIMAX_API_KEY", ""))
+os.environ.setdefault("MINIMAX_BASE_URL", "https://api.minimax.io/anthropic")
 
-sys.path.insert(0, "/Users/jleechan/Downloads/chimera")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from chimera.orchestrator import SwarmOrchestrator
 from chimera.judge import AIJudge
@@ -380,7 +380,7 @@ def _format_detailed_scores(results: List[Dict]) -> str:
 
 def update_orchestrator_quality_score():
     """Update orchestrator.py to use computed scores instead of hardcoded values."""
-    orch_path = "/Users/jleechan/Downloads/chimera/chimera/orchestrator.py"
+    orch_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chimera", "orchestrator.py")
 
     with open(orch_path, "r") as f:
         content = f.read()
@@ -420,14 +420,14 @@ if __name__ == "__main__":
         # Generate report
         report = generate_benchmark_report(results, outputs)
 
-        output_path = "/Users/jleechan/Downloads/chimera/benchmark_results.md"
+        output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_results.md")
         with open(output_path, "w") as f:
             f.write(report)
 
         print(f"\n[BENCHMARK] Results written to: {output_path}")
 
         # Also save raw JSON
-        json_path = "/Users/jleechan/Downloads/chimera/benchmark_results.json"
+        json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_results.json")
         with open(json_path, "w") as f:
             json.dump({"results": results, "timestamp": datetime.now().isoformat()}, f, indent=2, default=str)
         print(f"[BENCHMARK] Raw JSON saved to: {json_path}")

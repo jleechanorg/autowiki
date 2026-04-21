@@ -13,17 +13,18 @@ import time
 from datetime import datetime
 from typing import Dict, Any, List, Tuple
 
-# Set up environment for MiniMax
-os.environ["MINIMAX_API_KEY"] = "sk-cp-Rg64VbM5FkwJrZkiTYazH3PXihEFIaY4ohU5r-zg-aAyPN60puG0IaWTQ9AJXdbGpzTlqcozbsIEhpquqkg3GA9qTeN-C_SXTJsOSYWQhPuFhIPPuULgs1I"
-os.environ["MINIMAX_BASE_URL"] = "https://api.minimax.io/anthropic"
+# Set up environment for MiniMax — use env vars, do not hardcode credentials
+os.environ.setdefault("MINIMAX_API_KEY", os.environ.get("MINIMAX_API_KEY", ""))
+os.environ.setdefault("MINIMAX_BASE_URL", "https://api.minimax.io/anthropic")
 
-sys.path.insert(0, "/Users/jleechan/Downloads/chimera")
+# Add chimera package to path (relative to this file's location)
+sys.path.insert(0, str(__file__).rsplit("/", 1)[0])
 
 from chimera.orchestrator import SwarmOrchestrator
 from chimera.utils import load_llm_client
 import httpx
 
-LOG_DIR = "/Users/jleechan/Downloads/chimera/benchmark_logs"
+LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_logs")
 os.makedirs(LOG_DIR, exist_ok=True)
 LOG_FILE = f"{LOG_DIR}/hard_benchmark.log"
 
@@ -61,7 +62,7 @@ BASE_URL = os.environ["MINIMAX_BASE_URL"]
 MODEL = "minimax-m2.7"
 
 
-def call_minimax(messages: list, system: str = "", max_tokens: int = 4096, timeout: int = 120) -> str:
+def call_minimax(messages: list, system: str = "", max_tokens: int = 4096, timeout: int = 180) -> str:
     """Call MiniMax /v1/messages endpoint directly."""
     headers = {
         "Authorization": f"Bearer {API_KEY}",
@@ -357,8 +358,49 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
     return result
 
 
+def _is_error_output(output: str) -> tuple[bool, str]:
+    """Check if output is an API/system error, not a valid response.
+    Returns (is_error, error_type).
+    """
+    error_patterns = [
+        (r'\[API Error\]', 'api_error'),
+        (r'timeout', 'timeout'),
+        (r'529', 'service_unavailable'),
+        (r'rate limit', 'rate_limit'),
+        (r'connection error', 'connection_error'),
+        (r'upstream error', 'upstream_error'),
+        (r'service unavailable', 'service_unavailable'),
+        (r'too many requests', 'rate_limit'),
+        (r'429', 'rate_limit'),
+        (r'internal server error', 'server_error'),
+        (r'500\b', 'server_error'),
+        (r'502\b', 'server_error'),
+        (r'503\b', 'server_error'),
+        (r'504\b', 'server_error'),
+        (r'\[Error\]', 'error'),
+    ]
+    for pattern, error_type in error_patterns:
+        if re.search(pattern, output, re.IGNORECASE):
+            return True, error_type
+    return False, ""
+
+
 def score_single_output(output: str, query: str) -> Dict[str, float]:
     """Score a single output on absolute scale (1-10 per dimension)."""
+    # Check for error outputs BEFORE calling LLM
+    is_error, error_type = _is_error_output(output)
+    if is_error:
+        return {
+            "error_flag": True,
+            "error_type": error_type,
+            "overall": 0.0,
+            "factual": 0.0,
+            "comprehensive": 0.0,
+            "clarity": 0.0,
+            "useful": 0.0,
+            "specific": 0.0,
+        }
+
     prompt = f"""Score this research output honestly on a 1-10 scale.
 
 QUERY: {query[:200]}
@@ -383,7 +425,7 @@ SPECIFIC: [score]"""
     system = """You are a strict evaluator. A 5/10 is average. Only give 9-10 for truly exceptional work.
 Be critical and specific about what held the score back."""
 
-    result = call_minimax([{"role": "user", "content": prompt}], system=system, max_tokens=512, timeout=120)
+    result = call_minimax([{"role": "user", "content": prompt}], system=system, max_tokens=512, timeout=180)
 
     # Parse scores
     scores = {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0, "overall": 5.0}
@@ -546,6 +588,8 @@ def generate_report(results: List[Dict], total_time: float) -> str:
     # Build comparison table
     table_rows = []
     spreads = []
+    error_counts = {"single": 0, "fixed": 0, "gnn": 0}
+    error_queries = {"single": [], "fixed": [], "gnn": []}
 
     for qr in results:
         qi = qr["query_num"]
@@ -553,17 +597,52 @@ def generate_report(results: List[Dict], total_time: float) -> str:
 
         row = f"| Q{qi} | {query_short}"
 
-        single_score = qr["modes"].get("single", {}).get("scores", {}).get("overall", 0)
-        fixed_score = qr["modes"].get("fixed", {}).get("scores", {}).get("overall", 0)
-        gnn_score = qr["modes"].get("gnn", {}).get("scores", {}).get("overall", 0)
+        single_scores = qr["modes"].get("single", {}).get("scores", {})
+        fixed_scores = qr["modes"].get("fixed", {}).get("scores", {})
+        gnn_scores = qr["modes"].get("gnn", {}).get("scores", {})
 
-        row += f" | {single_score:.1f} | {fixed_score:.1f} | {gnn_score:.1f}"
+        single_score = single_scores.get("overall", 0) if single_scores else 0
+        fixed_score = fixed_scores.get("overall", 0) if fixed_scores else 0
+        gnn_score = gnn_scores.get("overall", 0) if gnn_scores else 0
 
-        # Determine winner
-        scores = {"single": single_score, "fixed": fixed_score, "gnn": gnn_score}
-        max_score = max(scores.values())
-        winners = [k for k, v in scores.items() if v == max_score]
-        winner_str = "/".join(winners).upper()
+        single_error = single_scores.get("error_flag", False) if single_scores else False
+        fixed_error = fixed_scores.get("error_flag", False) if fixed_scores else False
+        gnn_error = gnn_scores.get("error_flag", False) if gnn_scores else False
+
+        # Track errors
+        if single_error:
+            error_counts["single"] += 1
+            error_queries["single"].append(qi)
+        if fixed_error:
+            error_counts["fixed"] += 1
+            error_queries["fixed"].append(qi)
+        if gnn_error:
+            error_counts["gnn"] += 1
+            error_queries["gnn"].append(qi)
+
+        # Show ERROR for failed modes, score for valid
+        single_str = "ERROR" if single_error else f"{single_score:.1f}"
+        fixed_str = "ERROR" if fixed_error else f"{fixed_score:.1f}"
+        gnn_str = "ERROR" if gnn_error else f"{gnn_score:.1f}"
+        row += f" | {single_str} | {fixed_str} | {gnn_str}"
+
+        # Determine winner (only among non-error scores)
+        scores = {}
+        if not single_error:
+            scores["single"] = single_score
+        if not fixed_error:
+            scores["fixed"] = fixed_score
+        if not gnn_error:
+            scores["gnn"] = gnn_score
+
+        if scores:
+            max_score = max(scores.values())
+            winners = [k for k, v in scores.items() if v == max_score]
+            winner_str = "/".join(winners).upper()
+        else:
+            winner_str = "N/A"
+            max_score = 0
+
         row += f" | {winner_str}"
 
         spread = max_score - min(s for s in scores.values() if s > 0)
@@ -572,25 +651,33 @@ def generate_report(results: List[Dict], total_time: float) -> str:
 
         table_rows.append(row)
 
-    # Calculate mode averages
+    # Calculate mode averages (exclude error outputs)
     mode_stats = {"single": [], "fixed": [], "gnn": []}
     win_counts = {"single": 0, "fixed": 0, "gnn": 0, "tie": 0}
 
     for qr in results:
         for mode in ["single", "fixed", "gnn"]:
-            score = qr["modes"].get(mode, {}).get("scores", {}).get("overall", 0)
-            if score > 0:
-                mode_stats[mode].append(score)
+            scores_data = qr["modes"].get(mode, {}).get("scores", {})
+            # Exclude error outputs from averages
+            if scores_data and not scores_data.get("error_flag", False):
+                score = scores_data.get("overall", 0)
+                if score > 0:
+                    mode_stats[mode].append(score)
 
-        # Count wins
-        scores = {m: qr["modes"].get(m, {}).get("scores", {}).get("overall", 0) for m in ["single", "fixed", "gnn"]}
-        max_score = max(scores.values())
-        if max_score > 0:
-            winners = [k for k, v in scores.items() if v == max_score]
-            if len(winners) == 1:
-                win_counts[winners[0]] += 1
-            else:
-                win_counts["tie"] += 1
+        # Count wins (exclude error outputs)
+        scores = {}
+        for m in ["single", "fixed", "gnn"]:
+            scores_data = qr["modes"].get(m, {}).get("scores", {})
+            if scores_data and not scores_data.get("error_flag", False):
+                scores[m] = scores_data.get("overall", 0)
+        if scores:
+            max_score = max(scores.values())
+            if max_score > 0:
+                winners = [k for k, v in scores.items() if v == max_score]
+                if len(winners) == 1:
+                    win_counts[winners[0]] += 1
+                else:
+                    win_counts["tie"] += 1
 
     avg_row = "| AVG | |"
     for mode in ["single", "fixed", "gnn"]:
@@ -639,6 +726,18 @@ Queries with spread > 1.0: {sum(1 for s in spreads if s > 1.0)} / {len(spreads)}
 
 ---
 
+## Error Analysis
+
+| Mode | Errors | Error Rate | Queries Affected |
+|------|--------|------------|------------------|
+| Single | {error_counts["single"]} | {error_counts["single"]/len(results)*100:.0f}% | {", ".join(f"Q{q}" for q in error_queries["single"]) or "none"} |
+| Fixed | {error_counts["fixed"]} | {error_counts["fixed"]/len(results)*100:.0f}% | {", ".join(f"Q{q}" for q in error_queries["fixed"]) or "none"} |
+| GNN | {error_counts["gnn"]} | {error_counts["gnn"]/len(results)*100:.0f}% | {", ".join(f"Q{q}" for q in error_queries["gnn"]) or "none"} |
+
+Note: Error-state outputs score 0.0 and are excluded from mode averages and win counts.
+
+---
+
 ## Detailed Results
 
 """
@@ -652,9 +751,12 @@ Queries with spread > 1.0: {sum(1 for s in spreads if s > 1.0)} / {len(spreads)}
             mode_data = qr["modes"].get(mode, {})
             if "scores" in mode_data:
                 s = mode_data["scores"]
-                report += f"- **{mode.upper()}**: Overall {s['overall']:.1f} | "
-                report += f"Factual {s['factual']:.1f} | Comp {s['comprehensive']:.1f} | "
-                report += f"Clarity {s['clarity']:.1f} | Useful {s['useful']:.1f} | Specific {s['specific']:.1f}\n"
+                if s.get("error_flag", False):
+                    report += f"- **{mode.upper()}**: ERROR ({s.get('error_type', 'unknown')}) - scored 0.0\n"
+                else:
+                    report += f"- **{mode.upper()}**: Overall {s['overall']:.1f} | "
+                    report += f"Factual {s['factual']:.1f} | Comp {s['comprehensive']:.1f} | "
+                    report += f"Clarity {s['clarity']:.1f} | Useful {s['useful']:.1f} | Specific {s['specific']:.1f}\n"
             elif "error" in mode_data:
                 report += f"- **{mode.upper()}**: ERROR - {mode_data['error'][:100]}\n"
 
@@ -740,14 +842,14 @@ if __name__ == "__main__":
     # Generate report
     report = generate_report(results, total_time)
 
-    output_path = "/Users/jleechan/Downloads/chimera/benchmark_hard_queries.md"
+    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_hard_queries.md")
     with open(output_path, "w") as f:
         f.write(report)
 
     log(f"[COMPLETE] Report written to: {output_path}")
 
     # Save raw JSON
-    json_path = "/Users/jleechan/Downloads/chimera/benchmark_hard_queries.json"
+    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_hard_queries.json")
     with open(json_path, "w") as f:
         json.dump({
             "results": results,

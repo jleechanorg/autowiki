@@ -19,7 +19,7 @@ What are the most promising approaches to achieving nuclear fusion energy in 202
 Include technical challenges, timelines, and key players.
 """
 
-OUTPUT_FILE = "/Users/jleechan/Downloads/chimera/research_report_fusion_2026.md"
+OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "research_report_fusion_2026.md")
 
 def call_minimax(messages: list, system: str = "", max_tokens: int = 2048, timeout: int = 120) -> str:
     """Call MiniMax /v1/messages endpoint directly."""
