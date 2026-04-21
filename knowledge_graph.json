@@ -230,6 +230,14 @@
       "quality_score": 8.9405,
       "mode": "gnn",
       "id": "research_20260420_135344"
+    },
+    {
+      "type": "research_output",
+      "query": "Test persistence",
+      "timestamp": "2026-04-20T22:44:21.969484",
+      "quality_score": 8.9405,
+      "mode": "gnn",
+      "id": "research_20260420_224421"
     }
   ],
   "edges": [
@@ -524,6 +532,18 @@
     {
       "relation": "about",
       "source": "research_20260420_135344",
+      "target": "battery",
+      "key": 1
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_224421",
+      "target": "battery",
+      "key": 0
+    },
+    {
+      "relation": "about",
+      "source": "research_20260420_224421",
       "target": "battery",
       "key": 1
     }

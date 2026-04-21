@@ -371,26 +371,34 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
 def _is_error_output(output: str) -> tuple[bool, str]:
     """Check if output is an API/system error, not a valid response.
     Returns (is_error, error_type).
+
+    Conservative detection: Only flag as error if the indicator appears
+    near the start of output (first 500 chars) to avoid false positives
+    from terms like 'timeout' in valid content or '500' in numbers.
     """
+    # Only search first 500 chars to avoid false positives from
+    # legitimate content that discusses errors/timeouts/numbers
+    search_region = output[:500]
+
     error_patterns = [
         (r'\[API Error\]', 'api_error'),
-        (r'timeout', 'timeout'),
-        (r'529', 'service_unavailable'),
-        (r'rate limit', 'rate_limit'),
-        (r'connection error', 'connection_error'),
-        (r'upstream error', 'upstream_error'),
-        (r'service unavailable', 'service_unavailable'),
-        (r'too many requests', 'rate_limit'),
-        (r'429', 'rate_limit'),
-        (r'internal server error', 'server_error'),
-        (r'500\b', 'server_error'),
-        (r'502\b', 'server_error'),
-        (r'503\b', 'server_error'),
-        (r'504\b', 'server_error'),
+        (r'\btimeout\b', 'timeout'),
+        (r'\b529\b', 'service_unavailable'),
+        (r'\brate limit\b', 'rate_limit'),
+        (r'\bconnection error\b', 'connection_error'),
+        (r'\bupstream error\b', 'upstream_error'),
+        (r'\bservice unavailable\b', 'service_unavailable'),
+        (r'\btoo many requests\b', 'rate_limit'),
+        (r'\b429\b', 'rate_limit'),
+        (r'\binternal server error\b', 'server_error'),
+        (r'\b500\b', 'server_error'),
+        (r'\b502\b', 'server_error'),
+        (r'\b503\b', 'server_error'),
+        (r'\b504\b', 'server_error'),
         (r'\[Error\]', 'error'),
     ]
     for pattern, error_type in error_patterns:
-        if re.search(pattern, output, re.IGNORECASE):
+        if re.search(pattern, search_region, re.IGNORECASE):
             return True, error_type
     return False, ""
 
