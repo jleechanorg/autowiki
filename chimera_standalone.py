@@ -10,8 +10,8 @@ import httpx
 from datetime import datetime
 
 # Set up environment for MiniMax
-API_KEY = "sk-cp-Rg64VbM5FkwJrZkiTYazH3PXihEFIaY4ohU5r-zg-aAyPN60puG0IaWTQ9AJXdbGpzTlqcozbsIEhpquqkg3GA9qTeN-C_SXTJsOSYWQhPuFhIPPuULgs1I"
-BASE_URL = "https://api.minimax.io/anthropic"
+API_KEY = os.environ.get("MINIMAX_API_KEY")
+BASE_URL = os.environ.get("MINIMAX_BASE_URL", "https://api.minimax.io/anthropic")
 MODEL = "minimax-m2.7"
 
 RESEARCH_QUERY = """
