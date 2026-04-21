@@ -1,7 +1,14 @@
 {
   "run_id": "hard-benchmark-2026-04-20",
+  "bundle_version": "1.0",
+  "iteration": 3,
   "git_commit": "a11e11c4a8a1dbad46150097538c9051f8cb231e",
   "git_branch": "main",
+  "provenance": {
+    "run_commit": "a11e11c4a8a1dbad46150097538c9051f8cb231e",
+    "result_commit": "5ce5e062cb428496bbd8cb45845bd778c5dd3c3a",
+    "merge_base": "f07fd66"
+  },
   "run_timestamp": "2026-04-20T22:59:28-07:00",
   "model": "minimax-m2.7",
   "timeout_seconds": 180,
