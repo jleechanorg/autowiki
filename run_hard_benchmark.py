@@ -333,7 +333,7 @@ Give higher scores only for genuinely superior outputs. Don't default to high sc
 
 
 def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, Any]:
-    """Parse pairwise comparison result."""
+    """Parse pairwise comparison result with robust regex patterns."""
     result = {
         "scores_a": {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0},
         "scores_b": {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0},
@@ -343,26 +343,42 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
         "rationale": "",
     }
 
-    # Extract overall scores
-    overall_match = re.search(r'OVERALL:.*?A=\[?(\d+(?:\.\d+)?)\]?/10.*?B=\[?(\d+(?:\.\d+)?)\]?/10', raw, re.IGNORECASE | re.DOTALL)
+    # Extract overall scores - handle multiple formats and scales (/10 or /50):
+    # "A=5/10 vs B=6/10", "A=N/A/10 vs B=8.4/10", "A=5/50 vs B=37/50"
+    # "Winner: B with scores A=0/10 vs B=8.4/10"
+    overall_match = re.search(r'A=(N/?A|\d+(?:\.\d+)?)/(?:10|50)\s*vs\.?\s*B=(N/?A|\d+(?:\.\d+)?)/(?:10|50)', raw, re.IGNORECASE | re.DOTALL)
     if overall_match:
-        result["overall_score_a"] = float(overall_match.group(1))
-        result["overall_score_b"] = float(overall_match.group(2))
+        score_a_str = overall_match.group(1)
+        score_b_str = overall_match.group(2)
+        result["overall_score_a"] = 0.0 if score_a_str.upper() in ('N/A',) else float(score_a_str)
+        result["overall_score_b"] = 0.0 if score_b_str.upper() in ('N/A',) else float(score_b_str)
+
+    # Extract overall winner from OVERALL: or Winner: line
+    overall_winner_match = re.search(r'OVERALL:.*?Winner:\s*([ABTIE])', raw, re.IGNORECASE | re.DOTALL)
+    if not overall_winner_match:
+        # Also check for "Winner: B with scores A=..."
+        overall_winner_match = re.search(r'Winner:\s*([ABTIE])', raw, re.IGNORECASE | re.DOTALL)
+    if overall_winner_match:
+        result["winners"]["overall"] = overall_winner_match.group(1).upper()
 
     # Extract rationale
     rat_match = re.search(r'RATIONALE:\s*(.+)', raw, re.IGNORECASE | re.DOTALL)
     if rat_match:
         result["rationale"] = rat_match.group(1).strip()[:300]
 
-    # Extract individual dimension winners
+    # Extract individual dimension winners - handle N/A, parenthetical scores, etc.
     dim_names = ["factual", "comprehensive", "clarity", "useful", "specific"]
     for dim in dim_names:
-        # Find pattern like "Factual: A: 7 / B: 6 / Winner: A"
-        pattern = rf'{dim}.*?A:\s*(\d+).*?B:\s*(\d+).*?Winner:\s*([ABTIE])'
-        match = re.search(pattern, raw, re.IGNORECASE)
+        # Pattern handles: "A: 7 / B: 6 / Winner: A", "A: N/A / B: 8 / Winner: B"
+        # Also handles: "A: 7 (winner) / B: 6"
+        dim_pattern = rf'{dim}.*?A:\s*(\d+(?:\.\d+)?|N/?A).*?B:\s*(\d+(?:\.\d+)?|N/?A).*?Winner:\s*([ABTIE])'
+        match = re.search(dim_pattern, raw, re.IGNORECASE)
         if match:
-            result["scores_a"][dim] = float(match.group(1))
-            result["scores_b"][dim] = float(match.group(2))
+            score_a_str = match.group(1)
+            score_b_str = match.group(2)
+            # Handle N/A
+            result["scores_a"][dim] = 0.0 if score_a_str.upper() in ('N/A', 'N/A') else float(score_a_str)
+            result["scores_b"][dim] = 0.0 if score_b_str.upper() in ('N/A', 'N/A') else float(score_b_str)
             result["winners"][dim] = match.group(3).upper()
 
     return result
