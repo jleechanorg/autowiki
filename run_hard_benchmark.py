@@ -354,10 +354,10 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
         result["overall_score_b"] = 0.0 if score_b_str.upper() in ('N/A',) else float(score_b_str)
 
     # Extract overall winner from OVERALL: or Winner: line
-    overall_winner_match = re.search(r'OVERALL:.*?Winner:\s*([ABTIE])', raw, re.IGNORECASE | re.DOTALL)
+    overall_winner_match = re.search(r'OVERALL:.*?Winner:\s*([ABTIE]+)', raw, re.IGNORECASE | re.DOTALL)
     if not overall_winner_match:
         # Also check for "Winner: B with scores A=..."
-        overall_winner_match = re.search(r'Winner:\s*([ABTIE])', raw, re.IGNORECASE | re.DOTALL)
+        overall_winner_match = re.search(r'Winner:\s*([ABTIE]+)', raw, re.IGNORECASE | re.DOTALL)
     if overall_winner_match:
         result["winners"]["overall"] = overall_winner_match.group(1).upper()
 
@@ -371,7 +371,7 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
     for dim in dim_names:
         # Pattern handles: "A: 7 / B: 6 / Winner: A", "A: N/A / B: 8 / Winner: B"
         # Also handles: "A: 7 (winner) / B: 6"
-        dim_pattern = rf'{dim}.*?A:\s*(\d+(?:\.\d+)?|N/?A).*?B:\s*(\d+(?:\.\d+)?|N/?A).*?Winner:\s*([ABTIE])'
+        dim_pattern = rf'{dim}.*?A:\s*(\d+(?:\.\d+)?|N/?A).*?B:\s*(\d+(?:\.\d+)?|N/?A).*?Winner:\s*([ABTIE]+)'
         match = re.search(dim_pattern, raw, re.IGNORECASE)
         if match:
             score_a_str = match.group(1)

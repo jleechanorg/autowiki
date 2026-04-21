@@ -48,29 +48,29 @@
         "pairwise_single_fixed": {
           "raw": "## Evaluation of Research Outputs\n\n**Output A:** [API Error] - No content generated\n**Output B:** Comprehensive investment portfolio strategy report\n\n---\n\nDIMENSION_SCORES:\n\n1. **Factual Accuracy:** A: N/A / B: 8/10 / Winner: B\n   *B provides sourced historical data (1926\u20132023 S&P 500 returns, 60/40 performance) consistent with established financial literature. Specific figures are plausible and appropriately hedged.*\n\n2. **Comprehensiveness:** A: N/A / B: 8/10 / Winner: B\n   *B addresses all four requested asset classes (equities, fixed income, real estate, alternatives) with allocation targets, ranges, and rationale. However, the output appears truncated, suggesting incomplete coverage.*\n\n3. **Clarity:** A: N/A / B: 9/10 / Winner: B\n   *B demonstrates excellent structure with executive summary, tables, organized sections, and clear formatting. Professional report format enhances readability.*\n\n4. **Usefulness:** A: N/A / B: 8/10 / Winner: B\n   *B provides actionable allocation recommendations (62%/22%/10%/6%) with targeted ranges and projected return/volatility metrics. Includes critical implementation caveats.*\n\n5. **Specificity:** A: N/A / B: 9/10 / Winner: B\n   *B offers concrete numbers throughout: specific allocation percentages, historical return data points (10.3% nominal, 7% real), volatility ranges (12\u201316%), and drawdown estimates (25\u201335%).*\n\n---\n\n**OVERALL:** Winner: B with scores A=N/A/10 vs B=8.4/10\n\n**RATIONALE:** Output A represents a complete system failure producing no content, making evaluation impossible across all dimensions. Output B, while truncated mid-section, delivers a well-structured, specific, and actionable portfolio strategy with appropriate historical context and risk caveats. B significantly outperforms A on all evaluable criteria by providing actual research content suitable for decision-making.",
           "scores_a": {
-            "factual": 5.0,
-            "comprehensive": 5.0,
-            "clarity": 5.0,
-            "useful": 5.0,
-            "specific": 5.0
+            "factual": 0.0,
+            "comprehensive": 0.0,
+            "clarity": 0.0,
+            "useful": 0.0,
+            "specific": 0.0
           },
           "scores_b": {
-            "factual": 5.0,
-            "comprehensive": 5.0,
-            "clarity": 5.0,
-            "useful": 5.0,
-            "specific": 5.0
+            "factual": 8.0,
+            "comprehensive": 8.0,
+            "clarity": 9.0,
+            "useful": 8.0,
+            "specific": 9.0
           },
           "winners": {
-            "factual": "TIE",
-            "comprehensive": "TIE",
-            "clarity": "TIE",
-            "useful": "TIE",
-            "specific": "TIE",
-            "overall": "TIE"
+            "factual": "B",
+            "comprehensive": "B",
+            "clarity": "B",
+            "useful": "B",
+            "specific": "B",
+            "overall": "B"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 0.0,
+          "overall_score_b": 8.4,
           "rationale": "** Output A represents a complete system failure producing no content, making evaluation impossible across all dimensions. Output B, while truncated mid-section, delivers a well-structured, specific, and actionable portfolio strategy with appropriate historical context and risk caveats. B significan"
         },
         "pairwise_single_gnn": {
@@ -95,10 +95,10 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 0.0,
+          "overall_score_b": 44.0,
           "rationale": "** Output B is a fully realized, well-structured investment strategy document that delivers comprehensive coverage, actionable specificity, and clear methodology for a 35-year-old moderate-risk investor. Output A produced only an error message with no content\u2014making this comparison a forfeit. B is t"
         },
         "pairwise_fixed_gnn": {
@@ -119,14 +119,14 @@
           },
           "winners": {
             "factual": "A",
-            "comprehensive": "T",
+            "comprehensive": "TIE",
             "clarity": "B",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 38.0,
+          "overall_score_b": 41.0,
           "rationale": "While Output A demonstrates stronger historical depth and methodological rigor, Output B delivers superior practical value with explicit implementation guidance, clearer"
         }
       }
@@ -198,10 +198,10 @@
             "clarity": "B",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 0.0,
+          "overall_score_b": 38.0,
           "rationale": "OUTPUT A is entirely non-functional, containing only an API error message with no actual research content to evaluate. OUTPUT B provides a comprehensive, well-structured analytical report with concrete data (e.g., specific import percentages, volume figures in bcm, and projected timelines), organize"
         },
         "pairwise_single_gnn": {
@@ -226,10 +226,10 @@
             "clarity": "B",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_b": 37.0,
           "rationale": "Output A contains no substantive content whatsoever\u2014merely an error message indicating a failed API request\u2014rendering it completely non-evaluable on any meaningful dimension. Output B is a well-structured, professionally formatted report with specific quantitative data (e.g., exact pipeline capaciti"
         },
         "pairwise_fixed_gnn": {
@@ -254,7 +254,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -327,10 +327,10 @@
             "clarity": "B",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_b": 37.0,
           "rationale": "Output A contains no legitimate content\u2014only corrupted or deliberately nonsensical text repeating \"typeof\" keywords\u2014with zero relevance to the query. Output B is a professionally structured research synthesis that directly addresses all query dimensions (concurrency models, typing systems, ecosystem"
         },
         "pairwise_single_gnn": {
@@ -355,7 +355,7 @@
             "clarity": "B",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 1.0,
           "overall_score_b": 7.0,
@@ -383,7 +383,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -608,15 +608,15 @@
             "specific": 8.0
           },
           "winners": {
-            "factual": "T",
+            "factual": "TIE",
             "comprehensive": "B",
             "clarity": "B",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 33.0,
+          "overall_score_b": 41.0,
           "rationale": "Output B demonstrates superior evaluative rigor through explicit dimension mapping aligned to the query, clearer architectural analysis with concrete diagrams, more comprehensive coverage of memory and"
         },
         "pairwise_fixed_gnn": {
@@ -641,7 +641,7 @@
             "clarity": "B",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -714,7 +714,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -742,10 +742,10 @@
             "clarity": "A",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 26.0,
+          "overall_score_b": 35.0,
           "rationale": "Output B wins decisively because it demonstrates methodological rigor by identifying and reconciling internally inconsistent market sizing figures\u2014a fundamental credibility issue that Output A ignores entirely. While Output A presents polished formatting and clear structure, it is incomplete (missin"
         },
         "pairwise_fixed_gnn": {
@@ -770,7 +770,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -843,7 +843,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -899,7 +899,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "A"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -995,9 +995,9 @@
             "specific": 9.0
           },
           "winners": {
-            "factual": "T",
+            "factual": "TIE",
             "comprehensive": "B",
-            "clarity": "T",
+            "clarity": "TIE",
             "useful": "B",
             "specific": "B",
             "overall": "TIE"
@@ -1101,7 +1101,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -1129,7 +1129,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -1157,7 +1157,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "A"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -1230,7 +1230,7 @@
             "clarity": "A",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -1359,7 +1359,7 @@
             "clarity": "A",
             "useful": "A",
             "specific": "A",
-            "overall": "TIE"
+            "overall": "A"
           },
           "overall_score_a": 8.2,
           "overall_score_b": 6.8,
@@ -1415,10 +1415,10 @@
             "clarity": "A",
             "useful": "A",
             "specific": "A",
-            "overall": "TIE"
+            "overall": "A"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 38.0,
+          "overall_score_b": 28.0,
           "rationale": "Output A demonstrates significantly superior quality across all dimensions. It provides comprehensive coverage of all four fusion approaches with appropriate technical hedging, specific facility references (ITER, Wendelstein 7-X, NIF), and realistic timeline assessments. Output B contains a critical"
         }
       }
@@ -1673,10 +1673,10 @@
             "clarity": "A",
             "useful": "B",
             "specific": "B",
-            "overall": "TIE"
+            "overall": "B"
           },
-          "overall_score_a": 5.0,
-          "overall_score_b": 5.0,
+          "overall_score_a": 36.0,
+          "overall_score_b": 38.0,
           "rationale": "Output B edges ahead primarily due to superior usefulness"
         }
       }
@@ -1774,7 +1774,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -1802,7 +1802,7 @@
             "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "B"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
@@ -1870,12 +1870,12 @@
             "specific": 4.0
           },
           "winners": {
-            "factual": "T",
+            "factual": "TIE",
             "comprehensive": "A",
-            "clarity": "T",
+            "clarity": "TIE",
             "useful": "A",
             "specific": "A",
-            "overall": "TIE"
+            "overall": "A"
           },
           "overall_score_a": 8.0,
           "overall_score_b": 6.4,
@@ -1900,10 +1900,10 @@
           "winners": {
             "factual": "A",
             "comprehensive": "A",
-            "clarity": "T",
+            "clarity": "TIE",
             "useful": "TIE",
             "specific": "TIE",
-            "overall": "TIE"
+            "overall": "A"
           },
           "overall_score_a": 5.0,
           "overall_score_b": 5.0,
