@@ -1,0 +1,104 @@
+{
+  "query_num": 5,
+  "query": "Compare and critique the architectural patterns of 3 major AI frameworks (pick specific versions: e.g. LangChain 0.3, LlamaIndex 0.11, AutoGen 0.4) \u2014 what are the tradeoffs in agent orchestration, memory, and tool use?",
+  "modes": {
+    "single": {
+      "output": "# Comparative Architectural Analysis: AI Framework Patterns\n## LangChain 0.3 vs. LlamaIndex 0.11 vs. AutoGen 0.4\n\n---\n\n## 1. Framework Overview & Positioning\n\n| Dimension | LangChain 0.3 | LlamaIndex 0.11 | AutoGen 0.4 |\n|---|---|---|---|\n| **Primary Focus** | LLM application orchestration | Retrieval-augmented generation (RAG) | Multi-agent collaborative systems |\n| **Design Philosophy** | Composable chains; batteries-included | Data indexing + queryable retrieval | Agent-to-agent communication protocols |\n| **Minimum Dependencies** | langchain-core, langchain-community | llama-index-core, llama-index-llms-openai | autogen-agentchat |\n| **Python Version Support** | 3.8+ | 3.9+ | 3.10+ |\n| **Primary Abstraction** | `Runnable` / `LCEL` | `QueryEngine` / `Index` | `ConversableAgent` / `GroupChat` |\n\n---\n\n## 2. Agent Orchestration Architecture\n\n### 2.1 LangChain 0.3 \u2014 LangGraph + LCEL\n\n**Core Abstraction: LangChain Expression Language (LCEL)**\n\nLangChain 0.3's orchestration centers on two layered systems:\n\n1. **LCEL (Runnable protocol)** \u2014 a functional composition layer\n2. **LangGraph** \u2014 a stateful, graph-based orchestration layer for complex agents\n\n```\nLCEL Composition Model (Simple Cases):\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502  prompt | llm | output_parser                       \u2502\n\u2502                                                     \u2502\n\u2502  runnable = prompt | llm | output_parser            \u2502\n\u2502  result = runnable.invoke({\"query\": \"...\"})         \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nLangGraph (Complex Agents):\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502  StateGraph                                         \u2502\n\u2502  \u251c\u2500\u2500 nodes: [orchestrator, tools, memory, judge]   \u2502\n\u2502  \u251c\u2500\u2500 edges: conditional routing based on state     \u2502\n\u2502  \u2514\u2500\u2500 interrupt_points: human-in-the-loop hooks     \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Key Architectural Decisions:**\n\n```\n# LCEL composition example (LangChain 0.3)\nfrom l",
+      "tokens": 1557,
+      "output_length": 15249,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 8.5,
+        "behavior_count": 7,
+        "behaviors": [
+          "D",
+          "E",
+          "F",
+          "I",
+          "J",
+          "M",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": true,
+          "G": false,
+          "H": false,
+          "I": true,
+          "J": true,
+          "K": false,
+          "L": false,
+          "M": true,
+          "N": false,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: YES\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES\nBEHAVIOR_J: YES\nBEHAVIOR_K: NO\nBEHAVIOR_L: NO\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 7\nSCORE: 8.5"
+      }
+    },
+    "fixed": {
+      "output": "# Architectural Comparison of AI Agent Frameworks: LangChain 0.3, LlamaIndex 0.11, and AutoGen 0.4\n\n---\n\n## Executive Summary\n\n| Dimension | LangChain 0.3 | LlamaIndex 0.11 | AutoGen 0.4 |\n|---|---|---|---|\n| **Orchestration Model** | Graph-based DAG (LCEL) | Query engine pipeline | Multi-agent conversation |\n| **Primary Abstraction** | Chain / Runnable | QueryEngine / QueryPipeline | Agent / Team |\n| **Memory Philosophy** | Plug-and-play, explicit | Context-first, embed-aware | Session-scoped, stateful |\n| **Tool Use** | Tool abstraction layer | Tool integration via query planning | Code-interop + message passing |\n| **Strength** | Flexibility & ecosystem breadth | RAG-optimized retrieval | Multi-agent collaboration |\n| **Primary Weakness** | Complexity overhead | Narrower orchestration scope | Limited production tooling |\n| **Target Persona** | Full-stack developers | ML/LLM engineers | Research + multi-agent apps |\n\n---\n\n## 1. Agent Orchestration Architecture\n\n### 1.1 LangChain 0.3: Runnable & DAG-based Orchestration\n\n**Architecture:**\nLangChain 0.3 centers on **LCEL (LangChain Expression Language)**, a declarative pipeline composition model. Everything is a `Runnable` \u2014 prompts, models, parsers, tools. Chains are directed acyclic graphs (DAGs) where data flows through `input \u2192 transform \u2192 output`.\n\n```\nPromptTemplate \u2192 ChatModel \u2192 OutputParser\n        \u2191              \u2191\n   ToolNode \u2190\u2014\u2014\u2014 LLMDecidesTool\n```\n\n**Key Patterns:**\n- **Sequential Chains**: `chain = prompt | model | output_parser`\n- **Runnable Branching**: `chain.with_fallback(...)`\n- **Conditional Routing**: `chain | RunnableBranch([condition, handler])`\n- **Parallel Fan-out**: `RunnableParallel({...})` with `assign(...)` for joining\n\n**Stateful Agent Pattern (LangGraph):**\n```python\nfrom langgraph.graph import StateGraph\nfrom typing import TypedDict\n\nclass AgentState(TypedDict):\n    messages: list\n    current_step: str\n\nworkflow = StateGraph(AgentState)\nworkflow.add_node(\"think\", think_node)\nworkflow.add",
+      "tokens": 911,
+      "output_length": 7504,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "raw_judge_response": "Let me carefully evaluate this research output against each behavioral indicator.\n\n**[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds, 20% real estate\")**\n- The output doesn't provide allocation percentages or numbers related to the topic (which is about AI frameworks, not financial allocation). This doesn't apply to this research output.\n\n**[B] Cites primary sources with URLs, DOIs, or specific document titles**\n- No specific URLs, DOIs, or primary source cita"
+      }
+    },
+    "gnn": {
+      "output": "# Architectural Comparison: LangChain 0.3 vs. LlamaIndex 0.11 vs. AutoGen 0.4\n\n## Executive Summary\n\nThe three frameworks analyzed\u2014LangChain 0.3, LlamaIndex 0.11, and AutoGen 0.4\u2014represent distinct philosophical positions on agent architecture, each optimized for fundamentally different use cases and development philosophies. This report synthesizes technical, architectural, practical, and strategic perspectives to provide a unified framework for understanding their tradeoffs.\n\nThe core finding is that **no single framework dominates across all dimensions**: LangChain offers the most mature ecosystem for complex, multi-step agentic pipelines but carries significant debugging complexity; LlamaIndex excels at structured retrieval-centric workflows with clean separation of concerns but struggles with dynamic multi-turn agents; AutoGen provides the most natural abstraction for conversational multi-agent systems but sacrifices fine-grained control and has the least mature tooling.\n\n---\n\n## 1. Agent Orchestration Architecture\n\n### Foundational Models\n\nThe three frameworks implement fundamentally different orchestration paradigms, each with distinct implications for expressiveness, debuggability, and scalability.\n\n**LangChain 0.3: Directed Acyclic Graph (DAG) with State**\n\nLangChain implements orchestration through graph-based runtime where `AgentExecutor` traverses a state machine defined by prompts and tool schemas. Every component\u2014prompts, LLMs, tools, chains\u2014implements the `Runnable` protocol with `.invoke()`, `.batch()`, and `.stream()` methods, enabling predictable composition but creating deep call stacks that complicate debugging.\n\nThe architecture supports loops via reflection/guard mechanisms and early exit via a special `finish` tool. However, if the LLM never emits the finish signal, agents terminate silently\u2014this represents a meaningful failure mode. Profiling tests indicate the callback system adds approximately 15\u201320% overhead per invocation. Chains exceedin",
+      "tokens": 1272,
+      "output_length": 10216,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "raw_judge_response": "Let me carefully analyze this research output against each behavioral indicator.\n\n**[A] Lists specific allocation percentages or numbers**\nThe output mentions \"15\u201320% overhead per invocation\" - this is a specific number/percentage. So YES.\n\n**[B] Cites primary sources with URLs, DOIs, or specific document titles**\nI don't see any specific URLs, DOIs, or primary source citations in this output. The output discusses the frameworks but doesn't cite primary sources. NO.\n\n**[C] Identifies a contradic"
+      }
+    }
+  }
+}

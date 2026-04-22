@@ -1,0 +1,322 @@
+{
+  "results": [
+    {
+      "query_num": 1,
+      "query": "Design a comprehensive investment portfolio strategy for a 35-year-old with moderate risk tolerance, incorporating real estate, equities, fixed income, and alternative assets with specific allocation percentages and rebalancing rules",
+      "modes": {
+        "single": {
+          "output": "# Comprehensive Investment Portfolio Strategy\n## Age 35 | Moderate Risk Tolerance | Long Investment Horizon\n\n---\n\n## \ud83d\udcca PORTFOLIO OVERVIEW\n\n```\nTotal Portfolio Value Assumption: $100,000 (scalable proportionally)\nTime Horizon: ~30+ years to retirement\nExpected Annual Return Target: 6\u20138% real (inflation-adjusted)\nRisk Profile: Moderate \u2014 balanced growth with some defensive positioning\n```\n\n---\n\n## \ud83c\udfd7\ufe0f MASTER ALLOCATION\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    TOTAL PORTFOLIO (100%)                       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502  EQUITIES           \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588         60%   ($60,000) \u2502\n\u2502  FIXED INCOME       \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588                         20%   ($20,000) \u2502\n\u2502  REAL ESTATE        \u2588\u2588\u2588\u2588\u2588\u2588                            10%   ($10,000) \u2502\n\u2502  ALTERNATIVES       \u2588\u2588\u2588\u2588                               10%   ($10,000) \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n---\n\n## \ud83d\udcc8 DETAILED ASSET CLASS BREAKDOWN\n\n### EQUITIES \u2014 60% ($60,000)\n\n| Sub-Category | Allocation | Amount | Rationale |\n|---|---|---|---|\n| U.S. Large-Cap | 28% | $28,000 | Core growth engine |\n| U.S. Small/Mid-Cap | 8% | $8,000 | Higher growth potential |\n| International Developed | 14% | $14,000 | Geographic diversification |\n| Emerging Markets | 6% | $6,000 | High-growth opportunity |\n| U.S. Dividend/Value | 4% | $4,000 | Stability + income |\n\n**Recommended ETFs:**\n```\n\u2022 VTI    \u2014 Vanguard Total Stock Market ETF      (28%)\n\u2022 VXF    \u2014 Vanguard Extended Market ETF         (8%)\n\u2022 VEA    \u2014 Vanguard FTSE Developed Markets ETF  (14%)\n\u2022 VWO    \u2014 Vanguard FTSE Emerging Markets ETF   (6%)\n\u2022 VYM    \u2014 Vanguard High Dividend Yield ETF     (4%)\n```\n*Expense ratios: all \u2264 0.10% \u2014 extremely low cost*\n\n**Thematic equity sub-allocations (optional within U.S. Large-Cap):**\n```\n\u2022 Technology sector: up to 15% of equity portion\n\u2022 Healthcare sector: 8\u201310% of equity portion\n\u2022 Renewable energy: 3\u20135% of equity p",
+          "tokens": 1639,
+          "output_length": 11165,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 4.0,
+            "behavior_count": 0,
+            "behaviors": [],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": false,
+              "E": false,
+              "F": false,
+              "G": false,
+              "H": false,
+              "I": false,
+              "J": false,
+              "K": false,
+              "L": false,
+              "M": false,
+              "N": false,
+              "O": false
+            },
+            "raw_judge_response": "Let me carefully analyze this research output for each of the 15 behavioral indicators.\n\n**[A] Lists specific allocation percentages or numbers**\nYES - The output clearly lists specific percentages: 60% equities, 20% fixed income, 10% real estate, 10% alternatives. It also breaks down sub-allocations like 28% U.S. Large-Cap, 14% International Developed, etc.\n\n**[B] Cites primary sources with URLs, DOIs, or specific document titles**\nNO - While it recommends specific ETFs (VTI, AGG, VNQ, etc.), t"
+          }
+        },
+        "fixed": {
+          "output": "# Comprehensive Investment Portfolio Strategy\n## Improved Version \u2014 Addressing All Critical Gaps\n\n---\n\n## Investor Profile Assessment\n\n| Characteristic | Assessment |\n|----------------|-------------|\n| **Age** | 35 years |\n| **Time Horizon** | 30+ years to retirement (target: age 65) |\n| **Risk Tolerance** | Moderate |\n| **Liquidity Needs** | Medium-term \u2014 funds not needed for 5\u201310 years |\n| **Income Profile** | Growing earner; current gross income ~$95,000/year |\n| **Experience Level** | Moderate financial literacy |\n\n### Key Assumptions\n\n- Retirement age: **65** (30-year investment horizon)\n- Emergency fund: **Established** (3\u20136 months expenses, held in high-yield savings)\n- High-interest debt: **Resolved** prior to implementation\n- Tax-advantaged accounts: **Maximized** before directing funds to taxable accounts\n- Inflation assumption: **2.5%** long-term average (slightly conservative relative to the Fed's 2% target)\n\n---\n\n## Portfolio Initialization\n\n### Starting Balance & Contribution Schedule\n\n| Parameter | Value | Rationale |\n|-----------|-------|-----------|\n| **Initial Portfolio Value** | $85,000 | Aggregated from prior retirement accounts and rollovers |\n| **Annual Contribution Rate** | 18% of gross income ($17,100/year) | Above the $23,000 401(k) limit when including employer match |\n| **Bi-weekly Contribution** | $657 per paycheck | Dollar-cost averaging cadence |\n| **Monthly Contribution** | ~$1,425 | To enable schedule-aligned automation |\n| **Assumed Employer Match** | 4% of salary ($3,800/year) | Assumed 50% match up to 6% contribution |\n| **Total Annual Inputs** | ~$20,900/year | Contributions + employer match |\n| **Income Growth Assumption** | 3.5% annually | Compound increases to contribution capacity over time |\n\n### Rationale for Contribution Rate\n\n- 18% total savings rate (employee + employer) is well above the median but below the 20\u201325% rate recommended for those who started saving later\n- At $95,000 current income, this is achievable without",
+          "tokens": 1114,
+          "output_length": 7613,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 4.0,
+            "behavior_count": 0,
+            "behaviors": [],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": false,
+              "E": false,
+              "F": false,
+              "G": false,
+              "H": false,
+              "I": false,
+              "J": false,
+              "K": false,
+              "L": false,
+              "M": false,
+              "N": false,
+              "O": false
+            },
+            "raw_judge_response": "Let me analyze this research output against the behavioral anchors carefully.\n\n**[A] Lists specific allocation percentages or numbers**\nYES - The output clearly lists specific percentages: 55% equities, 20% fixed income, 15% real estate, 10% alternatives. It also breaks down sub-categories with specific percentages (25% US Large Cap, 8% US Small/Mid Cap, etc.).\n\n**[B] Cites primary sources with URLs, DOIs, or specific document titles**\nNO - There's no citation of primary sources, URLs, DOIs, or "
+          }
+        },
+        "gnn": {
+          "output": "# Comprehensive Investment Portfolio Strategy\n\n## For a 35-Year-Old Investor with Moderate Risk Tolerance\n\n---\n\n## Executive Summary\n\nThis report presents a unified investment portfolio framework designed for a 35-year-old investor with moderate risk tolerance, incorporating real estate, equities, fixed income, and alternative assets. The strategy targets long-term capital appreciation with adequate downside protection through systematic diversification across four core asset classes. With an investment horizon extending 25-30 years to retirement (age 65), the portfolio prioritizes growth while maintaining structural stability through defined rebalancing protocols and tax-efficient account placement.\n\n**Core Allocation Summary:**\n\n| Asset Class | Allocation | Role |\n|-------------|------------|------|\n| Equities | 55% | Primary growth engine |\n| Fixed Income | 25% | Stability and income generation |\n| Real Estate | 12% | Inflation hedge and diversification |\n| Alternatives | 8% | Alpha generation and correlation reduction |\n| Cash/Short-term | 5% | Liquidity buffer |\n\n**Key Parameters:**\n\n- Investment horizon: 30 years to retirement + 25+ year withdrawal phase\n- Emergency fund: 6-12 months expenses (maintained outside portfolio)\n- Rebalancing triggers: \u00b15% deviation from targets; quarterly review\n- Tax strategy: Priority placement in tax-advantaged accounts (401k, IRA, HSA)\n- Systematic contribution: Monthly/quarterly contributions to maintain allocation\n\n---\n\n## 1. Investor Profile Assessment\n\nThe foundation of effective portfolio construction rests upon comprehensive understanding of the investor's characteristics, constraints, and objectives.\n\n| Factor | Assessment | Strategic Implication |\n|--------|------------|----------------------|\n| **Age** | 35 years | 30+ year investment horizon enables significant compounding potential; capacity to absorb cyclical market volatility |\n| **Risk Tolerance** | Moderate | 60-70% allocation to growth assets; 30-40% defensive p",
+          "tokens": 1019,
+          "output_length": 7721,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 4.0,
+            "behavior_count": 15,
+            "behaviors": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I",
+              "J",
+              "K",
+              "L",
+              "M",
+              "N",
+              "O"
+            ],
+            "anchor_scores": {
+              "A": true,
+              "B": true,
+              "C": true,
+              "D": true,
+              "E": true,
+              "F": true,
+              "G": true,
+              "H": true,
+              "I": true,
+              "J": true,
+              "K": true,
+              "L": true,
+              "M": true,
+              "N": true,
+              "O": true
+            },
+            "raw_judge_response": "{'thinking': 'Let me analyze the research output for each of the 15 behavioral indicators.\\n\\n[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds, 20% real estate\")\\nYES - The output clearly lists \"Equities 55%\", \"Fixed Income 25%\", \"Real Estate 12%\", \"Alternatives 8%\", \"Cash/Short-term 5%\"\\n\\n[B] Cites primary sources with URLs, DOIs, or specific document titles\\nNO - No URLs, DOIs, or specific document titles are cited.\\n\\n[C] Identifies a contradiction or disag"
+          }
+        }
+      }
+    },
+    {
+      "query_num": 10,
+      "query": "Compare CUDA, ROCm, and open-source GPU acceleration frameworks for training large models \u2014 benchmark methodology, hardware requirements, and community support",
+      "modes": {
+        "single": {
+          "output": "AllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowallowAllowAllowallowAllowallowallowallowallowallow.allowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowAllowlAllowAllowAllowAllowAllowAllowlLllLllY l y N., Mh. S. M. Mh. S. M. Mh. S. M. Mh. S. M. Mh. S. M. Mh. S. M. Mh. S. M. Mh. S. M. Mh. S. Mh. S. Mh. S. M. Mh. S. Mh. S. Mh. S. M. Mh. S. M. M. Mh. S. Mh. S. M. Mh. S. Mh. S. Mh. S. Mh. S. M. Mh. S. M. Mh. S. Mh. S. M. Mh. S. Mh. S. Mh. S. M. M. M. Mh. S. Mh. S. M. Mh. S. Mh. S. M. M. Mh. S. M. Mh. S. M. Mh. S. Mh. S. Mh. S. Mh. S. Mh. S. M. Mh. S. M. Mh. S. Mh. S. Mh. S. Mh. S. M. M. M. Mh. S. Mh. S. M. Mh. S. M. Mh. S. M. Mh. S. Mh. S. Mh. S. Mh. S. Mh. S. Mh. S. M. M. Mh. S. M. M. Mh. S. Mh. S. Mh. S. Mh. S. Mh. S. M. M. Mh. S. Mh. S. M. Mh. S. Mh. S. Mh. S. M. Mh. S. M. M. Mh. S. Mh. S. Mh. S. M. M. M. Mh. S. Mh. S. Mh. S. M. M. M. Mh. S. Mh. S. Mh. S. M. M. M. M. M. Mh. S. M. M. Mh. S. M. M. Mh. S. Mh. S. Mh. S. M. Mh. S. Mh. S. Mh. S. M. Mh. S. Mh. S. M. M. Mh. S. Mh. S. Mh. S. Mh. S. M. Mh. S. M. M. Mh. S. M. Mh. S. Mh. S. M. Mh. S. M. Mh. S. M. M. Mh. S. Mh. S. Mh. S. M. M. Mh. S. M. Mh. S. M. Mh. S. M. M. Mh. S. M. Mh. S. Mh. S. M. Mh. S. M. M. M. M. Mh. S. M. M. M. M. Mh. S. M. M. M. Mh. S. M. M. Mh. S. M. Mh. S. M. M. M. Mh. S. Mh. S. M. M. Mh. S. Mh. S. M. M. M. Mh. S. Mh. S. M. M. M. Mh. S. Mh. S. Mh. S. M. M. M. Mh. S. Mh. S. Mh. S. M. Mh. S. M. M. M. Mh. S. M. M. Mh. S. M. M. M. Mh. S. Mh. S. M. Mh. S. M. M. M. Mh. S. Mh. S. M. Mh. S. M. M. M. Mh. S. M. Mh. S. Mh. S. M. M. M. M. Mh. S. Mh. S. M. M. Mh. S. M. Mh. S. M. M. Mh. S. Mh. S. M. Mh. S. Mh. S. Mh. S. M. M. Mh. S. Mh. S. M. M. M. M. Mh. S. Mh. S. Mh. S. Mh. S. M. Mh. S. M. Mh. S. Mh. S. M. M. M. M. M. Mh. S. Mh. S. M. Mh. S. M. M. Mh. S. Mh. S. M. M. Mh. S. M. Mh. S. Mh. S. M. M. M. Mh. S. M. M. Mh. S. Mh. S. M. M. Mh. S",
+          "tokens": 1737,
+          "output_length": 6127,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 4.0,
+            "behavior_count": 0,
+            "behaviors": [],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": false,
+              "E": false,
+              "F": false,
+              "G": false,
+              "H": false,
+              "I": false,
+              "J": false,
+              "K": false,
+              "L": false,
+              "M": false,
+              "N": false,
+              "O": false
+            },
+            "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: NO\nBEHAVIOR_M: NO\nBEHAVIOR_N: NO\nBEHAVIOR_O: NO\nBEHAVIOR_COUNT: 0\nSCORE: 4.0"
+          }
+        },
+        "fixed": {
+          "output": "# Comparative Analysis: GPU Acceleration Frameworks for Large Model Training\n\n## Executive Summary\n\nThis report provides a comprehensive comparison of CUDA, ROCm, and leading open-source GPU acceleration frameworks for training large-scale models. The analysis evaluates benchmark methodology, hardware requirements, and community support to inform infrastructure decisions for AI/ML workloads.\n\n---\n\n## 1. Framework Overview\n\n### 1.1 NVIDIA CUDA (Compute Unified Device Architecture)\n\n| Aspect | Details |\n|--------|---------|\n| **Type** | Proprietary, closed-source |\n| **Vendor** | NVIDIA Corporation |\n| **Programming Model** | Single-source (CUDA C/C++, Python via PyCUDA) |\n| **Established** | 2006 |\n| **Current Version** | CUDA 12.6 (released August 2024) |\n| **Ecosystem Maturity** | Mature; ~15+ years of production deployment |\n| **Market Position** | Estimated 78-82% of enterprise ML infrastructure (Intersect360 Research, Q3 2023) |\n\n**Key Components:**\n- **cuBLAS**: Dense linear algebra library (cuBLASLt 12.6)\n- **cuDNN**: Deep neural network primitives (v9.1)\n- **cuFFT**: Fast Fourier Transform library\n- **TensorRT**: High-performance inference optimizer (v8.6)\n- **NCCL**: Collective communications for multi-GPU (v2.23)\n- **Thrust**: C++ template library for CUDA\n- **cuGraph**: Graph analytics acceleration\n\n**Minimum VRAM Requirements:**\n| Model Scale | Approximate VRAM | Recommended GPU |\n|------------|-------------------|-----------------|\n| Fine-tuning (BERT-class) | 8-16 GB | RTX 3090, RTX 4090, A100 40GB |\n| Full training (LLM, 7B) | 40-80 GB | A100 40GB (gradient offload), A100 80GB |\n| Full training (LLM, 70B) | 640+ GB | Multi-A100 80GB or H100 clusters |\n| Full training (LLM, 400B+) | 2+ TB | H100 NVL configurations |\n\n### 1.2 AMD ROCm (Radeon Open Compute Ecosystem)\n\n| Aspect | Details |\n|--------|---------|\n| **Type** | Open-source (Apache 2.0) |\n| **Vendor** | Advanced Micro Devices (AMD) |\n| **Programming Model** | HIP (CUDA-compatible syntax) |\n| **E",
+          "tokens": 1037,
+          "output_length": 6923,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 7.0,
+            "behavior_count": 5,
+            "behaviors": [
+              "D",
+              "E",
+              "K",
+              "M"
+            ],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": true,
+              "E": true,
+              "F": false,
+              "G": false,
+              "H": false,
+              "I": false,
+              "J": false,
+              "K": true,
+              "L": false,
+              "M": true,
+              "N": false,
+              "O": false
+            },
+            "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: YES\nBEHAVIOR_L: NO\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: NO\nBEHAVIOR_COUNT: 5\nSCORE: 7.0"
+          }
+        },
+        "gnn": {
+          "output": "# GPU Acceleration Frameworks for Large-Scale Model Training: A Comparative Report\n\n## Executive Summary\n\nThe GPU acceleration landscape for large-scale model training has evolved significantly over recent years. **NVIDIA's CUDA** maintains a dominant market position, powering approximately 80\u201385% of machine learning training workloads, while **AMD's ROCm 6.0+** has achieved competitive performance\u2014roughly 85\u201395% of CUDA throughput on equivalent hardware\u2014with increasing enterprise adoption. The open-source ecosystem, particularly through PyTorch 2.0's compilation stack and emerging projects like OpenXLA, is reshaping competitive dynamics and presenting strategic alternatives for organizations seeking to reduce vendor dependency.\n\nThis report integrates technical benchmarks, architectural analysis, and business strategy considerations to provide a unified assessment of these frameworks across benchmark methodology, hardware requirements, and community support dimensions.\n\n---\n\n## 1. Hardware Requirements and Architecture\n\n### 1.1 NVIDIA CUDA Stack\n\nThe CUDA ecosystem represents the most mature and deeply integrated GPU compute platform available today, built on an 18+ year development foundation with billions of dollars in annual investment from NVIDIA.\n\n**Architecture Stack:**\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502              Frameworks (PyTorch, TensorFlow, JAX)       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502         cuDNN, cuBLAS, cuFFT, cuSPARSE           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502              CUDA Toolkit + NVCC                \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502         Driver (470.x+, 535.x+ for Hopper)      \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502     Hardware: Ampere, Ada, Hopper, Blackwell     \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Hardware Requirements:**\n- **Minimum for development / small models:** RTX 3090 or RTX 4090, with 8\u201324 GB V",
+          "tokens": 1206,
+          "output_length": 9548,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 4.0,
+            "behavior_count": 0,
+            "behaviors": [],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": false,
+              "E": false,
+              "F": false,
+              "G": false,
+              "H": false,
+              "I": false,
+              "J": false,
+              "K": false,
+              "L": false,
+              "M": false,
+              "N": false,
+              "O": false
+            },
+            "raw_judge_response": "Let me carefully analyze this research output against each behavioral indicator.\n\n**[A] Lists specific allocation percentages or numbers**\n- \"80\u201385% of machine learning training workloads\"\n- \"85\u201395% of CUDA throughput\"\n- \"18+ year development foundation\"\n- \"approximately 8 years of development\"\n- \"hundreds-of-millions-of-dollars range annually\"\n- \"2.0 TB/s\" memory bandwidth\n- \"3.35 TB/s\" bandwidth\n- \"900 GB/s\" bandwidth\n- \"312\" TFLOPS, \"989\" TFLOPS, \"383\" TFLOPS\n- \"1.1 \u03bcs\", \"0.9 \u03bcs\", \"2.4 \u03bcs\" la"
+          }
+        }
+      }
+    },
+    {
+      "query_num": 5,
+      "query": "Compare and critique the architectural patterns of 3 major AI frameworks (pick specific versions: e.g. LangChain 0.3, LlamaIndex 0.11, AutoGen 0.4) \u2014 what are the tradeoffs in agent orchestration, memory, and tool use?",
+      "modes": {
+        "single": {
+          "output": "# Comparative Architectural Analysis: AI Framework Patterns\n## LangChain 0.3 vs. LlamaIndex 0.11 vs. AutoGen 0.4\n\n---\n\n## 1. Framework Overview & Positioning\n\n| Dimension | LangChain 0.3 | LlamaIndex 0.11 | AutoGen 0.4 |\n|---|---|---|---|\n| **Primary Focus** | LLM application orchestration | Retrieval-augmented generation (RAG) | Multi-agent collaborative systems |\n| **Design Philosophy** | Composable chains; batteries-included | Data indexing + queryable retrieval | Agent-to-agent communication protocols |\n| **Minimum Dependencies** | langchain-core, langchain-community | llama-index-core, llama-index-llms-openai | autogen-agentchat |\n| **Python Version Support** | 3.8+ | 3.9+ | 3.10+ |\n| **Primary Abstraction** | `Runnable` / `LCEL` | `QueryEngine` / `Index` | `ConversableAgent` / `GroupChat` |\n\n---\n\n## 2. Agent Orchestration Architecture\n\n### 2.1 LangChain 0.3 \u2014 LangGraph + LCEL\n\n**Core Abstraction: LangChain Expression Language (LCEL)**\n\nLangChain 0.3's orchestration centers on two layered systems:\n\n1. **LCEL (Runnable protocol)** \u2014 a functional composition layer\n2. **LangGraph** \u2014 a stateful, graph-based orchestration layer for complex agents\n\n```\nLCEL Composition Model (Simple Cases):\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502  prompt | llm | output_parser                       \u2502\n\u2502                                                     \u2502\n\u2502  runnable = prompt | llm | output_parser            \u2502\n\u2502  result = runnable.invoke({\"query\": \"...\"})         \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nLangGraph (Complex Agents):\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502  StateGraph                                         \u2502\n\u2502  \u251c\u2500\u2500 nodes: [orchestrator, tools, memory, judge]   \u2502\n\u2502  \u251c\u2500\u2500 edges: conditional routing based on state     \u2502\n\u2502  \u2514\u2500\u2500 interrupt_points: human-in-the-loop hooks     \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n**Key Architectural Decisions:**\n\n```\n# LCEL composition example (LangChain 0.3)\nfrom l",
+          "tokens": 1557,
+          "output_length": 15249,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 8.5,
+            "behavior_count": 7,
+            "behaviors": [
+              "D",
+              "E",
+              "F",
+              "I",
+              "J",
+              "M",
+              "O"
+            ],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": true,
+              "E": true,
+              "F": true,
+              "G": false,
+              "H": false,
+              "I": true,
+              "J": true,
+              "K": false,
+              "L": false,
+              "M": true,
+              "N": false,
+              "O": true
+            },
+            "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: YES\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES\nBEHAVIOR_J: YES\nBEHAVIOR_K: NO\nBEHAVIOR_L: NO\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 7\nSCORE: 8.5"
+          }
+        },
+        "fixed": {
+          "output": "# Architectural Comparison of AI Agent Frameworks: LangChain 0.3, LlamaIndex 0.11, and AutoGen 0.4\n\n---\n\n## Executive Summary\n\n| Dimension | LangChain 0.3 | LlamaIndex 0.11 | AutoGen 0.4 |\n|---|---|---|---|\n| **Orchestration Model** | Graph-based DAG (LCEL) | Query engine pipeline | Multi-agent conversation |\n| **Primary Abstraction** | Chain / Runnable | QueryEngine / QueryPipeline | Agent / Team |\n| **Memory Philosophy** | Plug-and-play, explicit | Context-first, embed-aware | Session-scoped, stateful |\n| **Tool Use** | Tool abstraction layer | Tool integration via query planning | Code-interop + message passing |\n| **Strength** | Flexibility & ecosystem breadth | RAG-optimized retrieval | Multi-agent collaboration |\n| **Primary Weakness** | Complexity overhead | Narrower orchestration scope | Limited production tooling |\n| **Target Persona** | Full-stack developers | ML/LLM engineers | Research + multi-agent apps |\n\n---\n\n## 1. Agent Orchestration Architecture\n\n### 1.1 LangChain 0.3: Runnable & DAG-based Orchestration\n\n**Architecture:**\nLangChain 0.3 centers on **LCEL (LangChain Expression Language)**, a declarative pipeline composition model. Everything is a `Runnable` \u2014 prompts, models, parsers, tools. Chains are directed acyclic graphs (DAGs) where data flows through `input \u2192 transform \u2192 output`.\n\n```\nPromptTemplate \u2192 ChatModel \u2192 OutputParser\n        \u2191              \u2191\n   ToolNode \u2190\u2014\u2014\u2014 LLMDecidesTool\n```\n\n**Key Patterns:**\n- **Sequential Chains**: `chain = prompt | model | output_parser`\n- **Runnable Branching**: `chain.with_fallback(...)`\n- **Conditional Routing**: `chain | RunnableBranch([condition, handler])`\n- **Parallel Fan-out**: `RunnableParallel({...})` with `assign(...)` for joining\n\n**Stateful Agent Pattern (LangGraph):**\n```python\nfrom langgraph.graph import StateGraph\nfrom typing import TypedDict\n\nclass AgentState(TypedDict):\n    messages: list\n    current_step: str\n\nworkflow = StateGraph(AgentState)\nworkflow.add_node(\"think\", think_node)\nworkflow.add",
+          "tokens": 911,
+          "output_length": 7504,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 4.0,
+            "behavior_count": 0,
+            "behaviors": [],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": false,
+              "E": false,
+              "F": false,
+              "G": false,
+              "H": false,
+              "I": false,
+              "J": false,
+              "K": false,
+              "L": false,
+              "M": false,
+              "N": false,
+              "O": false
+            },
+            "raw_judge_response": "Let me carefully evaluate this research output against each behavioral indicator.\n\n**[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds, 20% real estate\")**\n- The output doesn't provide allocation percentages or numbers related to the topic (which is about AI frameworks, not financial allocation). This doesn't apply to this research output.\n\n**[B] Cites primary sources with URLs, DOIs, or specific document titles**\n- No specific URLs, DOIs, or primary source cita"
+          }
+        },
+        "gnn": {
+          "output": "# Architectural Comparison: LangChain 0.3 vs. LlamaIndex 0.11 vs. AutoGen 0.4\n\n## Executive Summary\n\nThe three frameworks analyzed\u2014LangChain 0.3, LlamaIndex 0.11, and AutoGen 0.4\u2014represent distinct philosophical positions on agent architecture, each optimized for fundamentally different use cases and development philosophies. This report synthesizes technical, architectural, practical, and strategic perspectives to provide a unified framework for understanding their tradeoffs.\n\nThe core finding is that **no single framework dominates across all dimensions**: LangChain offers the most mature ecosystem for complex, multi-step agentic pipelines but carries significant debugging complexity; LlamaIndex excels at structured retrieval-centric workflows with clean separation of concerns but struggles with dynamic multi-turn agents; AutoGen provides the most natural abstraction for conversational multi-agent systems but sacrifices fine-grained control and has the least mature tooling.\n\n---\n\n## 1. Agent Orchestration Architecture\n\n### Foundational Models\n\nThe three frameworks implement fundamentally different orchestration paradigms, each with distinct implications for expressiveness, debuggability, and scalability.\n\n**LangChain 0.3: Directed Acyclic Graph (DAG) with State**\n\nLangChain implements orchestration through graph-based runtime where `AgentExecutor` traverses a state machine defined by prompts and tool schemas. Every component\u2014prompts, LLMs, tools, chains\u2014implements the `Runnable` protocol with `.invoke()`, `.batch()`, and `.stream()` methods, enabling predictable composition but creating deep call stacks that complicate debugging.\n\nThe architecture supports loops via reflection/guard mechanisms and early exit via a special `finish` tool. However, if the LLM never emits the finish signal, agents terminate silently\u2014this represents a meaningful failure mode. Profiling tests indicate the callback system adds approximately 15\u201320% overhead per invocation. Chains exceedin",
+          "tokens": 1272,
+          "output_length": 10216,
+          "scores": {
+            "error_flag": false,
+            "is_error": false,
+            "overall": 4.0,
+            "behavior_count": 0,
+            "behaviors": [],
+            "anchor_scores": {
+              "A": false,
+              "B": false,
+              "C": false,
+              "D": false,
+              "E": false,
+              "F": false,
+              "G": false,
+              "H": false,
+              "I": false,
+              "J": false,
+              "K": false,
+              "L": false,
+              "M": false,
+              "N": false,
+              "O": false
+            },
+            "raw_judge_response": "Let me carefully analyze this research output against each behavioral indicator.\n\n**[A] Lists specific allocation percentages or numbers**\nThe output mentions \"15\u201320% overhead per invocation\" - this is a specific number/percentage. So YES.\n\n**[B] Cites primary sources with URLs, DOIs, or specific document titles**\nI don't see any specific URLs, DOIs, or primary source citations in this output. The output discusses the frameworks but doesn't cite primary sources. NO.\n\n**[C] Identifies a contradic"
+          }
+        }
+      }
+    }
+  ],
+  "timestamp": "P9-aggregated"
+}
