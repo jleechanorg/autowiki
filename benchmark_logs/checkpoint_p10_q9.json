@@ -1,0 +1,160 @@
+{
+  "query_num": 9,
+  "query": "Design a multi-cloud architecture for a healthcare startup that must comply with HIPAA, SOC2, and GDPR \u2014 include data residency, encryption, access control, and vendor selection criteria",
+  "modes": {
+    "single": {
+      "output": "# Multi-Cloud Architecture for a HIPAA-, SOC2-, and GDPR-Compliant Healthcare Startup\n\n## Architecture Overview\n\nA healthcare startup operating across jurisdictions must balance clinical data sensitivity, regulatory compliance, geographic data residency mandates, and business continuity. A multi-cloud strategy \u2014 defined here as a primary cloud provider augmented by a secondary or tertiary provider for specific workloads \u2014 provides vendor negotiation leverage, disaster recovery resilience, and regulatory flexibility.\n\n---\n\n## 1. Foundational Architecture: Platform Strategy\n\n### 1.1 Recommended Multi-Cloud Topology\n\n| Layer | Primary Cloud | Secondary/Shadow Cloud | Rationale |\n|---|---|---|---|\n| **Clinical Data & PHI Storage** | AWS GovCloud or Azure for Government | AWS Commercial (non-PHI) or GCP | Geographic control, FedRAMP adjacency |\n| **EHR/Clinical Applications** | AWS (via HIPAA-eligible services) | Azure (for EU data residency) | Vendor lock-in reduction |\n| **Analytics & ML Pipelines** | Google Cloud Platform (BigQuery, Vertex AI) | AWS Athena / Redshift | Best-of-breed analytics tooling |\n| **Disaster Recovery / Failover** | Primary region (e.g., US East) | Secondary region (e.g., EU West) | RTO < 4 hours, RPO < 1 hour |\n| **Regulatory Audit Logs** | AWS CloudTrail + GuardDuty | Azure Sentinel | Dual-provider log correlation |\n\n### 1.2 Inter-Cloud Connectivity\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    AWS Transit Gateway                        \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510      \u2502\n\u2502  \u2502 AWS GovCloud \u2502  \u2502 AWS Commerc. \u2502  \u2502  Azure Gov.  \u2502      \u2502\n\u2502  \u2502  (US-PHI)    \u2502  \u2502  (Non-PHI)   \u2502  \u2502  (EU-PHI)    \u2502      \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518      \u2502\n\u2502         \u2502                 \u2502                 \u2502               \u2502\n\u2502         \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518               \u2502\n\u2502                  \u2502                 \u2502                         \u2502\n\u2502            AWS PrivateL",
+      "tokens": 2049,
+      "output_length": 17306,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 1,
+        "behaviors": [
+          "D"
+        ],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBE"
+      }
+    },
+    "fixed": {
+      "output": "# IMPROVED REPORT: Multi-Cloud Architecture for a HIPAA/SOC2/GDPR-Compliant Healthcare Startup\n\n## Table of Contents\n\n1. [Executive Summary](#1-executive-summary)\n2. [Regulatory Compliance Framework](#2-regulatory-compliance-framework)\n3. [Multi-Cloud Architecture Overview](#3-multi-cloud-architecture-overview)\n4. [Data Residency & Sovereignty Design](#4-data-residency--sovereignty-design)\n5. [Encryption Architecture](#5-encryption-architecture)\n6. [Identity & Access Control Framework](#6-identity--access-control-framework)\n7. [Network Security & Segmentation](#7-network-security--segmentation)\n8. [Vendor Selection Criteria & Recommendations](#8-vendor-selection-criteria--recommendations)\n9. [Implementation Roadmap](#9-implementation-roadmap)\n10. [Operational Governance & Monitoring](#10-operational-governance--monitoring)\n11. [Cost Considerations](#11-cost-considerations)\n12. [Conclusion](#12-conclusion)\n13. [References](#13-references)\n\n---\n\n## 1. Executive Summary\n\n### 1.1 Scope Definition\n\nThis architecture addresses a **growth-stage healthcare startup** (Series A-B, 50-150 engineers) with the following characteristics:\n\n- **Current markets**: United States\n- **Target markets**: European Union (18-36 month horizon)\n- **Core product**: EHR integration middleware, patient engagement portal, and clinical analytics platform\n- **Supported EHR systems**: Epic, Cerner (Oracle Health), Meditech (per ONC certification requirements)\n- **Technical stack**: Kubernetes-based microservices on cloud infrastructure\n- **Budget context**: Year 1 compliance investment estimated at $180,000-$320,000 (see Section 11)\n\n### 1.2 Key Design Principles\n\n| Principle | Definition | Architectural Enforcement |\n|---|---|---|\n| **Zero Trust Architecture** | Never trust, always verify regardless of network location (NIST SP 800-207) | All access requires authentication + authorization regardless of network origin |\n| **Defense in Depth** | Layered controls where failure of one control doesn't ",
+      "tokens": 1195,
+      "output_length": 9121,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "Let me carefully analyze this research output against each behavioral anchor.\n\nFirst, let me note that the output provided is quite incomplete - it ends at \"Workforce Security\" and doesn't show the full document. But I need to evaluate what's provided.\n\nLet me go through each behavior:\n\n**[A] Lists specific allocation percentages or numbers**\n- Looking for specific numbers with allocation context (e.g., \"60% equities, 20% bonds\")\n- I see: \"50-150 engineers\", \"$180,000-$320,000\", \"18-36 month hor"
+      }
+    },
+    "gnn": {
+      "output": "# Multi-Cloud Architecture for a HIPAA/SOC2/GDPR-Compliant Healthcare Startup\n\n## A Comprehensive Technical and Compliance Report\n\n---\n\n## Executive Summary\n\nA healthcare startup operating across regulatory jurisdictions confronts a compliance architecture challenge that cannot be solved by policy declarations alone. The Health Insurance Portability and Accountability Act (HIPAA) governs Protected Health Information (PHI) for US patients, the SOC2 trust service criteria establish operational security standards, and the General Data Protection Regulation (GDPR) imposes strict requirements\u2014particularly for health data classified as \"special category\" under Article 9\u2014on EU residents' personal data.\n\nThis report presents a reference architecture that uses **multi-cloud deployment as the foundational compliance mechanism**, not merely a resilience or vendor-diversification strategy. The core design premise: **data residency, sovereignty, and jurisdictional controls must be architecturally enforced at the infrastructure layer**, with cryptographic guarantees rather than administrative promises.\n\nThe architecture allocates cloud providers per regulatory jurisdiction\u2014AWS for US workloads under HIPAA, GCP for EU workloads under GDPR\u2014while sharing a unified control plane for identity, policy, and observability. This approach transforms compliance from a documentation exercise into an infrastructure guarantee.\n\n---\n\n## 1. Architectural Philosophy and Core Design Principles\n\n### 1.1 Why Multi-Cloud for Compliance\n\nThe choice of multi-cloud architecture in this context stems from a fundamental regulatory reality: HIPAA, SOC2, and GDPR each require different jurisdictional guarantees that single-cloud architectures cannot satisfy simultaneously without complex workarounds.\n\n**HIPAA's Business Associate Agreement (BAA) requirement** necessitates working directly with cloud providers who will sign BAAs and offer HIPAA-eligible services. AWS, Azure, and Google Cloud Platform all mai",
+      "tokens": 1189,
+      "output_length": 9007,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 7.0,
+        "behavior_count": 5,
+        "behaviors": [
+          "D",
+          "H",
+          "K",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": true,
+          "I": false,
+          "J": false,
+          "K": true,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": true
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: NO\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: YES\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: YES\nBEHAVIOR_L: NO\nBEHAVIOR_M: NO\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 5\nSCORE: 7.0"
+      }
+    }
+  }
+}
