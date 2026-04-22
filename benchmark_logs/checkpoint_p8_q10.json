@@ -1,0 +1,54 @@
+{
+  "query_num": 10,
+  "query": "Compare CUDA, ROCm, and open-source GPU acceleration frameworks for training large models \u2014 benchmark methodology, hardware requirements, and community support",
+  "modes": {
+    "single": {
+      "output": "[API Error] All retries failed",
+      "tokens": 5,
+      "output_length": 30,
+      "scores": {
+        "error_flag": true,
+        "is_error": true,
+        "overall": 0.0,
+        "factual": 0.0,
+        "coverage": 0.0,
+        "insight": 0.0,
+        "evidence": 0.0,
+        "actionability": 0.0,
+        "structure": 0.0
+      }
+    },
+    "fixed": {
+      "output": "[No output]",
+      "tokens": 2,
+      "output_length": 11,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 5.0,
+        "factual": 5.0,
+        "coverage": 5.0,
+        "insight": 5.0,
+        "evidence": 5.0,
+        "actionability": 5.0,
+        "structure": 5.0
+      }
+    },
+    "gnn": {
+      "output": "[No output]",
+      "tokens": 2,
+      "output_length": 11,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 5.0,
+        "factual": 5.0,
+        "coverage": 5.0,
+        "insight": 5.0,
+        "evidence": 5.0,
+        "actionability": 5.0,
+        "structure": 5.0
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "query_num": 1,
+  "query": "Design a comprehensive investment portfolio strategy for a 35-year-old with moderate risk tolerance, incorporating real estate, equities, fixed income, and alternative assets with specific allocation percentages and rebalancing rules",
+  "modes": {
+    "single": {
+      "output": "[API Error] All retries failed",
+      "tokens": 5,
+      "output_length": 30,
+      "scores": {
+        "error_flag": true,
+        "is_error": true,
+        "overall": 0.0,
+        "factual": 0.0,
+        "coverage": 0.0,
+        "insight": 0.0,
+        "evidence": 0.0,
+        "actionability": 0.0,
+        "structure": 0.0
+      }
+    },
+    "fixed": {
+      "output": "[No output]",
+      "tokens": 2,
+      "output_length": 11,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 5.0,
+        "factual": 5.0,
+        "coverage": 5.0,
+        "insight": 5.0,
+        "evidence": 5.0,
+        "actionability": 5.0,
+        "structure": 5.0
+      }
+    },
+    "gnn": {
+      "output": "[No output]",
+      "tokens": 2,
+      "output_length": 11,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 5.0,
+        "factual": 5.0,
+        "coverage": 5.0,
+        "insight": 5.0,
+        "evidence": 5.0,
+        "actionability": 5.0,
+        "structure": 5.0
+      }
+    }
+  }
+}
