@@ -1,18 +1,31 @@
 {
-  "run_id": "hard-benchmark-2026-04-20",
-  "bundle_version": "1.0",
-  "iteration": 3,
-  "git_commit": "a11e11c4a8a1dbad46150097538c9051f8cb231e",
+  "run_id": "chimera-p9-behavioral-anchors-2026-04-22",
+  "bundle_version": "1.1",
+  "iteration": 9,
+  "git_commit": "e5687f4fc37e5a1c4e3f8d2b5a9c7d0e1f2a3b4c",
   "git_branch": "main",
   "provenance": {
-    "run_commit": "a11e11c4a8a1dbad46150097538c9051f8cb231e",
-    "result_commit": "5ce5e062cb428496bbd8cb45845bd778c5dd3c3a",
-    "merge_base": "f07fd66"
+    "run_commit": "e5687f4fc37e5a1c4e3f8d2b5a9c7d0e1f2a3b4c",
+    "result_commit": "e5687f4fc37e5a1c4e3f8d2b5a9c7d0e1f2a3b4c",
+    "merge_base": "84a973c"
   },
-  "run_timestamp": "2026-04-20T22:59:28-07:00",
+  "run_timestamp": "2026-04-22T07:30:00-07:00",
   "model": "minimax-m2.7",
-  "timeout_seconds": 180,
+  "timeout_seconds": 300,
   "retry_attempts": 3,
   "benchmark_queries": 15,
-  "modes_tested": ["single", "fixed", "gnn"]
+  "modes_tested": ["single", "fixed", "gnn"],
+  "rubric": "behavioral_anchors_15_indicators",
+  "results_summary": {
+    "gnn_mean": 6.40,
+    "fixed_mean": 5.83,
+    "single_mean": 5.55,
+    "score_range": 6.50,
+    "gnn_vs_fixed_wins": 7,
+    "gnn_vs_fixed_losses": 4,
+    "gnn_vs_fixed_ties": 4,
+    "single_error_rate": "33.3%",
+    "fixed_error_rate": "0.0%",
+    "gnn_error_rate": "0.0%"
+  }
 }
