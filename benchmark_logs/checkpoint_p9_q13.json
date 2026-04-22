@@ -1,0 +1,91 @@
+{
+  "query_num": 13,
+  "query": "Develop a pricing strategy for an enterprise AI coding assistant \u2014 include value-based pricing justification, competitor price comparison, and tiered packaging",
+  "modes": {
+    "single": {
+      "output": "[API Error] All retries failed",
+      "tokens": 5,
+      "output_length": 30,
+      "scores": {
+        "error_flag": true,
+        "is_error": true,
+        "overall": 0.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {}
+      }
+    },
+    "fixed": {
+      "output": "# Enterprise AI Coding Assistant \u2014 Pricing Strategy Report (Revised)\n\n---\n\n## 1. Strategic Positioning & Market Context\n\n### 1.1 Market Landscape\n\nThe AI coding assistant market is in a **high-growth expansion phase**, with enterprise adoption accelerating as organizations recognize quantifiable productivity gains. The global market is valued at approximately **$4.2 billion in 2024** and is projected to reach **$12.8 billion by 2030**, representing a compound annual growth rate (CAGR) of **20.4%** [1]. The enterprise segment specifically is growing faster than the consumer tier, with analyst estimates placing enterprise AI coding tool spend at **$1.8-2.4 billion in 2024**, expanding at 25-30% CAGR [2].\n\nThe competitive landscape comprises four distinct segments:\n\n| Segment | Representative Tools | Pricing (Individual) | Market Position |\n|---------|----------------------|---------------------|-----------------|\n| **Incumbent** | GitHub Copilot | $19/mo (individual), $39/mo (business) [3] | ~60% market share; 1.3M+ paying users |\n| **Incumbent** | JetBrains AI | $14.99/mo (individual) [4] | Bundled with IDE subscription |\n| **Incumbent** | AWS CodeWhisperer | $19/mo (professional) [5] | Integrated with AWS ecosystem |\n| **Specialist Pure-Play** | Cursor | $20/mo (Pro), $40/mo (Business) [6] | ~400K+ users; fastest-growing in segment |\n| **Specialist Pure-Play** | Tabnine | $10-20/mo (tiered), custom enterprise [7] | 1M+ developers; 100+ enterprise clients |\n| **Specialist Pure-Play** | Codeium | Free (Starter), $15/mo (Pro) [8] | 700K+ Pro users; aggressive pricing |\n| **Emerging Agentic** | Devin (Cognition) | $100+/mo (early access tiers) [9] | Pre-revenue; positioned above current tiers |\n| **Enterprise-Oriented** | Sourcegraph Cody | Custom enterprise pricing | Repository-scale intelligence |\n\nThe market exhibits **price compression at the individual tier** (Codeium's free tier has captured ~15% of active developers) while **enterprise value expansion continues**",
+      "tokens": 940,
+      "output_length": 6842,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 9.5,
+        "behavior_count": 12,
+        "behaviors": [
+          "A",
+          "B",
+          "D",
+          "E",
+          "H",
+          "I",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": true,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false,
+          "G": false,
+          "H": true,
+          "I": true,
+          "J": false,
+          "K": true,
+          "L": true,
+          "M": true,
+          "N": true,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: YES\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: YES\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: YES\nBEHAVIOR_L: YES\nBEHAVIOR_M: YES\nBEHAVIOR_N: YES\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 12\nSCORE: 9.5"
+      }
+    },
+    "gnn": {
+      "output": "# Enterprise AI Coding Assistant: Pricing Strategy Report\n\n---\n\n## 1. Executive Summary\n\nThe enterprise AI coding assistant market represents a significant and rapidly expanding opportunity, valued at approximately **$2.1B in 2024** and projected to exceed **$12B by 2030** (Grand View Research, Gartner). With the broader DevTools market at roughly **$9.5B and growing at ~12% CAGR**, the sector is attracting intense competition across a fragmented vendor landscape.\n\nThis report establishes a pricing strategy framework grounded in three pillars: **value-based pricing justification**, **competitor price benchmarking**, and **tiered packaging architecture**. The core principle guiding this strategy is that pricing should capture **15\u201325% of the delivered economic value per developer**, with segment-specific calibration to balance adoption friction against revenue capture. A senior developer's fully loaded cost of approximately **$180,000/year** yields a value ceiling of roughly **$16,700/year** in productivity gains; a target price of **$2,500\u2013$4,000 per developer annually** aligns with this principle at the enterprise segment. Competitor pricing ranges from **$10/seat/month (Individual tier)** to **$39/seat/month (Enterprise tier)**, with the market clearly segmenting along lines of integration depth, security posture, and governance capability.\n\n---\n\n## 2. Value-Based Pricing Framework\n\n### 2.1 Quantifying Customer Value\n\nValue-based pricing requires translating product impact into measurable economic outcomes for buyers. The following value drivers form the foundation of the pricing model:\n\n| Value Driver | Conservative Estimate | Source Basis |\n|---|---|---|\n| Lines of code written/saved | 15\u201340% acceleration | GitHub Copilot studies, McKinsey productivity analysis |\n| Developer time reallocation | 3\u20135 hrs/week per developer | User-reported metrics, Harvard Business Review |\n| Reduced code review cycles | 20\u201330% fewer iterations | Industry benchmarks on PR velocity ",
+      "tokens": 1074,
+      "output_length": 7964,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "raw_judge_response": "Let me analyze this research output carefully against each of the 15 behavioral indicators.\n\n[A] Lists specific allocation percentages or numbers - YES, the output contains specific percentages: \"15\u201325% of the delivered economic value\", \"$180,000/year\", \"4 hrs/week \u00d7 48 productive weeks = 192 hrs/year\", \"20% developer willingness to pay\", \"$2,500\u2013$4,000 per developer annually\", \"60%\" in one mention (wait, let me check - it mentions \"4 hrs/week \u00d7 48 productive weeks = 192 hrs/year\" and \"Capture 1"
+      }
+    }
+  }
+}

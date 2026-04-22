@@ -1,0 +1,95 @@
+{
+  "query_num": 4,
+  "query": "Develop a detailed manufacturing scale-up plan for a startup going from 100 to 100,000 units/month, covering supply chain, equipment, workforce, quality control, and regulatory compliance",
+  "modes": {
+    "single": {
+      "output": "[API Error] All retries failed",
+      "tokens": 5,
+      "output_length": 30,
+      "scores": {
+        "error_flag": true,
+        "is_error": true,
+        "overall": 0.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {}
+      }
+    },
+    "fixed": {
+      "output": "# Manufacturing Scale-Up Plan: 100 to 100,000 Units/Month\n\n## A Comprehensive Strategic Framework for Sustainable Growth\n\n---\n\n# Executive Summary\n\nScaling manufacturing output by 1,000x represents one of the most demanding challenges a startup can face. This plan addresses the transition from 100 units/month (pilot production) to 100,000 units/month (commercial-scale manufacturing) over a projected 24-36 month timeline, depending on capital availability and market demand.\n\n**Key Assumptions:**\n\n- Product type: Moderate complexity consumer product, medical device, or industrial component (adjust specific parameters based on your product category)\n- Existing regulatory approval pathway: 510(k) cleared, general ISO 9001 environment, or comparable baseline\n- Starting infrastructure: Small facility (2,000-5,000 sq ft), 5-15 employees, manual or semi-automated processes\n- Target market: Quantified demand growth supporting the volume ramp (see Section 1.3)\n\n**Critical Success Factors:**\n\n- Phased capital deployment aligned with validated demand\n- Supply chain resilience built progressively\n- Quality systems that scale without breaking\n- Workforce development as a parallel strategic track\n- Regulatory compliance integrated from the outset, not retrofitted\n\n**Expected Timeline:** 24-36 months from initiation to sustained 100,000 units/month\n\n---\n\n# Phase 1: Foundation Building (100 \u2192 1,000 units/month)\n\n**Timeline:** Months 1-6\n**Investment Requirement:** $750,000 (base case), range $500,000 - $1,500,000 depending on existing assets and facility conditions\n\n## 1.1 Current State Assessment\n\nBefore scaling, rigorously document your current state across all operational dimensions:\n\n| Dimension | Starting Point | Minimum Viable Target | Validation Method |\n|-----------|---------------|----------------------|-------------------|\n| Facility Size | 2,000-5,000 sq ft | 5,000-10,000 sq ft | Lease analysis, layout planning |\n| Workforce | 5-15 FTE | 20-25 FTE | See Section 1.4 for br",
+      "tokens": 1127,
+      "output_length": 7521,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 8.5,
+        "behavior_count": 7,
+        "behaviors": [
+          "A",
+          "F",
+          "G",
+          "I",
+          "L",
+          "M",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true,
+          "G": true,
+          "H": false,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": true,
+          "M": true,
+          "N": false,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: YES\nBEHAVIOR_G: YES\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: YES\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 7\nSCORE: 8.5"
+      }
+    },
+    "gnn": {
+      "output": "# Manufacturing Scale-Up Plan: 100 to 100,000 Units/Month\n\n## A Comprehensive Strategic Report\n\n---\n\n## Executive Summary\n\nScaling from 100 to 100,000 units monthly represents a **1,000x increase over approximately 18-36 months** \u2014 a transformation that has broken most organizations that attempt it without systematic preparation. This plan assumes a general durable goods or electronics product; organizations in regulated industries such as pharmaceutical, medical device, or aerospace should apply 1.5\u20133x time multipliers to each phase and apply stringent compliance gates at each transition.\n\nThe core challenge of this scale-up is that unit economics, process stability, and organizational design must transform simultaneously \u2014 and each creates hard constraints on the others. Underinvesting in any single dimension creates bottlenecks that cascade through the entire operation. This report provides a phased framework that synchronizes supply chain development, equipment investment, workforce scaling, quality systems, and regulatory compliance to achieve sustainable high-volume production.\n\n**Key Assumptions:**\n\n- Product is a general durable good or consumer electronics category\n- Initial production is domestic or near-shore with standard component availability\n- Product is not yet regulated but may encounter regulatory requirements as volume scales\n- Starting organizational structure is 10\u201350 people with an ad hoc manufacturing approach\n\n---\n\n## I. Phase Architecture Overview\n\nThe scale-up is organized into four distinct phases, each requiring fundamentally different capabilities, investments, and organizational structures.\n\n| Phase | Production Target | Time Horizon | Primary Focus | Key Transition Gate |\n|--------|-------------------|--------------|---------------|---------------------|\n| **Phase 0** | 100\u2013500 units/mo | 0\u20133 months | Process stabilization | Process capability study (Cpk \u2265 1.0) |\n| **Phase 1** | 500\u20135,000 units/mo | 3\u20139 months | Equipment investment & ",
+      "tokens": 1095,
+      "output_length": 8011,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 8.5,
+        "behavior_count": 7,
+        "behaviors": [
+          "A",
+          "F",
+          "G",
+          "L",
+          "M",
+          "N",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true,
+          "G": true,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": true,
+          "M": true,
+          "N": true,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: YES\nBEHAVIOR_G: YES\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: YES\nBEHAVIOR_M: YES\nBEHAVIOR_N: YES\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 7\nSCORE: 8.5"
+      }
+    }
+  }
+}

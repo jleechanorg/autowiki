@@ -1,0 +1,86 @@
+{
+  "query_num": 8,
+  "query": "Write a technical due diligence report for acquiring a 50-person software company \u2014 cover tech debt, architecture decisions, IP ownership, key person risk, and integration challenges",
+  "modes": {
+    "single": {
+      "output": "[API Error] All retries failed",
+      "tokens": 5,
+      "output_length": 30,
+      "scores": {
+        "error_flag": true,
+        "is_error": true,
+        "overall": 0.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {}
+      }
+    },
+    "fixed": {
+      "output": "# Technical Due Diligence Report\n\n## Acquisition Target: NovaTech Solutions, Inc.\n\n### Prepared for: Apex Digital Holdings, LLC\n\n### Report Date: March 15, 2024\n\n### Classification: Confidential\n\n---\n\n## Executive Summary\n\nThis technical due diligence report assesses the engineering health, intellectual property position, key personnel dependencies, and integration readiness of NovaTech Solutions, Inc., a 50-person software company specializing in enterprise workflow automation. The assessment draws from source code review, architecture documentation analysis, codebase metrics, process audits, and stakeholder interviews conducted over a 4-week evaluation period.\n\n**Key Findings at a Glance:**\n\n| Domain | Risk Level | Priority |\n|--------|------------|----------|\n| Technical Debt | Moderate-High | High |\n| Architecture | Moderate | Medium |\n| IP Ownership | Low-Moderate | Medium |\n| Key Person Risk | High | Critical |\n| Integration Readiness | Moderate | Medium |\n\n**Overall Assessment:** The target company demonstrates a functioning product with market traction, but carries significant technical debt, architectural decisions that constrain scalability, and concentrated knowledge ownership that poses material integration risk. Addressing these issues should be a condition of acquisition or factored into purchase price negotiations.\n\n---\n\n## 1. Technical Debt Analysis\n\n### 1.1 Scope and Methodology\n\nTechnical debt was evaluated across four dimensions: code quality, testing coverage, dependency management, and documentation completeness. The assessment included static code analysis using SonarQube and CodeClimate, repository metrics extraction via GitHub API, CI/CD pipeline review, and code review sampling encompassing a representative 15% of the codebase by line count (approximately 47,000 lines reviewed out of 312,000 total).\n\n### 1.2 Code Quality Findings\n\n**Dependency and Package Management**\n\n- The codebase operates on 847 dependencies with a mean dependency age of",
+      "tokens": 1384,
+      "output_length": 10007,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "raw_judge_response": "{'thinking': 'Let me carefully analyze this research output against each of the behavioral indicators (A through O).\\n\\n[A] Lists specific allocation percentages or numbers - I see percentages like \"23% of dependencies\", \"12.3% duplicate code\", \"34% test coverage\", \"43% of API endpoints\", \"40-60% defect risk\", but these are measurements of the target company\\'s codebase, not allocation decisions. The query asks about technical due diligence report content. Let me check if there\\'s anything like "
+      }
+    },
+    "gnn": {
+      "output": "# Technical Due Diligence Report\n\n**Target Company:** [Subject to NDA \u2014 Confidential]\n**Prepared by:** Technical Due Diligence Specialist\n**Date:** [Current Date]\n**Classification:** Confidential \u2014 Internal Due Diligence Use Only\n\n---\n\n## 1. Executive Summary\n\nThis report presents findings from a structured technical due diligence review of a 50-person software company (hereafter \"Target\") being considered for acquisition. The assessment evaluates technical health, architectural integrity, intellectual property position, dependency risks, and integration feasibility.\n\n**Overall Assessment: Conditional Pass with Significant Flags**\n\nThe Target demonstrates a functional but aging technology foundation with substantial accumulated debt. Several architectural decisions create meaningful acquisition risk. IP ownership requires forensic validation. Key person concentration is high. Integration complexity is moderate but manageable with deliberate post-acquisition planning.\n\n**Key Risk Summary Table**\n\n| Risk Domain | Severity | Urgency | Recommendation |\n|---|---|---|---|\n| Tech Debt | High | Immediate | Negotiate price adjustment; mandate remediation budget |\n| Architecture Decisions | Medium-High | Pre-close | Require architecture review before signing |\n| IP Ownership | High | Immediate | Full code provenance audit; external legal review |\n| Key Person Risk | Critical | Pre-close | Structure earnout tied to retention; obtain IP assignment agreements |\n| Integration Challenges | Medium | Post-close | Design integration layer; delay deep system integration 90 days |\n\n---\n\n## 2. Scope and Methodology\n\n### 2.1 Scope of Review\n\nThis report covers the following technical domains across the Target's primary product lines and infrastructure:\n\n- Core codebase architecture and technical debt profile\n- Infrastructure and deployment environment\n- Intellectual property assignments, open-source usage, and licensing compliance\n- Development team structure, key personnel mapping, and ",
+      "tokens": 1111,
+      "output_length": 7986,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 7.0,
+        "behavior_count": 6,
+        "behaviors": [
+          "F",
+          "G",
+          "H",
+          "I",
+          "L",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true,
+          "G": true,
+          "H": true,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": true,
+          "M": false,
+          "N": false,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: YES\nBEHAVIOR_G: YES\nBEHAVIOR_H: YES\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: YES\nBEHAVIOR_M: NO\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 6\nSCORE: 7.0"
+      }
+    }
+  }
+}

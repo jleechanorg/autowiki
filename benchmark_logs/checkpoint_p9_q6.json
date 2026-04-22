@@ -1,0 +1,96 @@
+{
+  "query_num": 6,
+  "query": "Create a competitive analysis for a B2B SaaS product in the project management space \u2014 include market size, top 5 competitors, differentiation strategy, and pricing model with 3-year revenue projection",
+  "modes": {
+    "single": {
+      "output": "# Competitive Analysis Report: B2B SaaS Project Management\n\n---\n\n## Executive Summary\n\nThe project management software market represents a significant and growing opportunity within the broader B2B SaaS landscape. This analysis examines the competitive environment, identifies strategic positioning opportunities, and provides a financial projection framework for a new entrant or existing player seeking market share.\n\n**Key Finding**: Despite intense competition from well-funded players, meaningful whitespace exists in AI-native project management, industry-specific solutions, and enterprise-grade simplicity.\n\n---\n\n## 1. Market Size Analysis\n\n### Global Market Overview\n\n| Metric | Value | Source/Note |\n|--------|-------|-------------|\n| Global Market Size (2023) | **$6.2 billion** | Grand View Research, Gartner |\n| Projected Market Size (2028) | **$11.4 billion** | 13.1% CAGR |\n| Projected Market Size (2030) | **$14.6 billion** | Fortune Business Insights |\n| North America Market Share | **35-38%** | Largest regional market |\n\n### Market Segmentation\n\n| Segment | Market Size (2023) | Growth Rate (CAGR) | attractiveness |\n|---------|-------------------|-------------------|----------------|\n| Enterprise (500+ employees) | $2.8B | 11.2% | High \u2014 high LTV, long sales cycles |\n| Mid-Market (50-499 employees) | $2.1B | 15.8% | Very High \u2014 underserved, fast decisions |\n| SMB (< 50 employees) | $1.3B | 12.4% | Medium \u2014 price-sensitive, high churn |\n\n### Total Addressable Market (TAM) Breakdown\n\n```\nEnterprise Segment:     $2.8B  \u2500\u2500\u2500\u2500 High ACV ($50K-$500K/year)\nMid-Market Segment:    $2.1B  \u2500\u2500\u2500\u2500 Target ($10K-$80K/year)\nSMB Segment:           $1.3B  \u2500\u2500\u2500\u2500 Volume play ($2K-$15K/year)\n                                              \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\nCombined TAM:                    $6.2B (2023)\nProjected TAM:                  $11.4B (2028)\n```\n\n### Key Market Drivers\n\n1. **Remote/Hybrid Work Normalization**: 58% of knowledge workers now use project management tools daily\n2. **Digital ",
+      "tokens": 2288,
+      "output_length": 16631,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 9.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "raw_judge_response": "Let me analyze the output against the 15 behavioral anchors systematically.\n\n**[A] Lists specific allocation percentages or numbers**\nThe output has a market size table with \"$6.2 billion\", \"$11.4 billion\", \"13.1% CAGR\", etc. It has pricing tiers with \"$7.75\", \"$15.25\", etc. It has market share percentages like \"9.7%\", \"7.3%\", \"32.4%\", \"2.4%\", \"2.1%\". It has \"58%\", \"23% YoY\", \"86%\", \"67%\". It has funding amounts like \"$234M\", \"$200M+\", \"$535M\". It has valuation amounts like \"$1.9B\", \"$5.5B\", \"$5"
+      }
+    },
+    "fixed": {
+      "output": "# Competitive Analysis: B2B SaaS Project Management Platform\n\n**Framework Document \u2014 Market Entry Strategy**\n*Revised Version 2.0*\n\n---\n\n## Editorial Note\n\nThroughout this report, three data tiers are applied to ensure transparency:\n\n- **Confirmed Data (\u25ce)** \u2014 Sourced from verified public filings, official announcements, or confirmed analyst reports with specific citations.\n- **Estimated Data (\u25d0)** \u2014 Derived from triangulated industry sources, earnings calls, and reputable analyst estimates; explicitly flagged.\n- **Insufficient Data (\u25b3)** \u2014 Critical gap where reliable figures were not publicly available at time of publication; flagged as an area requiring primary research or vendor outreach before strategic decisions are made.\n\n---\n\n## 1. Market Size & Opportunity\n\n### Global Market Overview\n\n| Metric | Value | Confidence | Source |\n|--------|-------|------------|--------|\n| Global Project Management Software Market (2024) | $12.5B | \u25d0 | Grand View Research, MarketsandMarkets estimates |\n| Expected Market Size (2030) | $22\u201325B | \u25d0 | Fortune Business Insights, CAGR 8.3% |\n| Compound Annual Growth Rate (CAGR) | 8.3\u201310% | \u25d0 | Varies by analyst; Gartner estimates 9.2% for 2024\u20132028 |\n| North America Market Share | ~38% | \u25d0 | IDC Worldwide Software Tracker |\n| EMEA Market Share | ~30% | \u25d0 | IDC Worldwide Software Tracker |\n| Asia-Pacific Market Share | ~22% | \u25d0 | IDC Worldwide Software Tracker |\n| Latin America Market Share | ~7% | \u25d0 | IDC Worldwide Software Tracker |\n\n### Market Drivers\n\n| Driver | Impact Level | Evidence |\n|--------|-------------|----------|\n| Remote & hybrid work adoption | High | Gallup data shows 52% of U.S. workers were remote-capable post-2022; Slack's State of Work Report indicates 93% of knowledge workers prefer flexible arrangements |\n| Digital transformation initiatives | High | Gartner CFO Survey 2023: 65% of CFOs increasing spend on digital initiatives |\n| SMB SaaS adoption | Moderate\u2013High | SMB Group / Accenture report: 80% of SMBs now usin",
+      "tokens": 1242,
+      "output_length": 8396,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "raw_judge_response": "Let me carefully analyze the output against each of the 15 behavioral indicators (A through O).\n\n[A] Lists specific allocation percentages or numbers - The output has many specific numbers (market size $12.5B, CAGR 8.3-10%, etc.) but I need to check if it has allocation percentages. Looking through... it mentions regional market shares (~38%, ~30%, ~22%, ~7%) which are specific percentages. It also has segment sizing with growth rates. This seems to qualify - YES\n\n[B] Cites primary sources with "
+      }
+    },
+    "gnn": {
+      "output": "# Competitive Analysis: B2B SaaS Project Management Space\n\n**Analysis Date:** Q1 2025\n**Prepared for:** Strategic Planning\n**Scope:** Global B2B SaaS Project Management Software Market\n\n---\n\n## 1. Market Overview & Sizing\n\n### Total Addressable Market\n\nThe global project management software market is estimated at **$7.2B in 2024**, projected to reach **$12.8B by 2027**, representing a **21.3% CAGR** over that period. When adjacent markets \u2014 portfolio management, resource management, and professional services automation \u2014 are incorporated, the broader addressable opportunity expands to approximately **$23.5B** at a sustained 8.8% CAGR.\n\nThese figures reflect two distinct but overlapping market views: a focused PM software TAM of $7.2B\u2013$12.3B, and a wider ecosystem TAM of $23.5B that includes resource planning, portfolio oversight, and workflow automation tools increasingly bundled into modern PM suites.\n\n| Market Segment | 2024 Value | 2027 Projected | CAGR |\n|---|---|---|---|\n| Project Management Software (Global) | $7.2B | $12.8B | 21.3% |\n| Enterprise PM Segment | $4.8B | \u2014 | 7.5% |\n| SMB / Startup Segment | $7.5B | \u2014 | 11.3% |\n| B2B SaaS PM Tools | $5.4B | $9.6B | 21.0% |\n| Agile & DevOps PM Tools | $2.1B | $4.2B | 24.7% |\n| Adjacent Markets (PM + Resource + Portfolio) | $23.5B | \u2014 | 8.8% |\n\n### Key Market Drivers\n\nFour structural forces are reshaping demand in this category:\n\n1. **Hybrid work normalization.** Distributed teams have made asynchronous collaboration capabilities \u2014 real-time visibility, cross-timezone scheduling, and task handoff systems \u2014 a permanent baseline requirement rather than a premium feature.\n2. **AI integration as a primary differentiation axis.** Approximately 40% of procurement decision-makers now list AI-assisted capabilities (auto-scheduling, risk detection, smart search, summarization) as a top-three purchase criterion, making AI a non-negotiable feature for competitive positioning.\n3. **Compliance complexity.** Expanding regulatory ",
+      "tokens": 942,
+      "output_length": 6843,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 3.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "raw_judge_response": "Let me analyze this research output carefully against each behavioral indicator.\n\n**[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds, 20% real estate\")**\n- The output has market sizing numbers like $7.2B, $12.8B, 21.3% CAGR\n- But these aren't allocation percentages - they're market values and growth rates\n- The competitor market shares are percentages: 18.5%, 12.5%, 10.8%, 7.2%, 6.5%\n- These are market share allocations, which could count\n- Let me reconsider: m"
+      }
+    }
+  }
+}

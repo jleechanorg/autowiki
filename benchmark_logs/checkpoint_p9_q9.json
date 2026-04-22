@@ -1,0 +1,117 @@
+{
+  "query_num": 9,
+  "query": "Design a multi-cloud architecture for a healthcare startup that must comply with HIPAA, SOC2, and GDPR \u2014 include data residency, encryption, access control, and vendor selection criteria",
+  "modes": {
+    "single": {
+      "output": "# Multi-Cloud Architecture for HIPAA, SOC2, and GDPR Compliant Healthcare Platform\n\n## Executive Summary\n\nThis architecture addresses a healthcare startup requiring multi-cloud infrastructure while maintaining compliance with three major regulatory frameworks: HIPAA (US healthcare data), SOC 2 Type II (security controls), and GDPR (EU personal data protection). The design emphasizes **data sovereignty**, **defense-in-depth security**, and **operational resilience** through strategic cloud provider selection and deployment patterns.\n\n---\n\n## 1. Architecture Overview\n\n### 1.1 Multi-Cloud Topology\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                         CONTROL PLANE (Centralized IAM)                     \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502\n\u2502  \u2502 Identity Provider\u2502  \u2502 Policy Orchestrator\u2502 \u2502 Audit & Compliance Gateway \u2502  \u2502\n\u2502  \u2502   (Okta/Entra)  \u2502  \u2502   (Terraform)     \u2502  \u2502       (SIEM Platform)       \u2502  \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n            \u2502                    \u2502                          \u2502\n            \u25bc                    \u25bc                          \u25bc\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510 \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510 \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502    AWS US EAST        \u2502 \u2502    AZURE EU WEST       \u2502 \u2502    GCP US WEST        \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502 \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502 \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502\n\u2502  \u2502 PHI/PHI Data    \u2502  \u2502 \u2502  \u2502 GDPR Data Zone  \u2502  \u2502 \u2502  \u2502 Non-PHI Workload\u2502  \u2502\n\u2502  \u2502 Primary Region  \u2502  \u2502 \u2502  \u2502 Primary Region  \u2502  \u2502 \u2502  \u2502 Analytics/ML    \u2502  \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2502 \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2502 \u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502 \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502 \u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u2502\n\u2502  \u2502 BAA Required    \u2502  \u2502 \u2502  \u2502 EU Residency    \u2502  \u2502 \u2502  \u2502 De-identified    \u2502  \u2502\n\u2502  \u2502 Services Only   \u2502  \u2502 \u2502  \u2502 Services Only   \u2502  \u2502 \u2502  \u2502 Data Processing  \u2502  \u2502\n",
+      "tokens": 1882,
+      "output_length": 16825,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 7.0,
+        "behavior_count": 5,
+        "behaviors": [
+          "E",
+          "K",
+          "M",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": true,
+          "L": false,
+          "M": true,
+          "N": false,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: YES\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: YES\nBEHAVIOR_L: NO\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 5\nSCORE: 7.0"
+      }
+    },
+    "fixed": {
+      "output": "# Multi-Cloud Architecture for Healthcare Startup\n## Comprehensive Design for HIPAA, SOC2, and GDPR Compliance\n\n---\n\n## Executive Summary\n\nThis architecture addresses a dual/multi-cloud strategy for a healthcare startup operating across US and EU jurisdictions. The design balances regulatory compliance with operational flexibility, incorporating zero-trust security principles and data sovereignty requirements. Key operational parameters are defined below.\n\n### Key Operational Targets\n\n| Metric | Target | Justification |\n|--------|--------|---------------|\n| **RTO** | \u22644 hours | HIPAA requires expedient restoration; business requirement |\n| **RPO** | \u22641 hour | Maximum acceptable PHI data loss for clinical operations |\n| **API Throughput** | 50,000 req/min peak | Estimated based on 10,000 concurrent users with 5 req/user/min |\n| **P99 Latency** | \u2264200ms (US), \u2264350ms (EU cross-region) | User experience threshold for clinical applications |\n| **Uptime SLA** | 99.95% | Industry standard for healthcare platforms |\n| **Concurrent Users** | 10,000 (initial), 50,000 (18-month growth) | Scalability buffer included |\n\n---\n\n## 1. Multi-Cloud Strategy\n\n### 1.1 Provider Distribution Rationale\n\n| Provider | Region(s) | Primary Use Case | Compliance Role | Monthly Cost Estimate |\n|----------|-----------|------------------|-----------------|----------------------|\n| **AWS** | US-EAST (primary), EU-WEST (secondary) | PHI storage, EKS workloads, S3 archival | HIPAA BAA capable; SOC2 Type II certified | $45,000\u2013$65,000 |\n| **Azure** | US-WEST (DR/HA) | Secondary workloads, ExpressRoute redundancy | HIPAA BAA, Azure Government adjacency | $20,000\u2013$30,000 |\n| **GCP** | EU-WEST (data residency) | EU-resident workloads, BigQuery analytics | GDPR Article 44\u201349 compliant zones | $15,000\u2013$25,000 |\n\n**Selection Rationale:**\n\n- **AWS** provides mature HIPAA-eligible services (S3, RDS, Lambda) with established BAA templates\n- **Azure** offers ExpressRoute for dedicated private connectivity and s",
+      "tokens": 1068,
+      "output_length": 9729,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 9.5,
+        "behavior_count": 9,
+        "behaviors": [
+          "A",
+          "D",
+          "E",
+          "F",
+          "I",
+          "K",
+          "L",
+          "M",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": true,
+          "G": false,
+          "H": false,
+          "I": true,
+          "J": false,
+          "K": true,
+          "L": true,
+          "M": true,
+          "N": false,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: YES\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: YES\nBEHAVIOR_L: YES\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 9\nSCORE: 9.5"
+      }
+    },
+    "gnn": {
+      "output": "# Multi-Cloud Architecture for Healthcare Startups: Compliance-First Design Framework\n\n## Strategic Analysis & Architectural Recommendations\n\n---\n\n## Executive Summary\n\nHealthcare startups operating across transatlantic jurisdictions face compounded compliance complexity where three regulatory frameworks\u2014HIPAA (US), SOC 2 (operational trust), and GDPR (EU)\u2014intersect with multi-cloud infrastructure. This report presents a compliance-first architectural framework that reconciles these requirements through deliberate platform role assignment, data residency zoning, and unified identity management.\n\n**Core Strategic Thesis:** Multi-cloud architecture is not merely a vendor diversification strategy for healthcare compliance\u2014it is a fundamental requirement for jurisdiction-aware data governance. However, multi-cloud introduces control plane fragmentation that must be managed explicitly through infrastructure-as-code, standardized identity fabrics, and classification-driven routing.\n\n**Key Findings:**\n\n- HIPAA, SOC 2, and GDPR are not mutually compatible out of the box; they require architectural reconciliation, particularly regarding data residency, breach notification timelines, and individual rights mechanisms\n- Platform role assignment based on native compliance capabilities (rather than cost or familiarity) yields the strongest compliance posture\n- Data residency cannot be retrofitted\u2014it must be designed from day zero with classification-driven routing\n- SPIFFE/SPIRE-based identity fabric is non-negotiable for multi-cloud IAM in regulated workloads\n- Vendor selection must prioritize BAA availability (HIPAA) and contractual data processing agreements (GDPR) as primary criteria, not secondary considerations\n\n---\n\n## 1. Regulatory Framework Reconciliation\n\nBefore detailing architectural choices, organizations must understand how the three regulatory frameworks interact, conflict, and reinforce each other.\n\n### 1.1 Framework Comparison Matrix\n\n| Dimension | HIPAA (US) | S",
+      "tokens": 1113,
+      "output_length": 9053,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "overall": 7.0,
+        "behavior_count": 5,
+        "behaviors": [
+          "C",
+          "E",
+          "H",
+          "I",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": false,
+          "G": false,
+          "H": true,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": true
+        },
+        "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: YES\nBEHAVIOR_D: NO\nBEHAVIOR_E: YES\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: YES\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: NO\nBEHAVIOR_M: NO\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 5\nSCORE: 7.0"
+      }
+    }
+  }
+}
