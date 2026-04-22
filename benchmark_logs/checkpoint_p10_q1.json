@@ -1,0 +1,163 @@
+{
+  "query_num": 1,
+  "query": "Design a comprehensive investment portfolio strategy for a 35-year-old with moderate risk tolerance, incorporating real estate, equities, fixed income, and alternative assets with specific allocation percentages and rebalancing rules",
+  "modes": {
+    "single": {
+      "output": "# Comprehensive Investment Portfolio Strategy\n## For a 35-Year-Old Investor with Moderate Risk Tolerance\n\n---\n\n## Executive Summary\n\nAt 35, you have approximately a **30-year investment horizon** before traditional retirement age. With moderate risk tolerance and assuming a blended annual return of **6.5\u20137.5%**, a well-structured portfolio can realistically accumulate **4\u20136\u00d7 your current invested capital** by retirement. This strategy prioritizes long-term growth while maintaining downside protection through diversification.\n\n---\n\n## Asset Allocation Framework\n\n### Strategic Allocation (Target Weights)\n\n| Asset Class | Allocation | Sub-Allocation | Rationale |\n|---|---|---|---|\n| **Equities (Growth)** | 55% | \u2014 | Primary wealth engine over 30-year horizon |\n| | | Domestic Large Cap: 25% | Core S&P 500 exposure, low costs |\n| | | Domestic Small/Mid Cap: 10% | Higher growth potential, small premium |\n| | | International Developed: 12% | Geographic diversification |\n| | | Emerging Markets: 8% | Higher growth, higher volatility |\n| **Fixed Income (Stability)** | 25% | \u2014 | Downside protection, income, rebalancing anchor |\n| | | Investment Grade Bonds: 10% | Stability, low correlation to equities |\n| | | Treasury Inflation-Protected: 5% | Inflation hedge |\n| | | International Bonds (Hedged): 5% | Diversification, currency exposure |\n| | | High-Yield Bonds: 5% | Income with managed risk |\n| **Real Estate (Income + Inflation)** | 12% | \u2014 | Income generation, inflation hedge |\n| | | REITs: 7% | Liquid real estate exposure |\n| | | Direct Real Estate: 5% | Crowdfunding or rental property |\n| **Alternatives (Diversification)** | 8% | \u2014 | Low correlation to traditional assets |\n| | | Private Equity/VC: 3% | Long-term growth, illiquidity premium |\n| | | Commodities/Gold: 3% | Inflation hedge, crisis protection |\n| | | Hedge Funds (Optional): 2% | For accredited investors |\n\n---\n\n## Detailed Allocation Breakdown\n\n### 1. Equities \u2014 55% ($55,000 per $100,000 portfolio)\n\n**Domestic L",
+      "tokens": 2191,
+      "output_length": 14026,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 8.5,
+        "behavior_count": 7,
+        "behaviors": [
+          "A",
+          "E",
+          "F",
+          "J",
+          "K",
+          "M",
+          "N"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": true,
+          "K": true,
+          "L": false,
+          "M": true,
+          "N": true,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: YES\nBEHAVIOR_F: YES\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: YES\nBEHAVIOR_K: YES\nBEHAVIOR_L: NO\nBEHAVIOR_M: YES\nBEHAVIOR_N: YES\nBEHAVIOR_O: NO\nBEHAVIOR_COUNT: 7\nSCORE: 8.5"
+      }
+    },
+    "fixed": {
+      "output": "# Comprehensive Investment Portfolio Strategy\n## For a 35-Year-Old with Moderate Risk Tolerance\n\n---\n\n## Executive Summary\n\nThis portfolio strategy is designed for an investor with a **25-30 year investment horizon** to retirement, moderate risk tolerance, and the capacity to withstand market volatility while pursuing long-term wealth accumulation. The strategy balances growth-oriented assets with income-generating and defensive positions to optimize risk-adjusted returns.\n\n**Core Allocation Philosophy:** 65% Growth Assets / 35% Defensive Assets\n\n---\n\n## Strategic Asset Allocation\n\n### Total Portfolio Overview\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    TOTAL PORTFOLIO ALLOCATION                   \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                                 \u2502\n\u2502   Equities (Growth)          \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591  45%      \u2502\n\u2502   Fixed Income (Defensive)   \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591  20%      \u2502\n\u2502   Real Estate                \u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591  15%      \u2502\n\u2502   Alternative Assets         \u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591  12%      \u2502\n\u2502   Cash/Short-Term            \u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591  5%        \u2502\n\u2502   Gold/Commodities           \u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591  3%        \u2502\n\u2502                                                                 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n---\n\n## Detailed Allocation Breakdown\n\n### 1. EQUITIES \u2014 45% of Portfolio ($45,000 per $100,000)\n\n| Sub-Asset Class | Allocation | Rationale |\n|-----------------|------------|-----------|\n| **US Large-Cap Growth** | 15% | Core growth engine; S&P 500 exposure |\n| **US Large-Cap Value** | 7% | Counter-cyclical to growth; dividend income |\n| **US Small/Mid-Cap** | 6% | Higher growth potential with managed risk |\n| **International Developed** | 10% | Europe, Japan, Australia diversification |\n| **Emerging Markets** | 5% | Higher growth, higher volatility; limited",
+      "tokens": 997,
+      "output_length": 7092,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 1,
+        "behaviors": [
+          "A"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: NO\nBEHAVIOR_M: NO\nBEHAVIOR_N: NO\nBEHAVIOR_O: NO\nBEHAVIOR_COUNT: 1\nSCORE: 4.0"
+      }
+    },
+    "gnn": {
+      "output": "# Comprehensive Investment Portfolio Strategy\n## For a 35-Year-Old Investor with Moderate Risk Tolerance\n\n---\n\n## Executive Summary\n\nThis report presents a unified investment portfolio strategy designed for an individual investor at age 35 with moderate risk tolerance and a 30+ year investment horizon. Drawing upon both quantitative technical analysis and strategic business rationale, the strategy integrates five major asset classes\u2014domestic equities, international equities, fixed income, real assets, and alternatives\u2014into a coherent framework optimized for long-term wealth accumulation with balanced risk exposure. The recommended portfolio targets a geometric expected return of 7.8% with a standard deviation of 11.2%, yielding a Sharpe ratio of 0.55, appropriate for an investor prioritizing growth while accepting moderate volatility.\n\n---\n\n## 1. Investor Profile & Strategic Parameters\n\n### 1.1 Core Investor Characteristics\n\nThe foundation of this strategy rests on well-defined investor parameters that drive all subsequent allocation decisions.\n\n| Parameter | Value | Strategic Rationale |\n|-----------|-------|--------------------|\n| Current Age | 35 years | Mid-career with 30+ years to retirement |\n| Investment Horizon | 30+ years | Permits meaningful equity exposure with recovery time from market downturns |\n| Risk Tolerance | Moderate | Balances growth objectives with capital preservation needs |\n| Risk Aversion Coefficient | 0.5\u20130.7 | Consistent with balanced growth/income orientation |\n| Liquidity Needs | Low\u2013Moderate | Emergency fund (3\u20136 months expenses) assumed held separately in cash |\n| Tax Bracket | 24\u201332% marginal | Assuming income of $100,000\u2013$200,000; tax-efficient allocation matters |\n| Initial Investment | $100,000 | Baseline for percentage-based allocation recommendations |\n| Time Commitment | Moderate | Quarterly review cycle is sustainable and appropriate |\n\n### 1.2 The Strategic Case for Moderate Risk at Age 35\n\nTwo structural factors fundamentall",
+      "tokens": 1075,
+      "output_length": 8205,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "Looking at this investment strategy document carefully:\n\n**[A]** The document provides expected returns and volatility tables but the actual portfolio allocation percentages (like \"60% equities, 20% bonds\") are not shown in the provided excerpt\u2014it cuts off before presenting the specific allocation breakdown. NO\n\n**[B]** No URLs, DOIs, or specific document titles are cited. The document references \"historical evidence\" and \"MPT calculation\" generically without specific source attribution. NO\n\n**["
+      }
+    }
+  }
+}
