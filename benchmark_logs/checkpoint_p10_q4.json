@@ -1,0 +1,164 @@
+{
+  "query_num": 4,
+  "query": "Develop a detailed manufacturing scale-up plan for a startup going from 100 to 100,000 units/month, covering supply chain, equipment, workforce, quality control, and regulatory compliance",
+  "modes": {
+    "single": {
+      "output": "# Manufacturing Scale-Up Plan: 100 \u2192 100,000 Units/Month\n\n## Executive Summary\n\nScaling from 100 to 100,000 units/month represents a **1,000x increase** requiring disciplined phased execution. This plan assumes:\n- **Product category**: General industrial/consumer product (hardware, electronics, or precision components)\n- **Starting point**: Small batch production, manual or bench-scale assembly, single facility\n- **Current state**: Quality management system (QMS) in early development\n- **Target geography**: Domestic primary, export secondary\n- **Regulatory environment**: ISO 9001, CE/UL (if applicable), cGMP (if applicable)\n\n> **Critical assumption noted**: Adjust production ratios, equipment specifications, and staffing models based on your specific product cycle time, footprint, and regulatory requirements.\n\n---\n\n## Phase Overview\n\n| Phase | Units/Month | Timeline | Facility | Core Focus |\n|-------|-------------|----------|----------|------------|\n| **0 \u2014 Baseline** | 100 | Current | 1,000\u20132,000 sq ft | Stabilize product & process |\n| **1 \u2014 Pilot Scale** | 1,000\u20133,000 | Months 1\u201312 | 5,000\u201310,000 sq ft | Process validation, first automation |\n| **2 \u2014 Intermediate** | 10,000\u201330,000 | Months 12\u201324 | 20,000\u201350,000 sq ft | Line automation, supply chain hardening |\n| **3 \u2014 Full Scale** | 100,000 | Months 24\u201348 | 80,000\u2013150,000 sq ft | Optimized lines, parallel production |\n\n---\n\n## Phase 0: Stabilize Before Scaling\n\n*Before any expansion, lock down these foundations*\n\n### Actions Required\n1. **Freeze product design** \u2014 Establish an engineering change control (ECO) process. Every design iteration after Phase 1 costs 5\u201310x more to implement\n2. **Run first-pass yield analysis** \u2014 Know your current defect rate per unit and map to process step\n3. **Document process parameters** \u2014 Create work instructions for every operation with critical process parameters (CPPs) defined\n4. **Establish incoming inspection** \u2014 Define acceptance criteria for every purchased component before i",
+      "tokens": 2428,
+      "output_length": 15581,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 5.5,
+        "behavior_count": 4,
+        "behaviors": [
+          "A",
+          "F",
+          "G",
+          "I"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true,
+          "G": true,
+          "H": false,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: YES\nBEHAVIOR_G: YES\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES"
+      }
+    },
+    "fixed": {
+      "output": "# Comprehensive Manufacturing Scale-Up Plan\n## From 100 to 100,000 Units/Month: A Strategic Framework for Exponential Growth\n\n---\n\n## Executive Summary\n\nScaling from 100 to 100,000 units per month represents a **1,000x increase** in production volume\u2014a transformation that fundamentally changes every aspect of operations. This plan provides a systematic framework for navigating this transition across five critical domains: facility and infrastructure, workforce development, equipment and capital investment, supply chain architecture, and quality control systems.\n\n**Key Assumptions:**\n\n| Parameter | Assumption |\n|-----------|------------|\n| Product category | Mid-tech physical product (consumer or industrial) |\n| Product weight | 0.5\u20132 kg per unit |\n| Product value | $50\u2013200 per unit (factory gate) |\n| Geography | United States or equivalent developed market |\n| Facility model | Greenfield manufacturing (owned or long-term lease) |\n| Target timeline | 24\u201336 months |\n| Initial capital | $4\u201315M total (CAPEX + working capital) |\n| Headcount at scale | 600\u20131,000 FTE |\n\n**Critical Success Factors:**\n\n- Phased implementation with defined milestones and metrics\n- Parallel development of all workstreams\n- Proactive regulatory engagement\n- Investment in scalable quality systems from day one\n- Strong leadership with scaled operations experience\n\n**Projected Economics at Scale:**\n\n| Metric | 100 Units/Mo | 25,000 Units/Mo | 100,000 Units/Mo |\n|--------|--------------|-----------------|------------------|\n| Cost per unit | $55\u201365 | $18\u201324 | $13\u201318 |\n| Gross margin | 25\u201335% | 50\u201358% | 58\u201368% |\n| Monthly revenue | $5\u201320K | $450K\u20131.5M | $3.2\u20138.6M |\n| Annual revenue | $60K\u2013240K | $5.4M\u201318M | $38M\u2013103M |\n\n---\n\n## Phase Overview: The 1,000x Journey\n\n| Phase | Units/Month | Primary Focus | Duration | Cumulative CAPEX | Cumulative Headcount |\n|-------|-------------|---------------|----------|------------------|---------------------|\n| Phase 0: Foundation | 100\u2013500 | Process validation, p",
+      "tokens": 867,
+      "output_length": 5816,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 7.0,
+        "behavior_count": 5,
+        "behaviors": [
+          "A",
+          "I",
+          "L",
+          "M",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": true,
+          "M": true,
+          "N": false,
+          "O": true
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: YES\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 5\nSCORE: 7.0"
+      }
+    },
+    "gnn": {
+      "output": "# Manufacturing Scale-Up Plan: 100 to 100,000 Units/Month\n\n## A Comprehensive Strategic Framework for High-Growth Production Scaling\n\n---\n\n## Executive Summary\n\nThis report presents a comprehensive manufacturing scale-up strategy for scaling production capacity from 100 to 100,000 units per month\u2014a 1,000x increase to be executed over an estimated 18-36 month timeline depending on capital availability and product complexity. The plan addresses five interdependent operational domains: supply chain development, equipment and manufacturing infrastructure, workforce scaling, quality control systems, and regulatory compliance.\n\nThe core thesis of this plan is that manufacturing scale-up failure is predominantly an organizational and systemic problem rather than a technical one. Startups that successfully scale production share a common characteristic: they build foundational systems before adding capacity, rather than adding capacity and attempting to retrofit systems afterward. The phase model presented here enforces this discipline by defining explicit capability milestones that must be achieved before advancing to the next production tier.\n\nThe 1,000x production increase will require approximately $15-50M in cumulative capital investment depending on automation level and whether in-house or contract manufacturing is employed for certain phases. Supply chain costs will decline 30-50% through volume commitment. Workforce will grow from a small team to 200-500+ personnel. Quality systems must evolve from ad hoc inspection to statistical process control with automated data collection. Regulatory compliance must transition from reactive certification to proactive quality management system implementation.\n\n**Critical Success Factors:**\n\n- Building supply chain depth before volume commitments are honored\n- Sequencing capability development in the order: process validation \u2192 quality systems \u2192 capacity expansion \u2192 cost optimization\n- Maintaining quality discipline as the primar",
+      "tokens": 1134,
+      "output_length": 8227,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "{'thinking': 'Let me analyze this research output against the behavioral indicators to determine which behaviors are present.\\n\\nI need to go through each of the 15 behavioral indicators (A through O) and determine if the output exhibits that behavior.\\n\\n**[A] Lists specific allocation percentages or numbers**\\nThe output mentions \"1,000x increase\", \"$15-50M in cumulative capital investment\", \"30-50% decline in supply chain costs\", \"200-500+ personnel\", \"98%+ supplier on-time delivery\", \"70% of"
+      }
+    }
+  }
+}
