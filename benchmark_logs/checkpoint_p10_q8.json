@@ -1,0 +1,172 @@
+{
+  "query_num": 8,
+  "query": "Write a technical due diligence report for acquiring a 50-person software company \u2014 cover tech debt, architecture decisions, IP ownership, key person risk, and integration challenges",
+  "modes": {
+    "single": {
+      "output": "# Technical Due Diligence Report\n\n## Proposed Acquisition: [Target Company]\n\n**Report Date:** [Date]\n**Classification:** Confidential \u2014 Deal Team Only\n**Prepared by:** [Firm / Investigator]\n**Scope:** 50-person software company (assumed B2B SaaS operating in mid-market vertical; substitute actual sector/vertical as applicable)\n\n---\n\n## Executive Summary\n\nThis report summarizes findings from a structured technical due diligence (TDD) review conducted across code repositories, infrastructure, intellectual property records, personnel documentation, and integration architecture. The review was scoped to evaluate five risk pillars: technical debt, architectural decisions, intellectual property ownership, key personnel dependency, and post-acquisition integration complexity.\n\n**Overall Assessment:** Moderate-to-High risk in its current state, with targeted remediation paths available. We estimate **12\u201318 months and $1.8M\u2013$3.2M** in remediation investment required before the platform reaches a clean, scalable foundation suitable for accelerated growth. Without remediation, integration velocity will be materially degraded and attrition risk among key technical personnel will increase.\n\n**Key Findings:**\n\n| Risk Pillar | Risk Level | Remediation Cost Estimate | Timeline |\n|---|---|---|---|\n| Tech Debt | **High** | $800K\u2013$1.4M | 9\u201314 months |\n| Architecture Decisions | **Moderate-High** | $300K\u2013$600K | 6\u201312 months |\n| IP Ownership | **Low-Moderate** | $50K\u2013$200K | 1\u20133 months |\n| Key Person Risk | **High** | Embedded in retention comp | Immediate |\n| Integration Challenges | **Moderate-High** | $600K\u2013$1.0M | 12\u201318 months |\n\n**Critical Recommendations:**\n\n1. Obtain full third-party audit of IP chain (open-source dependencies, contractor work-for-hire, and assignment agreements)\n2. Require binding retention and transition agreements from three identified key persons before close\n3. Embed a two-year technical roadmap with escrow holdback tied to milestones\n4. Commission a securit",
+      "tokens": 2795,
+      "output_length": 19745,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 9.5,
+        "behavior_count": 9,
+        "behaviors": [
+          "A",
+          "D",
+          "F",
+          "G",
+          "I",
+          "L",
+          "M",
+          "N",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": true,
+          "G": true,
+          "H": false,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": true,
+          "M": true,
+          "N": true,
+          "O": true
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: NO\nBEHAVIOR_F: YES\nBEHAVIOR_G: YES\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: YES\nBEHAVIOR_M: YES\nBEHAVIOR_N: YES\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 9\nSCORE: 9.5"
+      }
+    },
+    "fixed": {
+      "output": "# Technical Due Diligence Report\n\n## Acquisition Target: CloudSync Solutions, Inc.\n\n### Prepared for: Nexus Technologies, Inc.\n\n### Report Date: March 15, 2025\n\n### Classification: Confidential\n\n---\n\n# Executive Summary\n\nThis technical due diligence assessment evaluates the technology assets, architectural decisions, intellectual property position, personnel dependencies, and anticipated integration challenges associated with the proposed acquisition of CloudSync Solutions, Inc., a 52-person enterprise SaaS company specializing in cloud infrastructure management and DevOps automation tooling. The evaluation is based on comprehensive document review, technical interviews with 14 engineering personnel, and architecture analysis conducted over a four-week due diligence period.\n\n**Company Profile:**\n\n| Dimension | Value |\n|-----------|-------|\n| Headcount | 52 employees (38 engineering/technical) |\n| Annual Recurring Revenue (ARR) | $8.4 million |\n| Growth Rate (YoY) | 34% |\n| Gross Margin | 71% |\n| Customer Count | 186 enterprise customers |\n| Net Revenue Retention | 118% |\n| Runway | 24 months at current burn |\n\n**Key Findings Summary:**\n\n| Dimension | Risk Level | Key Concern |\n|-----------|------------|-------------|\n| Technical Debt | **Medium-High** | Accumulated infrastructure and code quality issues |\n| Architecture Decisions | **Medium** | Monolithic legacy components alongside modern microservices |\n| IP Ownership | **Low-Medium** | Minor third-party dependency risks identified |\n| Key Person Risk | **High** | Concentration of critical knowledge among founders |\n| Integration Challenges | **Medium-High** | Divergent technology stacks and organizational culture differences |\n\n**Overall Assessment:** CloudSync Solutions possesses a viable core product with solid market positioning and defensible technology differentiation in the DevOps tooling space. Annual recurring revenue of $8.4 million with 34% year-over-year growth demonstrates commercial traction. However",
+      "tokens": 1175,
+      "output_length": 8808,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "{'thinking': 'Let me carefully analyze this research output against each of the 15 behavioral indicators.\\n\\n[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds\")\\n- I see \"52 employees (38 engineering/technical)\", \"Annual Recurring Revenue (ARR): $8.4 million\", \"Growth Rate (YoY): 34%\", \"Gross Margin: 71%\", \"Customer Count: 186 enterprise customers\", \"Net Revenue Retention: 118%\", \"Runway: 24 months at current burn\"\\n- I see percentages like \"Test Coverage: 52%\","
+      }
+    },
+    "gnn": {
+      "output": "# Technical Due Diligence Report\n\n## Proposed Acquisition: 50-Person Software Company\n\n---\n\n**Report Classification:** Confidential \u2014 For Internal Acquisition Review Only\n\n**Prepared by:** Technical Due Diligence Specialist\n\n**Date:** [Current Date]\n\n**Engagement Scope:** Full technical assessment of acquisition target\n\n---\n\n# Executive Summary\n\nThis report presents findings from a comprehensive technical due diligence assessment of the target company, a 50-person software organization with approximately $8\u201312M ARR operating a B2B SaaS product in the enterprise productivity space. The company has been in operation for seven years.\n\n## Overall Assessment: Cautious Hold \u2014 Significant Concerns Requiring Resolution Before Proceeding\n\nThe organization demonstrates competent engineering execution but carries substantial technical debt that will constrain near-term product development, maintains an architecture creating meaningful acquisition integration risk, and exhibits key person dependencies that could materially impair value post-acquisition. Several critical IP ownership questions require legal verification before signing. Our assessment is that while the business fundamentals are sound, the technical foundation as-is presents unacceptable risk without remediation commitments from the target company as a condition of acquisition.\n\n**Key Findings Summary:**\n\n| Domain | Risk Level | Priority Action Required |\n|--------|------------|-------------------------|\n| Technical Debt | \ud83d\udd34 High | Yes \u2014 quantify remediation cost |\n| Architecture Decisions | \ud83d\udfe1 Medium-High | Yes \u2014 assess scalability ceiling |\n| IP Ownership | \ud83d\udd34 High (unverified) | Yes \u2014 legal review essential |\n| Key Person Risk | \ud83d\udd34 High | Yes \u2014 retention structure needed |\n| Integration Challenges | \ud83d\udfe1 Medium | Yes \u2014 planning begins immediately |\n\n**Estimated Total Remediation Investment:** $400,000\u2013$900,000 over 18 months. This figure represents preliminary estimates based on sampling and requires detailed audit b",
+      "tokens": 1342,
+      "output_length": 10255,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 8.5,
+        "behavior_count": 8,
+        "behaviors": [
+          "A",
+          "F",
+          "H",
+          "I",
+          "L",
+          "M",
+          "N",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true,
+          "G": false,
+          "H": true,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": true,
+          "M": true,
+          "N": true,
+          "O": true
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAVIOR_E: NO\nBEHAVIOR_F: YES\nBEHAVIOR_G: NO\nBEHAVIOR_H: YES\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: YES\nBEHAVIOR_M: YES\nBEHAVIOR_N: YES\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 8\nSCORE: 8.5"
+      }
+    }
+  }
+}
