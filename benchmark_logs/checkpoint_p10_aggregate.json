@@ -1,0 +1,140 @@
+{
+  "results": [
+    {
+      "q": 1,
+      "single": 8.5,
+      "fixed": 4.0,
+      "gnn": 4.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 2,
+      "single": 5.5,
+      "fixed": 9.0,
+      "gnn": 8.5,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 3,
+      "single": 9.5,
+      "fixed": 9.5,
+      "gnn": 4.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 4,
+      "single": 5.5,
+      "fixed": 7.0,
+      "gnn": 4.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 5,
+      "single": 5.5,
+      "fixed": 7.0,
+      "gnn": 7.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 6,
+      "single": 4.0,
+      "fixed": 7.0,
+      "gnn": 4.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 7,
+      "single": 8.5,
+      "fixed": 4.0,
+      "gnn": 7.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 8,
+      "single": 9.5,
+      "fixed": 4.0,
+      "gnn": 8.5,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 9,
+      "single": 4.0,
+      "fixed": 4.0,
+      "gnn": 7.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 10,
+      "single": 7.0,
+      "fixed": 4.0,
+      "gnn": 7.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 11,
+      "single": 7.0,
+      "fixed": 4.0,
+      "gnn": 4.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 12,
+      "single": 7.0,
+      "fixed": 4.0,
+      "gnn": 9.5,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 13,
+      "single": 7.0,
+      "fixed": 8.5,
+      "gnn": 5.5,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 14,
+      "single": 8.5,
+      "fixed": 9.5,
+      "gnn": 4.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": null
+    },
+    {
+      "q": 15,
+      "single": 4.0,
+      "fixed": 5.5,
+      "gnn": 0.0,
+      "single_err": null,
+      "fixed_err": null,
+      "gnn_err": "api_error"
+    }
+  ],
+  "mode": "p10"
+}

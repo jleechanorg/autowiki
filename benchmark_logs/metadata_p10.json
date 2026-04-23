@@ -1,0 +1,41 @@
+{
+  "run_id": "chimera-p10-behavioral-anchors-v2-2026-04-22",
+  "bundle_version": "1.2",
+  "iteration": 10,
+  "git_commit": "efe8d89",
+  "git_branch": "main",
+  "provenance": {
+    "run_commit": "efe8d89",
+    "result_commit": "e6f136c",
+    "merge_base": "bc35549"
+  },
+  "run_timestamp": "2026-04-22T16:30:00-07:00",
+  "completion_timestamp": "2026-04-23T00:23:30-07:00",
+  "model": "minimax-m2.7",
+  "timeout_seconds": 180,
+  "retry_attempts": 3,
+  "benchmark_queries": 15,
+  "modes_tested": ["single", "fixed", "gnn"],
+  "rubric": "behavioral_anchors_15_indicators_v2",
+  "improvements": [
+    "explicit error_type tagging (timeout/api_error/no_output)",
+    "per-anchor YES/NO in structured anchor_scores dict",
+    "anchor_labels mapping A-O to descriptive names",
+    "commit after each query for provenance"
+  ],
+  "results_summary": {
+    "single_mean": 6.73,
+    "fixed_mean": 6.07,
+    "gnn_mean": 6.00,
+    "gnn_mean_valid_only": 6.00,
+    "score_range": 5.5,
+    "single_vs_fixed_wins": 6,
+    "fixed_vs_gnn_wins": 6,
+    "gnn_vs_fixed_wins": 5,
+    "ties": 5,
+    "single_error_rate": "0.0%",
+    "fixed_error_rate": "0.0%",
+    "gnn_error_rate": "6.7%",
+    "notes": "Q12 GNN score capped at 9.5 (raw 15.0 rubric bug); Q15 GNN api_error excluded"
+  }
+}
