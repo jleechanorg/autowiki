@@ -1,0 +1,160 @@
+{
+  "query_num": 12,
+  "query": "Create a comprehensive security audit checklist for a FinTech app handling transactions up to $1M \u2014 cover OWASP, PCI-DSS, fraud detection, and regulatory requirements",
+  "modes": {
+    "single": {
+      "output": "# Comprehensive Security Audit Checklist: High-Value FinTech Application\n\n**Scope:** FinTech application handling transactions up to $1,000,000  \n**Classification:** Production Security Audit  \n**Assumptions:** Web/mobile application, cloud-hosted infrastructure, processes PII/PCI, operates in regulated jurisdiction (GDPR applicable)\n\n---\n\n## Executive Summary\n\n| Domain | Critical Controls | Audit Priority |\n|--------|-------------------|----------------|\n| Application Security | Input validation, authentication, session management | P0 |\n| PCI-DSS Compliance | Card data protection, encryption, access controls | P0 |\n| Fraud Detection | Anomaly detection, velocity limits, behavioral analytics | P0 |\n| Infrastructure | Network segmentation, logging, monitoring | P1 |\n| Regulatory | GDPR, KYC/AML, audit trails | P1 |\n| Operational | Incident response, vendor management | P2 |\n\n---\n\n## 1. OWASP Top 10 Application Security Controls\n\n### 1.1 A01:2021 \u2014 Broken Access Control\n\n| Control | Requirement | Test Method | Pass Criteria |\n|---------|-------------|------------|---------------|\n| Authorization matrix | All API endpoints enforce role-based access control (RBAC) | Manual code review + automated testing with authorization bypass payloads | HTTP 403 returned for unauthorized access attempts |\n| Direct Object Reference | Internal IDs not exposed; use indirect references or UUIDs | Fuzz all resource IDs with incrementing/inferrable values | 403/404 returned, no data exposure |\n| Function-level access | Admin functions require separate authentication + authorization | Test each admin endpoint without admin session | Unauthorized \u2192 403 |\n| Rate limiting | API endpoints enforce per-user/request rate limits | Send 200+ requests/minute to sensitive endpoints | Requests throttled after threshold |\n| CORS configuration | Whitelist specific origins; no `Access-Control-Allow-Origin: *` for sensitive endpoints | Inspect CORS headers | Allowed origins match documented whitelist |\n\n",
+      "tokens": 3026,
+      "output_length": 20459,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 7.0,
+        "behavior_count": 6,
+        "behaviors": [
+          "D",
+          "E",
+          "G",
+          "I",
+          "L",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false,
+          "G": true,
+          "H": false,
+          "I": true,
+          "J": false,
+          "K": false,
+          "L": true,
+          "M": false,
+          "N": false,
+          "O": true
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "BEHAVIOR_A: NO\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: NO\nBEHAVIOR_G: YES\nBEHAVIOR_H: NO\nBEHAVIOR_I: YES\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: YES\nBEHAVIOR_M: NO\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nBEHAVIOR_COUNT: 6\nSCORE: 7.0"
+      }
+    },
+    "fixed": {
+      "output": "# Comprehensive Security Audit Checklist for FinTech Applications\n\n## Executive Summary\n\nThis checklist addresses FinTech applications handling transactions up to **$1,000,000 per transaction**, encompassing:\n- **OWASP Top 10** (Web Application Security)\n- **PCI-DSS v4.0** (Payment Card Industry Data Security Standard)\n- **Fraud Detection & Prevention Systems**\n- **Regulatory Compliance** (Global & Regional)\n\n> **Note on Transaction Threshold:** The $1,000,000 threshold was selected because it represents the classification boundary for \"high-value transactions\" under PCI-DSS risk-based assessment requirements, triggers mandatory settlement risk controls, and aligns with FinCEN'sCurrency Transaction Report (CTR) filing threshold. Organizations processing transactions exceeding this amount are subject to enhanced due diligence requirements under FATF Recommendations 10 and 20. Transaction volume-based tiering (as defined in PCI-DSS Section 1.2) is addressed separately in the PCI-DSS portion of this document.\n\n---\n\n# SECTION 1: OWASP TOP 10 COMPLIANCE CHECKLIST\n\n## 1.1 A01:2021 \u2013 Broken Access Control\n\n| Category | Checklist Item | Priority | Status |\n|----------|---------------|----------|----------|\n| Authorization | Verify all API endpoints enforce authorization checks | Critical | \u2610 |\n| Authorization | Test horizontal privilege escalation (user A accessing user B's data) | Critical | \u2610 |\n| Authorization | Validate role-based access control (RBAC) implementation | Critical | \u2610 |\n| Authorization | Check attribute-based access control (ABAC) rules | High | \u2610 |\n| Authorization | Verify admin functions require elevated privileges and multi-factor authentication | Critical | \u2610 |\n| Session Management | Implement secure session handling with inactivity timeout of **15 minutes** and absolute maximum of **30 minutes** | Critical | \u2610 |\n| Session Management | Use server-side session validation (not client-side tokens) | Critical | \u2610 |\n| API Security | Apply rate limiting to ad",
+      "tokens": 1329,
+      "output_length": 9175,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "Let me analyze this research output against each behavioral anchor to determine which indicators are present.\n\n[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds\")\n- The output contains specific numbers and thresholds, but not allocation percentages in a portfolio sense. It has specific values like \"100 requests per minute per user\", \"200\" burst allowance, \"15 minutes\" inactivity timeout, \"30 minutes\" absolute maximum, \"max-age of 31536000 seconds\", \"365 days\" fo"
+      }
+    },
+    "gnn": {
+      "output": "# Comprehensive Security Audit Checklist: FinTech Application (Transactions \u2264$1M)\n\n---\n\n## Executive Summary\n\nFinTech applications processing transactions up to $1M present a high-value target profile, combining significant financial exposure with complex regulatory obligations. Financial services firms experience average breach costs of **$5.9 million** (IBM, 2023), with financial institutions paying **28% higher** than cross-industry averages. For applications in this transaction tier, compliance failures result in average regulatory fines of **$500K\u2013$2M**, exclusive of operational disruption costs.\n\nThis document provides an integrated audit framework spanning four critical pillars:\n\n| Pillar | Scope | Primary Standards |\n|---|---|---|\n| **I. Vulnerability Mitigation** | Application, API, Infrastructure | OWASP Top 10 (2021) |\n| **II. Payment Security** | Cardholder data, transaction integrity | PCI-DSS v4.0 |\n| **III. Fraud Detection Architecture** | Real-time and post-transaction monitoring | Custom + Industry Benchmarks |\n| **IV. Regulatory Adherence** | Multi-jurisdictional compliance | SOX, SOC 2, FinCEN, BSA, GDPR |\n\n**Assumptions:** User-facing FinTech (payments, wallets, transfers), cloud-hosted infrastructure, international user base, transaction ceiling of $1M per event.\n\n---\n\n## Pillar I: Vulnerability Mitigation \u2014 OWASP Top 10 (2021) Compliance\n\nThis section maps specific technical controls to audit test methods and severity ratings, aligned with the application's risk surface.\n\n---\n\n### A01 \u2014 Broken Access Control\n\nAccess control failures remain the most prevalent vulnerability class in web applications and are particularly severe in financial contexts where a single flaw can expose multiple users' transaction histories or permit unauthorized fund movement.\n\n| # | Check Item | Test Method | Severity | PCI-DSS Ref |\n|---|---|---|---|---|\n| 1.1 | **Vertical privilege escalation**: Users cannot access admin functions or other users' data via direct obje",
+      "tokens": 1200,
+      "output_length": 8275,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 15.0,
+        "behavior_count": 0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology"
+        },
+        "raw_judge_response": "{'thinking': 'Let me analyze this security audit checklist output against each of the 15 behavioral anchors systematically.\\n\\n**A. Lists specific allocation percentages or numbers**\\nThe output mentions \"$1M\" transaction limit, \"$5.9 million\" average breach costs, \"28% higher\", \"$500K-$2M\" regulatory fines, \"TLS 1.2+\", \"AES-256\", \">1,000 req/min\", and PCI-DSS section numbers. These are specific numbers/percentages. YES\\n\\n**B. Cites primary sources with URLs, DOIs, or specific document titles**"
+      }
+    }
+  }
+}
