@@ -1,6 +1,6 @@
 {
   "mode": "p13",
-  "timestamp": "2026-04-23T19:28:15.544885",
+  "timestamp": "2026-04-23T20:55:53.314922",
   "queries_tested": 15,
   "results": [
     {
@@ -135,7 +135,7 @@
       "gnn_err": null,
       "cascade": 6.0,
       "cascade_err": null,
-      "hybrid": 13.0,
+      "hybrid": 9.5,
       "hybrid_err": null
     },
     {
@@ -267,7 +267,7 @@
       "source_mean": 0.04
     },
     "hybrid": {
-      "mean": 5.47,
+      "mean": 5.24,
       "count": 15,
       "error_count": 0,
       "error_rate": 0.0,
@@ -279,9 +279,9 @@
   "win_counts": {
     "single": 1,
     "fixed": 6,
-    "gnn": 6,
+    "gnn": 7,
     "cascade": 1,
-    "hybrid": 1
+    "hybrid": 0
   },
   "comparisons": {
     "single_vs_fixed": {
@@ -326,8 +326,8 @@
     },
     "gnn_vs_hybrid": {
       "gnn_wins": 9,
-      "hybrid_wins": 4,
-      "ties": 2
+      "hybrid_wins": 3,
+      "ties": 3
     },
     "cascade_vs_hybrid": {
       "cascade_wins": 4,
@@ -348,7 +348,7 @@
       "fixed": 6.34,
       "gnn": 7.14,
       "cascade": 5.23,
-      "hybrid": 5.94
+      "hybrid": 5.62
     }
   },
   "domain_analysis": {
@@ -364,7 +364,7 @@
       "fixed": 7.07,
       "gnn": 7.95,
       "cascade": 4.5,
-      "hybrid": 7.69
+      "hybrid": 6.82
     },
     "technical": {
       "single": 5.08,
