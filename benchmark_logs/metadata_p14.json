@@ -1,0 +1,27 @@
+{
+  "phase": "P14",
+  "modes": [
+    "gnn",
+    "fixed"
+  ],
+  "queries": 15,
+  "rubric": "20-anchor (A-T)",
+  "circuit_breaker": {
+    "max_retries": 3,
+    "backoff": [
+      1,
+      2,
+      4
+    ],
+    "timeout_fixed": 180,
+    "timeout_gnn": 240,
+    "skip_after_consecutive": 3
+  },
+  "error_types": [
+    "timeout",
+    "api_error",
+    "no_output",
+    "parse_error"
+  ],
+  "created": "2026-04-24T14:26:27.177687"
+}
