@@ -532,6 +532,9 @@ def run_query(qnum):
 
 def run_full_benchmark():
     """Run all 15 queries through both modes."""
+    # Clean git check FIRST — before writing any files
+    check_git_clean()
+
     # Pre-flight: create metadata
     metadata = {
         "phase": "P14",
@@ -553,8 +556,10 @@ def run_full_benchmark():
         json.dump(metadata, f, indent=2)
     log(f"Metadata written to {metadata_file}")
 
-    # Clean git check
-    check_git_clean()
+    # Commit metadata before execution
+    import subprocess
+    subprocess.run(["git", "add", metadata_file], cwd="/home/jleechan/projects_other/autowiki")
+    subprocess.run(["git", "commit", "-m", "feat(chimera): P14 metadata before execution", "-q"], cwd="/home/jleechan/projects_other/autowiki")
 
     # Run queries 1-15
     all_results = []
