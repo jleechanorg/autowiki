@@ -1,0 +1,473 @@
+{
+  "mode": "p13",
+  "timestamp": "2026-04-23T19:28:15.544885",
+  "queries_tested": 15,
+  "results": [
+    {
+      "q": 1,
+      "complexity": "medium",
+      "domain": "business",
+      "single": 4.9,
+      "single_err": null,
+      "fixed": 5.5,
+      "fixed_err": null,
+      "gnn": 8.56,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 4.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 2,
+      "complexity": "high",
+      "domain": "policy",
+      "single": 2.7,
+      "single_err": null,
+      "fixed": 4.0,
+      "fixed_err": null,
+      "gnn": 4.3,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 4.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 3,
+      "complexity": "high",
+      "domain": "technical",
+      "single": 4.0,
+      "single_err": null,
+      "fixed": 4.0,
+      "fixed_err": null,
+      "gnn": 8.2,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 4.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 4,
+      "complexity": "high",
+      "domain": "business",
+      "single": 4.0,
+      "single_err": null,
+      "fixed": 5.8,
+      "fixed_err": null,
+      "gnn": 4.0,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 4.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 5,
+      "complexity": "high",
+      "domain": "technical",
+      "single": 5.3,
+      "single_err": null,
+      "fixed": 4.8,
+      "fixed_err": null,
+      "gnn": 9.72,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 7.09,
+      "hybrid_err": null
+    },
+    {
+      "q": 6,
+      "complexity": "high",
+      "domain": "business",
+      "single": 7.26,
+      "single_err": null,
+      "fixed": 3.8,
+      "fixed_err": null,
+      "gnn": 9.5,
+      "gnn_err": null,
+      "cascade": 7.0,
+      "cascade_err": null,
+      "hybrid": 4.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 7,
+      "complexity": "medium",
+      "domain": "science",
+      "single": 7.31,
+      "single_err": null,
+      "fixed": 8.6,
+      "fixed_err": null,
+      "gnn": 4.0,
+      "gnn_err": null,
+      "cascade": 7.0,
+      "cascade_err": null,
+      "hybrid": 4.7,
+      "hybrid_err": null
+    },
+    {
+      "q": 8,
+      "complexity": "high",
+      "domain": "technical",
+      "single": 4.0,
+      "single_err": null,
+      "fixed": 9.5,
+      "fixed_err": null,
+      "gnn": 4.0,
+      "gnn_err": null,
+      "cascade": 5.3,
+      "cascade_err": null,
+      "hybrid": 9.5,
+      "hybrid_err": null
+    },
+    {
+      "q": 9,
+      "complexity": "high",
+      "domain": "policy",
+      "single": 4.1,
+      "single_err": null,
+      "fixed": 7.27,
+      "fixed_err": null,
+      "gnn": 9.5,
+      "gnn_err": null,
+      "cascade": 6.0,
+      "cascade_err": null,
+      "hybrid": 13.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 10,
+      "complexity": "high",
+      "domain": "technical",
+      "single": 7.0,
+      "single_err": null,
+      "fixed": 4.0,
+      "fixed_err": null,
+      "gnn": 4.0,
+      "gnn_err": null,
+      "cascade": 9.5,
+      "cascade_err": null,
+      "hybrid": 1.2,
+      "hybrid_err": null
+    },
+    {
+      "q": 11,
+      "complexity": "medium",
+      "domain": "science",
+      "single": 4.0,
+      "single_err": null,
+      "fixed": 4.6,
+      "fixed_err": null,
+      "gnn": 4.0,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 4.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 12,
+      "complexity": "high",
+      "domain": "policy",
+      "single": 4.0,
+      "single_err": null,
+      "fixed": 9.78,
+      "fixed_err": null,
+      "gnn": 9.5,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 9.58,
+      "hybrid_err": null
+    },
+    {
+      "q": 13,
+      "complexity": "high",
+      "domain": "business",
+      "single": 4.0,
+      "single_err": null,
+      "fixed": 9.5,
+      "fixed_err": null,
+      "gnn": 7.3,
+      "gnn_err": null,
+      "cascade": 5.71,
+      "cascade_err": null,
+      "hybrid": 4.8,
+      "hybrid_err": null
+    },
+    {
+      "q": 14,
+      "complexity": "medium",
+      "domain": "science",
+      "single": 7.29,
+      "single_err": null,
+      "fixed": 4.0,
+      "fixed_err": null,
+      "gnn": 5.8,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 4.0,
+      "hybrid_err": null
+    },
+    {
+      "q": 15,
+      "complexity": "high",
+      "domain": "policy",
+      "single": 1.2,
+      "single_err": null,
+      "fixed": 7.24,
+      "fixed_err": null,
+      "gnn": 8.5,
+      "gnn_err": null,
+      "cascade": 4.0,
+      "cascade_err": null,
+      "hybrid": 4.2,
+      "hybrid_err": null
+    }
+  ],
+  "summary": {
+    "single": {
+      "mean": 4.74,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.239,
+      "quant_mean": 0.327,
+      "source_mean": 0.073
+    },
+    "fixed": {
+      "mean": 6.16,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.267,
+      "quant_mean": 0.407,
+      "source_mean": 0.093
+    },
+    "gnn": {
+      "mean": 6.73,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.235,
+      "quant_mean": 0.36,
+      "source_mean": 0.153
+    },
+    "cascade": {
+      "mean": 5.1,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.097,
+      "quant_mean": 0.173,
+      "source_mean": 0.04
+    },
+    "hybrid": {
+      "mean": 5.47,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.135,
+      "quant_mean": 0.167,
+      "source_mean": 0.053
+    }
+  },
+  "win_counts": {
+    "single": 1,
+    "fixed": 6,
+    "gnn": 6,
+    "cascade": 1,
+    "hybrid": 1
+  },
+  "comparisons": {
+    "single_vs_fixed": {
+      "single_wins": 4,
+      "fixed_wins": 10,
+      "ties": 1
+    },
+    "single_vs_gnn": {
+      "single_wins": 3,
+      "gnn_wins": 9,
+      "ties": 3
+    },
+    "single_vs_cascade": {
+      "single_wins": 5,
+      "cascade_wins": 6,
+      "ties": 4
+    },
+    "single_vs_hybrid": {
+      "single_wins": 5,
+      "hybrid_wins": 7,
+      "ties": 3
+    },
+    "fixed_vs_gnn": {
+      "fixed_wins": 6,
+      "gnn_wins": 8,
+      "ties": 1
+    },
+    "fixed_vs_cascade": {
+      "fixed_wins": 10,
+      "cascade_wins": 2,
+      "ties": 3
+    },
+    "fixed_vs_hybrid": {
+      "fixed_wins": 8,
+      "hybrid_wins": 3,
+      "ties": 4
+    },
+    "gnn_vs_cascade": {
+      "gnn_wins": 10,
+      "cascade_wins": 3,
+      "ties": 2
+    },
+    "gnn_vs_hybrid": {
+      "gnn_wins": 9,
+      "hybrid_wins": 4,
+      "ties": 2
+    },
+    "cascade_vs_hybrid": {
+      "cascade_wins": 4,
+      "hybrid_wins": 5,
+      "ties": 6
+    }
+  },
+  "complexity_analysis": {
+    "medium": {
+      "single": 5.88,
+      "fixed": 5.67,
+      "gnn": 5.59,
+      "cascade": 4.75,
+      "hybrid": 4.17
+    },
+    "high": {
+      "single": 4.32,
+      "fixed": 6.34,
+      "gnn": 7.14,
+      "cascade": 5.23,
+      "hybrid": 5.94
+    }
+  },
+  "domain_analysis": {
+    "business": {
+      "single": 5.04,
+      "fixed": 6.15,
+      "gnn": 7.34,
+      "cascade": 5.18,
+      "hybrid": 4.2
+    },
+    "policy": {
+      "single": 3.0,
+      "fixed": 7.07,
+      "gnn": 7.95,
+      "cascade": 4.5,
+      "hybrid": 7.69
+    },
+    "technical": {
+      "single": 5.08,
+      "fixed": 5.58,
+      "gnn": 6.48,
+      "cascade": 5.7,
+      "hybrid": 5.45
+    },
+    "science": {
+      "single": 6.2,
+      "fixed": 5.73,
+      "gnn": 4.6,
+      "cascade": 5.0,
+      "hybrid": 4.23
+    }
+  },
+  "p11_comparison": {
+    "single": {
+      "mean": 4.81,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.281,
+      "quant_mean": 0.413
+    },
+    "fixed": {
+      "mean": 4.55,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.101,
+      "quant_mean": 0.18
+    },
+    "gnn": {
+      "mean": 5.07,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.231,
+      "quant_mean": 0.353
+    },
+    "cascade": {
+      "mean": 5.52,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.279,
+      "quant_mean": 0.413
+    }
+  },
+  "p12_comparison": {
+    "single": {
+      "mean": 7.98,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.544,
+      "action_mean": 0.713,
+      "source_mean": 0.683
+    },
+    "fixed": {
+      "mean": 7.2,
+      "count": 14,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.57,
+      "action_mean": 0.521,
+      "source_mean": 0.549
+    },
+    "gnn": {
+      "mean": 5.98,
+      "count": 15,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.483,
+      "action_mean": 0.51,
+      "source_mean": 0.53
+    },
+    "cascade": {
+      "mean": 6.06,
+      "count": 14,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "depth_mean": 0.372,
+      "action_mean": 0.443,
+      "source_mean": 0.44
+    },
+    "ensemble": {
+      "mean": 6.2,
+      "count": 14,
+      "error_count": 1,
+      "error_rate": 0.067,
+      "depth_mean": 0.423,
+      "action_mean": 0.563,
+      "source_mean": 0.577
+    }
+  },
+  "improvements": [
+    "Cascade: reverted to 4-stage (generate \u2192 extreme_critique \u2192 gap_filling \u2192 final_review)",
+    "Rubric: 20-anchor (same as P11, not P12's 22-anchor)",
+    "GNN: 3 perspectives (from 5) + 3x longer synthesis (6144 vs 2048 tokens)",
+    "Hybrid mode: single \u2192 targeted critique \u2192 arbiter merge",
+    "Fixed: added verification step for claim support",
+    "Circuit breaker + error recovery maintained"
+  ]
+}
