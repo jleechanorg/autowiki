@@ -238,6 +238,30 @@
       "quality_score": 8.9405,
       "mode": "gnn",
       "id": "research_20260420_224421"
+    },
+    {
+      "type": "research_output",
+      "query": "Design a comprehensive investment portfolio strategy for a 35-year-old with moderate risk tolerance, incorporating real estate, equities, fixed income, and alternative assets with specific allocation percentages and rebalancing rules",
+      "timestamp": "2026-04-21T22:10:15.924515",
+      "quality_score": 8.0,
+      "mode": "fixed",
+      "id": "research_20260421_221015"
+    },
+    {
+      "type": "research_output",
+      "query": "Synthesize findings from 10 conflicting academic papers on a complex topic (e.g. Does creatine affect cognitive function? What is the best diet for longevity?) \u2014 identify consensus and genuine disagreements",
+      "timestamp": "2026-04-21T22:51:14.103587",
+      "quality_score": 8.0,
+      "mode": "fixed",
+      "id": "research_20260421_225114"
+    },
+    {
+      "type": "research_output",
+      "query": "Synthesize findings from 10 conflicting academic papers on a complex topic (e.g. Does creatine affect cognitive function? What is the best diet for longevity?) \u2014 identify consensus and genuine disagreements",
+      "timestamp": "2026-04-21T23:09:07.129665",
+      "quality_score": 8.9955,
+      "mode": "gnn",
+      "id": "research_20260421_230907"
     }
   ],
   "edges": [
