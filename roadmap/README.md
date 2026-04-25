@@ -3,7 +3,8 @@
 ## Recent Activity
 
 ### 2026-04-24
-- P13 GNN wins 6.73 (7/15 wins), Fixed 6.16 (6/15), Hybrid fails structurally (5.24, 0/15) — structural design flaw confirmed
+- **P14 COMPLETE — Fixed wins 6.20 (9/15), GNN 5.53 (3/15)** — OPPOSITE of P13
+- P13 GNN wins 6.73 (7/15 wins), Fixed 6.16 (6/15), Hybrid fails structurally (5.24, 0/15)
 - Mode routing deferred: GNN+Fixed 2-mode ensemble only for P14
 - Clean run protocol established (commit source before execution, checksums after)
 - Evidence review PARTIAL — metadata.json + hard_benchmark.log checksum mismatch; no metadata_p13.json
