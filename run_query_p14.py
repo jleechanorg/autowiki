@@ -405,6 +405,7 @@ SCORE: [final overall score 0-10]""".format(query_short=query[:200], output_shor
             match = re.search(r'SCORE:.*?(\d+\.?\d*)', line)
             if match:
                 final_score = float(match.group(1))
+                final_score = min(final_score, 10.0)  # cap invalid scores from judge
 
     if final_score is None:
         if behavior_count <= 2:
