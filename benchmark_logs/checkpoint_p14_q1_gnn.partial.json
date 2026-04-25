@@ -1,0 +1,72 @@
+{
+  "query_num": 1,
+  "complexity": "medium",
+  "domain": "business",
+  "query": "Design a comprehensive investment portfolio strategy for a 35-year-old with moderate risk tolerance, incorporating real estate, equities, fixed income, and alternative assets with specific allocation percentages and rebalancing rules",
+  "modes": {
+    "gnn": {
+      "output": "# Comprehensive Investment Portfolio Strategy for a 35-Year-Old with Moderate Risk Tolerance\n\n## Executive Summary\n\nThis report synthesizes technical, business, and risk-oriented perspectives to deliver a unified investment portfolio strategy for a 35-year-old investor with moderate risk tolerance and a 30+ year investment horizon. Based on the comprehensive analysis across all three perspectives, this strategy recommends a **60% equity / 25% fixed income / 10% real estate / 5% alternatives** allocation, balancing growth potential with volatility dampening.\n\nThe strategy is designed for an investor earning approximately **$85,000 annually** (as specified in the Technical perspective) with a savings rate of **15-20%** ($12,750-$17,000 per year), targeting traditional retirement at age 65-70. All recommendations assume the investor has already established a separate **6-12 month emergency fund** and has access to tax-advantaged accounts (401k, IRA) that should be maximized before taxable accounts.\n\n---\n\n## 1. Investment Parameters and Constraints\n\n### Foundational Parameters\n\n| Parameter | Value | Source |\n|-----------|-------|--------|\n| Investment Horizon | 30+ years (target retirement age 65-70) | All perspectives |\n| Annual Income | $85,000 | Technical |\n| Annual Savings Rate | 15-20% ($12,750-$17,000/year) | Technical |\n| Risk Tolerance | Moderate (5/10 on risk questionnaire) | All perspectives |\n| Acceptable Drawdown | 15-20% without panic-selling | Business |\n| Liquidity Reserve | 6-12 months emergency fund (separate) | Technical |\n\n### Critical Constraints Identified\n\n**Tax-Advantaged Account Priority:** The Technical perspective correctly identifies that **401k, IRA, and other tax-advantaged accounts should be maximized before taxable accounts**. This sequencing is essential for tax efficiency.\n\n**Accreditation Requirements:** The Technical perspective notes that alternative investments (private equity, private credit) typically require **$1M in investable as",
+      "tokens": 2291,
+      "output_length": 16389,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 1,
+        "depth_score": 0.0,
+        "quant_score": 0.0,
+        "source_score": 0.0,
+        "behaviors": [
+          "A"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false,
+          "P": 0.0,
+          "Q": 0.0,
+          "R": 0.0,
+          "S": 0.0,
+          "T": 0.0
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology",
+          "P": "depth_section_completeness",
+          "Q": "depth_cross_referencing",
+          "R": "depth_nuance_recognition",
+          "S": "quantitative_specificity",
+          "T": "source_diversity"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: NO\nBEHAV"
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "query_num": 9,
+  "complexity": "high",
+  "domain": "policy",
+  "query": "Design a multi-cloud architecture for a healthcare startup that must comply with HIPAA, SOC2, and GDPR \u2014 include data residency, encryption, access control, and vendor selection criteria",
+  "modes": {
+    "gnn": {
+      "output": "# Multi-Cloud Architecture for Healthcare Startup: Unified Compliance Report\n\n**Synthesized Report | Addressing HIPAA, SOC2, and GDPR Requirements**\n\n---\n\n## Executive Summary\n\nThis report synthesizes technical, business, and regulatory perspectives to design a multi-cloud architecture for a healthcare startup operating across US and EU jurisdictions in 2024\u20132025. The global health data market is projected to reach **$782 billion by 2030** (15.1% CAGR), yet regulatory penalties have increased 300% since 2019. A multi-cloud architecture is not merely a technical choice\u2014it is a strategic imperative for compliance, resilience, and market access.\n\nThe recommended architecture distributes workloads across **AWS GovCloud** (US PHI primary), **Azure Government** (US failover), and **AWS Frankfurt or Ireland** (EU data residency), unified by a control plane comprising Terraform v1.5.0+, Istio 1.20+, and Open Policy Agent v0.15+. This design addresses the query requirements for data residency, encryption, access control, and vendor selection.\n\n**Compliance Exposure Summary:**\n\n| Regulation | Maximum Penalty | 2024 Enforcement Activity |\n|------------|-----------------|---------------------------|\n| HIPAA | $1.5M per violation category | 51 settlements totaling $28.7M in 2023 |\n| SOC2 Type II | Lost enterprise contracts (40\u201360% pipeline reduction) | Increasingly mandated as contract prerequisite |\n| GDPR | \u20ac20M or 4% global revenue | \u20ac3.5 billion cumulative fines through Q3 2024 |\n\n---\n\n## 1. Architectural Overview\n\n### 1.1 Foundational Multi-Cloud Topology\n\nThe architecture addresses a fundamental tension in healthcare data management: PHI (Protected Health Information) must remain within US jurisdiction under HIPAA, while EU residents' personal data cannot leave European territory under GDPR. This necessitates geographic segmentation alongside workload distribution for resilience.\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                ",
+      "tokens": 2142,
+      "output_length": 15819,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.2,
+        "behavior_count": 5,
+        "depth_score": 0.56,
+        "quant_score": 0.9,
+        "source_score": 0.4,
+        "behaviors": [
+          "A",
+          "D",
+          "E",
+          "M",
+          "O"
+        ],
+        "anchor_scores": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": true,
+          "N": false,
+          "O": true,
+          "P": 0.4,
+          "Q": 0.3,
+          "R": 0.8,
+          "S": 0.9,
+          "T": 0.4
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology",
+          "P": "depth_section_completeness",
+          "Q": "depth_cross_referencing",
+          "R": "depth_nuance_recognition",
+          "S": "quantitative_specificity",
+          "T": "source_diversity"
+        },
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: NO\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nDEPTH_P: 0.4\nDEPTH_Q: 0.3\nDEPTH_R: 0.8\nDEPTH_S: 0.9\nDEPTH_T: 0.4\nBEHAVIOR_COUNT: 5\nDEPTH_AVG: 0.56\nSCORE: 4.2"
+      }
+    }
+  }
+}

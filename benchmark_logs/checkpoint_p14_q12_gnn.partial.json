@@ -1,0 +1,70 @@
+{
+  "query_num": 12,
+  "complexity": "high",
+  "domain": "policy",
+  "query": "Create a comprehensive security audit checklist for a FinTech app handling transactions up to $1M \u2014 cover OWASP, PCI-DSS, fraud detection, and regulatory requirements",
+  "modes": {
+    "gnn": {
+      "output": "# Comprehensive Security Audit Checklist for High-Value FinTech Applications\n\n## Executive Summary & Scope Definition\n\nThis unified report synthesizes technical and business security perspectives to produce a comprehensive audit framework for FinTech applications processing transactions up to **$1,000,000 USD** per single transaction. At this transaction threshold, organizations face mandatory **PCI-DSS Level 1** compliance requirements\u2014triggered by processing volumes exceeding 6 million card transactions annually or when breach potential could result in significant financial fraud. Additionally, this transaction ceiling activates enhanced regulatory scrutiny across multiple jurisdictions, including AML/BSA reporting obligations, state money transmitter licensing requirements, and EU PSD2 compliance for organizations serving European customers.\n\nThe technical perspective emphasizes granular testing methodologies, specific tool requirements (Burp Suite Professional v2023.2+, OWASP ZAP, SQLMap, Ffuf), and precise pass/fail criteria for security controls. The business perspective focuses on compliance mapping, tool cost considerations, and operational implementation frameworks. Where these perspectives diverge in emphasis or approach, this report explicitly acknowledges the divergence and provides rationale for recommended alignment.\n\n**Query Requirements Addressed by This Report:**\n\n| Requirement | Section Reference |\n|-------------|-------------------|\n| OWASP compliance framework | Section 4: OWASP Framework Implementation |\n| PCI-DSS Level 1 requirements | Section 3: Regulatory & Compliance Framework |\n| Fraud detection requirements | Section 5: Fraud Detection Architecture |\n| Regulatory requirements (AML/BSA, state licensing, PSD2) | Section 3: Regulatory & Compliance Framework |\n| Transaction processing up to $1M | Section 2: Scope Definition |\n| Real-time authorization SLAs | Section 5.2: Authorization Performance Requirements |\n\n---\n\n## Section 1: Critical Ris",
+      "tokens": 2479,
+      "output_length": 18585,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "depth_score": 0.0,
+        "quant_score": 0.0,
+        "source_score": 0.0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false,
+          "P": 0.0,
+          "Q": 0.0,
+          "R": 0.0,
+          "S": 0.0,
+          "T": 0.0
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology",
+          "P": "depth_section_completeness",
+          "Q": "depth_cross_referencing",
+          "R": "depth_nuance_recognition",
+          "S": "quantitative_specificity",
+          "T": "source_diversity"
+        },
+        "raw_judge_response": "{'thinking': 'Let me carefully evaluate this research output against the behavioral anchors and depth anchors provided.\\n\\n**BEHAVIORAL ANCHORS (A-O):**\\n\\n[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds\")\\n- Looking for specific allocation percentages or numbers. The output has specific numbers like \"6 million card transactions annually\", \"$1,000,000 USD\", \"300ms SLA\", \">$10,000 per transaction\", \"15 minutes\", \"8 hours\", \"5 attempts per 15 minutes\", \"AES-256\""
+      }
+    }
+  }
+}

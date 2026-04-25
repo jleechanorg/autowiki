@@ -1,0 +1,110 @@
+{
+  "mode": "p14",
+  "results": [
+    {
+      "q": 1,
+      "gnn": 4.0,
+      "fixed": 10.0,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 2,
+      "gnn": 8.8,
+      "fixed": 4.0,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 3,
+      "gnn": 9.6,
+      "fixed": 4.0,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 4,
+      "gnn": 7.2,
+      "fixed": 7.2,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 5,
+      "gnn": 4.0,
+      "fixed": 6.8,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 6,
+      "gnn": 7.0,
+      "fixed": 9.5,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 7,
+      "gnn": 6.8,
+      "fixed": 9.5,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 8,
+      "gnn": 9.5,
+      "fixed": 7.0,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 9,
+      "gnn": 4.2,
+      "fixed": 4.26,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 10,
+      "gnn": 4.0,
+      "fixed": 4.0,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 11,
+      "gnn": 4.0,
+      "fixed": 7.1,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 12,
+      "gnn": 4.0,
+      "fixed": 5.8,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 13,
+      "gnn": 4.0,
+      "fixed": 5.8,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 14,
+      "gnn": 4.0,
+      "fixed": 4.0,
+      "gnn_err": null,
+      "fixed_err": null
+    },
+    {
+      "q": 15,
+      "gnn": 1.8,
+      "fixed": 4.0,
+      "gnn_err": null,
+      "fixed_err": null
+    }
+  ]
+}

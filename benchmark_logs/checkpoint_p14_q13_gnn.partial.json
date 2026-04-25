@@ -1,0 +1,70 @@
+{
+  "query_num": 13,
+  "complexity": "high",
+  "domain": "business",
+  "query": "Develop a pricing strategy for an enterprise AI coding assistant \u2014 include value-based pricing justification, competitor price comparison, and tiered packaging",
+  "modes": {
+    "gnn": {
+      "output": "# Enterprise AI Coding Assistant: Pricing Strategy Report\n\n## Executive Summary\n\nThis report synthesizes three analytical perspectives to develop a comprehensive pricing strategy for an enterprise AI coding assistant. The analysis addresses three core requirements: value-based pricing justification grounded in measurable developer productivity gains, a competitive price comparison of market-leading solutions, and a tiered packaging framework designed to capture value while maintaining market competitiveness. Market projections indicate the enterprise AI coding assistant market will grow from **$2.8 billion in 2023 to $12.4 billion by 2032**, representing a compound annual growth rate (CAGR) of **18.1%**\u2014presenting substantial revenue opportunities for strategically positioned entrants.\n\nThe analysis concludes that viable pricing exists in a range of **$19\u2013$40 per user per month**, depending on tier positioning, with premium features enabling differentiation above the market anchor established by GitHub Copilot at **$19/user/month for Business tier** and **$39/user/month for Enterprise tier**.\n\n---\n\n## 1. Market Context and Opportunity\n\nThe enterprise AI coding assistant market has matured rapidly since GitHub Copilot's June 2022 launch, which established the initial market anchor. Today, multiple players compete across pricing tiers, from budget-conscious options like JetBrains AI Assistant (approximately **$12.90/month standalone**) to premium offerings like Cursor Business at **$40/user/month**. This competitive landscape creates both constraints and opportunities for new entrants.\n\nEnterprise buyers evaluate AI coding assistants through three primary lenses: **developer productivity, code quality, and time-to-market acceleration**. According to U.S. Bureau of Labor Statistics 2023 data, median total compensation for software developers ranges from **$90,000 to $180,000 annually** depending on seniority and geography\u2014a baseline that underpins all value-based prici",
+      "tokens": 1953,
+      "output_length": 15033,
+      "error_type": null,
+      "scores": {
+        "error_flag": false,
+        "is_error": false,
+        "error_type": null,
+        "overall": 4.0,
+        "behavior_count": 0,
+        "depth_score": 0.0,
+        "quant_score": 0.0,
+        "source_score": 0.0,
+        "behaviors": [],
+        "anchor_scores": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": false,
+          "G": false,
+          "H": false,
+          "I": false,
+          "J": false,
+          "K": false,
+          "L": false,
+          "M": false,
+          "N": false,
+          "O": false,
+          "P": 0.0,
+          "Q": 0.0,
+          "R": 0.0,
+          "S": 0.0,
+          "T": 0.0
+        },
+        "anchor_labels": {
+          "A": "specific_allocation_percentages",
+          "B": "primary_source_citations",
+          "C": "contradiction_identification",
+          "D": "concrete_examples",
+          "E": "specific_tools_versions",
+          "F": "uncertainty_acknowledgment",
+          "G": "specific_actions_with_conditions",
+          "H": "synthesizes_3plus_sources",
+          "I": "limitation_boundary_conditions",
+          "J": "working_code_pseudocode_formula",
+          "K": "specific_companies_institutions",
+          "L": "timeline_milestone_dates",
+          "M": "compares_alternatives_quantitative",
+          "N": "risk_threat_probability",
+          "O": "framework_taxonomy_methodology",
+          "P": "depth_section_completeness",
+          "Q": "depth_cross_referencing",
+          "R": "depth_nuance_recognition",
+          "S": "quantitative_specificity",
+          "T": "source_diversity"
+        },
+        "raw_judge_response": "{'thinking': 'Let me carefully evaluate this research output against the behavioral anchors (A-O) and depth anchors (P-T).\\n\\n**BEHAVIORAL ANCHORS (A-O):**\\n\\n[A] Lists specific allocation percentages or numbers (e.g. \"60% equities, 20% bonds\")\\n- The output has percentages like \"55% faster,\" \"30-45%,\" \"25%,\" \"50:1 ROI,\" etc. These are percentages/numbers, but they\\'re about productivity metrics, not allocation percentages. The question seems to be about financial allocation (like asset allocati"
+      }
+    }
+  }
+}
