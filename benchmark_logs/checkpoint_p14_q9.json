@@ -5,28 +5,29 @@
   "query": "Design a multi-cloud architecture for a healthcare startup that must comply with HIPAA, SOC2, and GDPR \u2014 include data residency, encryption, access control, and vendor selection criteria",
   "modes": {
     "gnn": {
-      "output": "# Multi-Cloud Architecture for Healthcare Startups: A Unified Compliance Framework\n\n## Executive Summary\n\nDesigning a multi-cloud architecture for a healthcare startup navigating HIPAA, SOC2, and GDPR compliance demands a strategic balance between operational flexibility, regulatory adherence, and cost optimization. This report synthesizes technical architecture requirements with business strategic considerations to produce a unified design framework for compliant cloud infrastructure deployment.\n\nThe healthcare cloud computing market reached **$37.4 billion in 2023** and is projected to grow to **$89.4 billion by 2028** (CAGR: 19.1%), according to MarketsandMarkets, underscoring both the opportunity and competitive stakes in this space. With healthcare data breaches costing an average of **$10.93 million per incident in 2023** (IBM/Ponemon Cost of a Data Breach Report), compliance architecture serves as both a regulatory requirement and a direct revenue protection mechanism.\n\nThis unified framework addresses the core query requirements: multi-cloud architecture design, HIPAA compliance controls, SOC 2 Trust Services Criteria, GDPR data residency mandates, encryption standards, access control mechanisms, and vendor selection criteria. The architecture employs a tiered deployment model using AWS, Azure, and GCP with functional segmentation to satisfy regulatory requirements while maintaining operational resilience.\n\n---\n\n## 1. Strategic Rationale for Multi-Cloud Architecture\n\n### 1.1 Why Healthcare Startups Require Multi-Cloud Strategies\n\nHealthcare organizations typically deploy multi-cloud architectures for three primary strategic reasons, as identified in the technical perspective:\n\n1. **Vendor Negotiation Leverage**: AWS reserved instances alone can represent **$2-4M annually at scale**, creating significant cost exposure with single-vendor dependency\n2. **Regulatory Data Residency**: GDPR Articles 44-49 require data to remain within EU jurisdiction; specific com",
-      "tokens": 2133,
-      "output_length": 16103,
+      "output": "# Multi-Cloud Architecture for Healthcare Startup: Unified Compliance Report\n\n**Synthesized Report | Addressing HIPAA, SOC2, and GDPR Requirements**\n\n---\n\n## Executive Summary\n\nThis report synthesizes technical, business, and regulatory perspectives to design a multi-cloud architecture for a healthcare startup operating across US and EU jurisdictions in 2024\u20132025. The global health data market is projected to reach **$782 billion by 2030** (15.1% CAGR), yet regulatory penalties have increased 300% since 2019. A multi-cloud architecture is not merely a technical choice\u2014it is a strategic imperative for compliance, resilience, and market access.\n\nThe recommended architecture distributes workloads across **AWS GovCloud** (US PHI primary), **Azure Government** (US failover), and **AWS Frankfurt or Ireland** (EU data residency), unified by a control plane comprising Terraform v1.5.0+, Istio 1.20+, and Open Policy Agent v0.15+. This design addresses the query requirements for data residency, encryption, access control, and vendor selection.\n\n**Compliance Exposure Summary:**\n\n| Regulation | Maximum Penalty | 2024 Enforcement Activity |\n|------------|-----------------|---------------------------|\n| HIPAA | $1.5M per violation category | 51 settlements totaling $28.7M in 2023 |\n| SOC2 Type II | Lost enterprise contracts (40\u201360% pipeline reduction) | Increasingly mandated as contract prerequisite |\n| GDPR | \u20ac20M or 4% global revenue | \u20ac3.5 billion cumulative fines through Q3 2024 |\n\n---\n\n## 1. Architectural Overview\n\n### 1.1 Foundational Multi-Cloud Topology\n\nThe architecture addresses a fundamental tension in healthcare data management: PHI (Protected Health Information) must remain within US jurisdiction under HIPAA, while EU residents' personal data cannot leave European territory under GDPR. This necessitates geographic segmentation alongside workload distribution for resilience.\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                ",
+      "tokens": 2142,
+      "output_length": 15819,
       "error_type": null,
       "scores": {
         "error_flag": false,
         "is_error": false,
         "error_type": null,
-        "overall": 5.5,
-        "behavior_count": 4,
-        "depth_score": 0.0,
-        "quant_score": 0.0,
-        "source_score": 0.0,
+        "overall": 4.2,
+        "behavior_count": 5,
+        "depth_score": 0.56,
+        "quant_score": 0.9,
+        "source_score": 0.4,
         "behaviors": [
           "A",
-          "B",
           "D",
-          "E"
+          "E",
+          "M",
+          "O"
         ],
         "anchor_scores": {
           "A": true,
-          "B": true,
+          "B": false,
           "C": false,
           "D": true,
           "E": true,
@@ -37,14 +38,14 @@
           "J": false,
           "K": false,
           "L": false,
-          "M": false,
+          "M": true,
           "N": false,
-          "O": false,
-          "P": 0.0,
-          "Q": 0.0,
-          "R": 0.0,
-          "S": 0.0,
-          "T": 0.0
+          "O": true,
+          "P": 0.4,
+          "Q": 0.3,
+          "R": 0.8,
+          "S": 0.9,
+          "T": 0.4
         },
         "anchor_labels": {
           "A": "specific_allocation_percentages",
@@ -68,24 +69,26 @@
           "S": "quantitative_specificity",
           "T": "source_diversity"
         },
-        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: YES\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBE"
+        "raw_judge_response": "BEHAVIOR_A: YES\nBEHAVIOR_B: NO\nBEHAVIOR_C: NO\nBEHAVIOR_D: YES\nBEHAVIOR_E: YES\nBEHAVIOR_F: NO\nBEHAVIOR_G: NO\nBEHAVIOR_H: NO\nBEHAVIOR_I: NO\nBEHAVIOR_J: NO\nBEHAVIOR_K: NO\nBEHAVIOR_L: NO\nBEHAVIOR_M: YES\nBEHAVIOR_N: NO\nBEHAVIOR_O: YES\nDEPTH_P: 0.4\nDEPTH_Q: 0.3\nDEPTH_R: 0.8\nDEPTH_S: 0.9\nDEPTH_T: 0.4\nBEHAVIOR_COUNT: 5\nDEPTH_AVG: 0.56\nSCORE: 4.2"
       }
     },
     "fixed": {
-      "output": "# Multi-Cloud Architecture for Healthcare Startup\n## HIPAA, SOC2, and GDPR Compliant Design\n\n---\n\n# Table of Contents\n\n1. [Executive Summary](#1-executive-summary)\n2. [Regulatory Compliance Framework](#2-regulatory-compliance-framework)\n3. [Architectural Overview](#3-architectural-overview)\n4. [Multi-Cloud Strategy](#4-multi-cloud-strategy)\n5. [Data Residency & Sovereignty](#5-data-residency--sovereignty)\n6. [Encryption Strategy](#6-encryption-strategy)\n7. [Identity & Access Management](#7-identity--access-management)\n8. [Network Security Architecture](#8-network-security-architecture)\n9. [Data Layer Design](#9-data-layer-design)\n10. [Vendor Selection Criteria](#10-vendor-selection-criteria)\n11. [Implementation Roadmap](#11-implementation-roadmap)\n12. [Cost Considerations](#12-cost-considerations)\n13. [Monitoring & Compliance Auditing](#13-monitoring--compliance-auditing)\n14. [Risk Assessment](#14-risk-assessment)\n\n---\n\n# 1. Executive Summary\n\n## Strategic Objectives\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    ARCHITECTURE PRINCIPLES                         \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                                     \u2502\n\u2502  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510 \u2502\n\u2502  \u2502  Security   \u2502  \u2502   Privacy   \u2502  \u2502  Resiliency \u2502  \u2502 Compliance\u2502 \u2502\n\u2502  \u2502   First     \u2502  \u2502 By Design   \u2502  \u2502  & Scale    \u2502  \u2502   Ready   \u2502 \u2502\n\u2502  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518 \u2502\n\u2502                                                                     \u2502\n\u2502  Multi-Cloud Strategy: AWS + Azure + GCP for Workload Distribution\u2502\n\u2502  Primary Regions: us-east-1, westeurope, us-west-2                 \u2502\n\u2502  Target: 99.99% Availability with HIPAA BAA Coverage               \u2502\n\u2502                                                                     \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n```\n\n## Availabili",
-      "tokens": 958,
-      "output_length": 8819,
+      "output": "# Multi-Cloud Architecture Design for HIPAA, SOC2, and GDPR Compliant Healthcare Startup\n\n## Executive Summary\n\nThis architecture establishes a secure, compliant multi-cloud infrastructure designed for a healthcare startup operating in EU and US markets. The design balances security requirements with operational efficiency, leveraging complementary strengths across cloud providers while maintaining strict data sovereignty and compliance controls.\n\n**Key Design Principles:**\n\n- Zero Trust security model throughout all layers\n- Privacy by Design and Security by Design as foundational tenets\n- Defense in depth with layered security controls\n- Automated compliance monitoring and audit trails\n- Vendor agnosticism with strategic provider selection\n\n**Compliance Posture:**\n\n| Metric | Target |\n|--------|--------|\n| Recovery Time Objective (RTO) | \u2264 4 hours for critical systems; \u2264 24 hours for non-critical |\n| Recovery Point Objective (RPO) | \u2264 1 hour for PHI systems; \u2264 4 hours for operational systems |\n| Encryption Standard | AES-256-GCM at rest; TLS 1.3 in transit |\n| Audit Log Retention | 7 years (satisfies all frameworks) |\n| Data Residency | EU-West (Frankfurt), EU-North (Dublin), US-East (Virginia), US-West (Oregon) |\n\n---\n\n## Part I: Compliance Framework Architecture\n\n### 1.1 Regulatory Requirement Mapping\n\n| Compliance Domain | HIPAA Requirements | SOC2 Trust Principles | GDPR Articles | Architectural Implementation |\n|-------------------|-------------------|----------------------|---------------|------------------------------|\n| **Confidentiality** | 45 CFR \u00a7164.312(a)(1) | CC6.1, CC6.6 | Articles 5, 25, 32 | AES-256-GCM encryption at rest; TLS 1.3 in transit; RBAC with principle of least privilege |\n| **Integrity** | 45 CFR \u00a7164.312(c)(1) | CC6.7, CC7.2 | Articles 5, 32 | HMAC-SHA256 checksums; immutability via WORM storage; cryptographic audit trails |\n| **Availability** | 45 CFR \u00a7164.312(a)(2)(ii) | CC9.1, CC9.2 | Article 32 | Active-active multi-region deployme",
+      "tokens": 1076,
+      "output_length": 8448,
       "error_type": null,
       "scores": {
         "error_flag": false,
         "is_error": false,
         "error_type": null,
-        "overall": 99.99,
-        "behavior_count": 0,
-        "depth_score": 0.0,
-        "quant_score": 0.0,
+        "overall": 4.26,
+        "behavior_count": 1,
+        "depth_score": 0.52,
+        "quant_score": 0.9,
         "source_score": 0.0,
-        "behaviors": [],
+        "behaviors": [
+          "O"
+        ],
         "anchor_scores": {
           "A": false,
           "B": false,
@@ -101,11 +104,11 @@
           "L": false,
           "M": false,
           "N": false,
-          "O": false,
-          "P": 0.0,
-          "Q": 0.0,
-          "R": 0.0,
-          "S": 0.0,
+          "O": true,
+          "P": 0.9,
+          "Q": 0.2,
+          "R": 0.6,
+          "S": 0.9,
           "T": 0.0
         },
         "anchor_labels": {
@@ -130,7 +133,7 @@
           "S": "quantitative_specificity",
           "T": "source_diversity"
         },
-        "raw_judge_response": "{'thinking': 'Let me analyze this research output against the behavioral anchors (A-O) and depth anchors (P-T).\\n\\n**BEHAVIORAL ANCHORS (A-O):**\\n\\n[A] Lists specific allocation percentages or numbers - The output does provide specific numbers like \"99.99% availability\", \"99.9% SLA\", RTO of 4 hours, RPO of 15 minutes, specific regions like \"us-east-1, westeurope, us-west-2\", \"52.6 minutes/year\" downtime tolerance. These are specific numbers but not allocation percentages like \"60% equities.\" The"
+        "raw_judge_response": "Let me carefully analyze this research output against the behavioral anchors and depth anchors.\n\n**BEHAVIORAL INDICATORS (A-O):**\n\n[A] Lists specific allocation percentages or numbers - I need to look for specific numbers. I see \"\u2264 4 hours for critical systems; \u2264 24 hours for non-critical\", \"\u2264 1 hour for PHI systems; \u2264 4 hours for operational systems\", \"AES-256-GCM\", \"TLS 1.3\", \"7 years\", specific regions like \"EU-West (Frankfurt), EU-North (Dublin), US-East (Virginia), US-West (Oregon)\", \"45 CF"
       }
     }
   }
