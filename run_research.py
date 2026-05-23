@@ -10,7 +10,7 @@ import json
 from datetime import datetime
 
 # Set up environment for MiniMax
-os.environ["MINIMAX_API_KEY"] = "sk-cp-Rg64VbM5FkwJrZkiTYazH3PXihEFIaY4ohU5r-zg-aAyPN60puG0IaWTQ9AJXdbGpzTlqcozbsIEhpquqkg3GA9qTeN-C_SXTJsOSYWQhPuFhIPPuULgs1I"
+os.environ["MINIMAX_API_KEY"] = "__REDACTED_API_KEY__"
 os.environ["MINIMAX_BASE_URL"] = "https://api.minimax.io/anthropic"
 
 # Add chimera to path
