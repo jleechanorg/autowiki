@@ -16,7 +16,6 @@ except ImportError:
     # Provide mock implementations when torch unavailable
     class MockTorch:
         no_grad = contextlib.nullcontext
-        Tensor = type('Tensor', (), {})
         @staticmethod
         def randn(*args, **kwargs):
             random.seed(42)
@@ -153,7 +152,7 @@ class GNNTopologyGenerator:
             "num_edges": len(G.edges),
             "sparsity": round(sparsity, 3),
             "estimated_tokens": estimated_tokens,
-            "node_importance": {i: round(float(node_scores[i].item()) if hasattr(node_scores[i], 'item') else float(node_scores[i]), 3) for i in range(len(selected_nodes))},
+            "node_importance": {i: round(float(node_scores[i]) if isinstance(node_scores, list) else float(node_scores[i]), 3) for i in range(len(selected_nodes))},
             "task_embedding": [0.1] * 8  # mock embedding
         }
 
