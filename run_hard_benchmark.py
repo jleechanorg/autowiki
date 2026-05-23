@@ -13,18 +13,17 @@ import time
 from datetime import datetime
 from typing import Dict, Any, List, Tuple
 
-# Set up environment for MiniMax — use env vars, do not hardcode credentials
-os.environ.setdefault("MINIMAX_API_KEY", os.environ.get("MINIMAX_API_KEY", ""))
-os.environ.setdefault("MINIMAX_BASE_URL", "https://api.minimax.io/anthropic")
+# Set up environment for MiniMax
+os.environ["MINIMAX_API_KEY"] = "__REDACTED_API_KEY__"
+os.environ["MINIMAX_BASE_URL"] = "https://api.minimax.io/anthropic"
 
-# Add chimera package to path (relative to this file's location)
-sys.path.insert(0, str(__file__).rsplit("/", 1)[0])
+sys.path.insert(0, "/Users/jleechan/Downloads/chimera")
 
 from chimera.orchestrator import SwarmOrchestrator
 from chimera.utils import load_llm_client
 import httpx
 
-LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_logs")
+LOG_DIR = "/Users/jleechan/Downloads/chimera/benchmark_logs"
 os.makedirs(LOG_DIR, exist_ok=True)
 LOG_FILE = f"{LOG_DIR}/hard_benchmark.log"
 
@@ -62,48 +61,38 @@ BASE_URL = os.environ["MINIMAX_BASE_URL"]
 MODEL = "minimax-m2.7"
 
 
-def call_minimax(messages: list, system: str = "", max_tokens: int = 4096, timeout: int = 180, max_retries: int = 3) -> str:
-    """Call MiniMax /v1/messages endpoint with exponential backoff retry."""
-    base_delay = 1.0
-    max_delay = 30.0
-    for attempt in range(max_retries):
-        headers = {
-            "Authorization": f"Bearer {API_KEY}",
-            "Content-Type": "application/json",
-            "anthropic-version": "2023-06-01",
-        }
-        body = {
-            "model": MODEL,
-            "messages": messages,
-            "max_tokens": max_tokens,
-        }
-        if system:
-            body["system"] = system
-        try:
-            resp = httpx.post(
-                f"{BASE_URL}/v1/messages",
-                headers=headers,
-                json=body,
-                timeout=timeout,
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            content = data.get("content", [])
-            if isinstance(content, list):
-                for block in content:
-                    if block.get("type") == "text":
-                        return block["text"]
-                return str(content[0]) if content else ""
-            return str(content)
-        except Exception as e:
-            if attempt < max_retries - 1:
-                delay = min(base_delay * (2 ** attempt), max_delay)
-                ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                log(f"[RETRY] attempt {attempt + 1}/{max_retries} failed: {e} — waiting {delay:.1f}s")
-                time.sleep(delay)
-            else:
-                return f"[API Error] {str(e)}"
-    return "[API Error] Max retries exceeded"
+def call_minimax(messages: list, system: str = "", max_tokens: int = 4096, timeout: int = 120) -> str:
+    """Call MiniMax /v1/messages endpoint directly."""
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json",
+        "anthropic-version": "2023-06-01",
+    }
+    body = {
+        "model": MODEL,
+        "messages": messages,
+        "max_tokens": max_tokens,
+    }
+    if system:
+        body["system"] = system
+    try:
+        resp = httpx.post(
+            f"{BASE_URL}/v1/messages",
+            headers=headers,
+            json=body,
+            timeout=timeout,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        content = data.get("content", [])
+        if isinstance(content, list):
+            for block in content:
+                if block.get("type") == "text":
+                    return block["text"]
+            return str(content[0]) if content else ""
+        return str(content)
+    except Exception as e:
+        return f"[API Error] {str(e)}"
 
 
 def run_single_mode(query: str) -> Tuple[str, int]:
@@ -305,28 +294,22 @@ OUTPUT A:
 OUTPUT B:
 {output_b[:3000]}
 
-SCORING DIMENSIONS (100 pts total):
-1. Accuracy & Uncertainty (15pts): Accurate + explicitly flags thin evidence, identifies source contradictions
-2. Coverage Breadth & Depth (20pts): All subtopics + edge cases + counterarguments + open questions
-3. Insight & Originality (25pts) [HEAVIEST]: Non-obvious relationships synthesized across sources
-4. Evidence Chain Quality (15pts): Primary sourcing + explicit evidence→inference→conclusion chain
-5. Actionability (15pts): Specific with owner + conditions + verification criteria
-6. Structure & Readability (10pts): Executive summary + value-add tables + clear hierarchy
+Compare on these dimensions (score A and B separately 1-10):
+1. Factual Accuracy (are claims supported?)
+2. Comprehensiveness (coverage of the topic?)
+3. Clarity (well-structured and readable?)
+4. Usefulness (actionable insights?)
+5. Specificity (concrete numbers, examples?)
 
-CRITICAL: 5 = BASELINE FLOOR (meets minimum). 8 = EXCEPTIONAL (does something NON-OBVIOUS).
-If an output only meets the baseline, it scores 5 — NOT higher.
-If both outputs are within 0.5 overall, declare a TIE and explain why.
+For each dimension, declare a winner (A or B or TIE).
+End with an overall winner declaration.
 
 Format your response exactly as:
 DIMENSION_SCORES:
-Accuracy: A=[score] B=[score] Winner:[A/B/TIE]
-Coverage: A=[score] B=[score] Winner:[A/B/TIE]
-Insight: A=[score] B=[score] Winner:[A/B/TIE]
-Evidence: A=[score] B=[score] Winner:[A/B/TIE]
-Actionability: A=[score] B=[score] Winner:[A/B/TIE]
-Structure: A=[score] B=[score] Winner:[A/B/TIE]
-OVERALL: A=(total)/10 vs B=(total)/10 — Winner: [A/B/TIE]
-RATIONALE: (specific behavioral reasons for the decision)"""
+A: [score] / B: [score] / Winner: [A/B/TIE]
+... (repeat for each dimension)
+OVERALL: Winner: [A/B/TIE] with scores A=[X]/10 vs B=[Y]/10
+RATIONALE: [2-3 sentences explaining the decision]"""
 
     system = """You are a world-class research evaluator. Be honest and critical.
 Give higher scores only for genuinely superior outputs. Don't default to high scores."""
@@ -339,30 +322,21 @@ Give higher scores only for genuinely superior outputs. Don't default to high sc
 
 
 def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, Any]:
-    """Parse pairwise comparison result with robust regex patterns.
-    Updated to 6-dimension rubric: accuracy, coverage, insight, evidence, actionability, structure."""
+    """Parse pairwise comparison result."""
     result = {
-        "scores_a": {"accuracy": 5.0, "coverage": 5.0, "insight": 5.0, "evidence": 5.0, "actionability": 5.0, "structure": 5.0},
-        "scores_b": {"accuracy": 5.0, "coverage": 5.0, "insight": 5.0, "evidence": 5.0, "actionability": 5.0, "structure": 5.0},
-        "winners": {"accuracy": "TIE", "coverage": "TIE", "insight": "TIE", "evidence": "TIE", "actionability": "TIE", "structure": "TIE", "overall": "TIE"},
+        "scores_a": {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0},
+        "scores_b": {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0},
+        "winners": {"factual": "TIE", "comprehensive": "TIE", "clarity": "TIE", "useful": "TIE", "specific": "TIE", "overall": "TIE"},
         "overall_score_a": 5.0,
         "overall_score_b": 5.0,
         "rationale": "",
     }
 
-    # Extract overall scores - handle multiple formats and scales (/10 or /50):
-    # "A=5/10 vs B=6/10", "A=N/A/10 vs B=8.4/10", "A=(total)/10 vs B=(total)/10"
-    overall_match = re.search(r'A=\(?(\d+(?:\.\d+)?)\)?/(?:10|50)\s*vs\.?\s*B=\(?(\d+(?:\.\d+)?)\)?/(?:10|50)', raw, re.IGNORECASE | re.DOTALL)
+    # Extract overall scores
+    overall_match = re.search(r'OVERALL:.*?A=\[?(\d+(?:\.\d+)?)\]?/10.*?B=\[?(\d+(?:\.\d+)?)\]?/10', raw, re.IGNORECASE | re.DOTALL)
     if overall_match:
         result["overall_score_a"] = float(overall_match.group(1))
         result["overall_score_b"] = float(overall_match.group(2))
-
-    # Extract overall winner from OVERALL: or Winner: line
-    overall_winner_match = re.search(r'OVERALL:.*?Winner:\s*([ABTIE]+)', raw, re.IGNORECASE | re.DOTALL)
-    if not overall_winner_match:
-        overall_winner_match = re.search(r'Winner:\s*([ABTIE]+)', raw, re.IGNORECASE | re.DOTALL)
-    if overall_winner_match:
-        result["winners"]["overall"] = overall_winner_match.group(1).upper()
 
     # Extract rationale
     rat_match = re.search(r'RATIONALE:\s*(.+)', raw, re.IGNORECASE | re.DOTALL)
@@ -370,11 +344,11 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
         result["rationale"] = rat_match.group(1).strip()[:300]
 
     # Extract individual dimension winners
-    # Pattern: "Accuracy: A=[score] B=[score] Winner:[A/B/TIE]"
-    dim_names = ["accuracy", "coverage", "insight", "evidence", "actionability", "structure"]
+    dim_names = ["factual", "comprehensive", "clarity", "useful", "specific"]
     for dim in dim_names:
-        dim_pattern = rf'{dim}.*?A=\(?(\d+(?:\.\d+)?)\)?.*?B=\(?(\d+(?:\.\d+)?)\)?.*?Winner:\s*([ABTIE]+)'
-        match = re.search(dim_pattern, raw, re.IGNORECASE)
+        # Find pattern like "Factual: A: 7 / B: 6 / Winner: A"
+        pattern = rf'{dim}.*?A:\s*(\d+).*?B:\s*(\d+).*?Winner:\s*([ABTIE])'
+        match = re.search(pattern, raw, re.IGNORECASE)
         if match:
             result["scores_a"][dim] = float(match.group(1))
             result["scores_b"][dim] = float(match.group(2))
@@ -383,59 +357,8 @@ def _parse_pairwise_result(raw: str, label_a: str, label_b: str) -> Dict[str, An
     return result
 
 
-def _is_error_output(output: str) -> tuple[bool, str]:
-    """Check if output is an API/system error, not a valid response.
-    Returns (is_error, error_type).
-
-    Conservative detection: Only flag as error if the indicator appears
-    near the start of output (first 500 chars) to avoid false positives
-    from terms like 'timeout' in valid content or '500' in numbers.
-    """
-    # Only search first 500 chars to avoid false positives from
-    # legitimate content that discusses errors/timeouts/numbers
-    search_region = output[:500]
-
-    error_patterns = [
-        (r'\[API Error\]', 'api_error'),
-        (r'\btimeout\b', 'timeout'),
-        (r'\b529\b', 'service_unavailable'),
-        (r'\brate limit\b', 'rate_limit'),
-        (r'\bconnection error\b', 'connection_error'),
-        (r'\bupstream error\b', 'upstream_error'),
-        (r'\bservice unavailable\b', 'service_unavailable'),
-        (r'\btoo many requests\b', 'rate_limit'),
-        (r'\b429\b', 'rate_limit'),
-        (r'\binternal server error\b', 'server_error'),
-        (r'\b500\b', 'server_error'),
-        (r'\b502\b', 'server_error'),
-        (r'\b503\b', 'server_error'),
-        (r'\b504\b', 'server_error'),
-        (r'\[Error\]', 'error'),
-    ]
-    for pattern, error_type in error_patterns:
-        if re.search(pattern, search_region, re.IGNORECASE):
-            return True, error_type
-    return False, ""
-
-
 def score_single_output(output: str, query: str) -> Dict[str, float]:
-    """Score a single output on absolute scale (1-10 per dimension).
-    Updated to 6-dimension rubric (100 pts)."""
-    # Check for error outputs BEFORE calling LLM
-    is_error, error_type = _is_error_output(output)
-    if is_error:
-        return {
-            "error_flag": True,
-            "error_type": error_type,
-            "overall": 0.0,
-            "accuracy": 0.0,
-            "coverage": 0.0,
-            "insight": 0.0,
-            "evidence": 0.0,
-            "actionability": 0.0,
-            "structure": 0.0,
-        }
-
+    """Score a single output on absolute scale (1-10 per dimension)."""
     prompt = f"""Score this research output honestly on a 1-10 scale.
 
 QUERY: {query[:200]}
@@ -443,41 +366,34 @@ QUERY: {query[:200]}
 OUTPUT:
 {output[:3500]}
 
-SCORING SCALE (100 pts total):
-1. Accuracy & Uncertainty (15pts): 5=All accurate no fabricated citations. 8=Accurate + explicitly flags thin evidence, identifies source contradictions.
-2. Coverage Breadth & Depth (20pts): 5=Covers all subtopics surface level. 8=All subtopics + edge cases + counterarguments + open questions.
-3. Insight & Originality (25pts) [HEAVIEST]: 5=Logical connections appropriate conclusions. 8=Non-obvious relationships synthesized across sources.
-4. Evidence Chain Quality (15pts): 5=Cites sources supports claims. 8=Primary sourcing + explicit evidence→inference→conclusion chain.
-5. Actionability (15pts): 5=Vague recommendations. 8=Specific with owner + conditions + verification criteria.
-6. Structure & Readability (10pts): 5=Clear baseline section headers. 8=Executive summary + value-add tables + clear hierarchy.
-
-CRITICAL: 5 = BASELINE FLOOR (meets minimum). 8 = EXCEPTIONAL (does something NON-OBVIOUS).
-If output only meets the baseline, it scores 5 — NOT higher.
+Score each dimension (BE HONEST - don't default to high scores):
+- Factual Accuracy (1-10): Are claims specific and supported?
+- Comprehensiveness (1-10): Is coverage thorough?
+- Clarity (1-10): Is it well-organized?
+- Usefulness (1-10): Are there actionable insights?
+- Specificity (1-10): Are there concrete numbers and examples?
 
 Respond with EXACTLY this format (one number per line):
-ACCURACY: [score]
-COVERAGE: [score]
-INSIGHT: [score]
-EVIDENCE: [score]
-ACTIONABILITY: [score]
-STRUCTURE: [score]"""
+FACTUAL: [score]
+COMPREHENSIVE: [score]
+CLARITY: [score]
+USEFUL: [score]
+SPECIFIC: [score]"""
 
-    system = """You are a strict evaluator. A 5/10 is baseline FLOOR (meets minimum).
-Only give 8+ for outputs that do something NON-OBVIOUS.
+    system = """You are a strict evaluator. A 5/10 is average. Only give 9-10 for truly exceptional work.
 Be critical and specific about what held the score back."""
 
-    result = call_minimax([{"role": "user", "content": prompt}], system=system, max_tokens=512, timeout=180)
+    result = call_minimax([{"role": "user", "content": prompt}], system=system, max_tokens=512, timeout=120)
 
-    # Parse scores — default to 5.0 (baseline floor) if parse fails
-    scores = {"accuracy": 5.0, "coverage": 5.0, "insight": 5.0, "evidence": 5.0, "actionability": 5.0, "structure": 5.0, "overall": 5.0}
+    # Parse scores
+    scores = {"factual": 5.0, "comprehensive": 5.0, "clarity": 5.0, "useful": 5.0, "specific": 5.0, "overall": 5.0}
 
     patterns = {
-        "accuracy": r"ACCURACY:\s*(\d+(?:\.\d+)?)",
-        "coverage": r"COVERAGE:\s*(\d+(?:\.\d+)?)",
-        "insight": r"INSIGHT:\s*(\d+(?:\.\d+)?)",
-        "evidence": r"EVIDENCE:\s*(\d+(?:\.\d+)?)",
-        "actionability": r"ACTIONABILITY:\s*(\d+(?:\.\d+)?)",
-        "structure": r"STRUCTURE:\s*(\d+(?:\.\d+)?)",
+        "factual": r"FACTUAL:\s*(\d+(?:\.\d+)?)",
+        "comprehensive": r"COMPREHENSIVE:\s*(\d+(?:\.\d+)?)",
+        "clarity": r"CLARITY:\s*(\d+(?:\.\d+)?)",
+        "useful": r"USEFUL:\s*(\d+(?:\.\d+)?)",
+        "specific": r"SPECIFIC:\s*(\d+(?:\.\d+)?)",
     }
 
     for dim, pat in patterns.items():
@@ -485,10 +401,9 @@ Be critical and specific about what held the score back."""
         if match:
             scores[dim] = min(10.0, max(1.0, float(match.group(1))))
 
-    # Overall = average of dimension scores (0-10 scale), not weighted
-    dimension_scores = [scores["accuracy"], scores["coverage"], scores["insight"],
-                        scores["evidence"], scores["actionability"], scores["structure"]]
-    scores["overall"] = round(sum(dimension_scores) / len(dimension_scores), 2)
+    # Weighted overall
+    weights = {"factual": 0.30, "comprehensive": 0.25, "clarity": 0.20, "useful": 0.15, "specific": 0.10}
+    scores["overall"] = sum(scores[d] * weights[d] for d in weights)
 
     return scores
 
@@ -631,8 +546,6 @@ def generate_report(results: List[Dict], total_time: float) -> str:
     # Build comparison table
     table_rows = []
     spreads = []
-    error_counts = {"single": 0, "fixed": 0, "gnn": 0}
-    error_queries = {"single": [], "fixed": [], "gnn": []}
 
     for qr in results:
         qi = qr["query_num"]
@@ -640,52 +553,17 @@ def generate_report(results: List[Dict], total_time: float) -> str:
 
         row = f"| Q{qi} | {query_short}"
 
-        single_scores = qr["modes"].get("single", {}).get("scores", {})
-        fixed_scores = qr["modes"].get("fixed", {}).get("scores", {})
-        gnn_scores = qr["modes"].get("gnn", {}).get("scores", {})
+        single_score = qr["modes"].get("single", {}).get("scores", {}).get("overall", 0)
+        fixed_score = qr["modes"].get("fixed", {}).get("scores", {}).get("overall", 0)
+        gnn_score = qr["modes"].get("gnn", {}).get("scores", {}).get("overall", 0)
 
-        single_score = single_scores.get("overall", 0) if single_scores else 0
-        fixed_score = fixed_scores.get("overall", 0) if fixed_scores else 0
-        gnn_score = gnn_scores.get("overall", 0) if gnn_scores else 0
+        row += f" | {single_score:.1f} | {fixed_score:.1f} | {gnn_score:.1f}"
 
-        single_error = single_scores.get("error_flag", False) if single_scores else False
-        fixed_error = fixed_scores.get("error_flag", False) if fixed_scores else False
-        gnn_error = gnn_scores.get("error_flag", False) if gnn_scores else False
-
-        # Track errors
-        if single_error:
-            error_counts["single"] += 1
-            error_queries["single"].append(qi)
-        if fixed_error:
-            error_counts["fixed"] += 1
-            error_queries["fixed"].append(qi)
-        if gnn_error:
-            error_counts["gnn"] += 1
-            error_queries["gnn"].append(qi)
-
-        # Show ERROR for failed modes, score for valid
-        single_str = "ERROR" if single_error else f"{single_score:.1f}"
-        fixed_str = "ERROR" if fixed_error else f"{fixed_score:.1f}"
-        gnn_str = "ERROR" if gnn_error else f"{gnn_score:.1f}"
-        row += f" | {single_str} | {fixed_str} | {gnn_str}"
-
-        # Determine winner (only among non-error scores)
-        scores = {}
-        if not single_error:
-            scores["single"] = single_score
-        if not fixed_error:
-            scores["fixed"] = fixed_score
-        if not gnn_error:
-            scores["gnn"] = gnn_score
-
-        if scores:
-            max_score = max(scores.values())
-            winners = [k for k, v in scores.items() if v == max_score]
-            winner_str = "/".join(winners).upper()
-        else:
-            winner_str = "N/A"
-            max_score = 0
-
+        # Determine winner
+        scores = {"single": single_score, "fixed": fixed_score, "gnn": gnn_score}
+        max_score = max(scores.values())
+        winners = [k for k, v in scores.items() if v == max_score]
+        winner_str = "/".join(winners).upper()
         row += f" | {winner_str}"
 
         spread = max_score - min(s for s in scores.values() if s > 0)
@@ -694,33 +572,25 @@ def generate_report(results: List[Dict], total_time: float) -> str:
 
         table_rows.append(row)
 
-    # Calculate mode averages (exclude error outputs)
+    # Calculate mode averages
     mode_stats = {"single": [], "fixed": [], "gnn": []}
     win_counts = {"single": 0, "fixed": 0, "gnn": 0, "tie": 0}
 
     for qr in results:
         for mode in ["single", "fixed", "gnn"]:
-            scores_data = qr["modes"].get(mode, {}).get("scores", {})
-            # Exclude error outputs from averages
-            if scores_data and not scores_data.get("error_flag", False):
-                score = scores_data.get("overall", 0)
-                if score > 0:
-                    mode_stats[mode].append(score)
+            score = qr["modes"].get(mode, {}).get("scores", {}).get("overall", 0)
+            if score > 0:
+                mode_stats[mode].append(score)
 
-        # Count wins (exclude error outputs)
-        scores = {}
-        for m in ["single", "fixed", "gnn"]:
-            scores_data = qr["modes"].get(m, {}).get("scores", {})
-            if scores_data and not scores_data.get("error_flag", False):
-                scores[m] = scores_data.get("overall", 0)
-        if scores:
-            max_score = max(scores.values())
-            if max_score > 0:
-                winners = [k for k, v in scores.items() if v == max_score]
-                if len(winners) == 1:
-                    win_counts[winners[0]] += 1
-                else:
-                    win_counts["tie"] += 1
+        # Count wins
+        scores = {m: qr["modes"].get(m, {}).get("scores", {}).get("overall", 0) for m in ["single", "fixed", "gnn"]}
+        max_score = max(scores.values())
+        if max_score > 0:
+            winners = [k for k, v in scores.items() if v == max_score]
+            if len(winners) == 1:
+                win_counts[winners[0]] += 1
+            else:
+                win_counts["tie"] += 1
 
     avg_row = "| AVG | |"
     for mode in ["single", "fixed", "gnn"]:
@@ -769,18 +639,6 @@ Queries with spread > 1.0: {sum(1 for s in spreads if s > 1.0)} / {len(spreads)}
 
 ---
 
-## Error Analysis
-
-| Mode | Errors | Error Rate | Queries Affected |
-|------|--------|------------|------------------|
-| Single | {error_counts["single"]} | {error_counts["single"]/len(results)*100:.0f}% | {", ".join(f"Q{q}" for q in error_queries["single"]) or "none"} |
-| Fixed | {error_counts["fixed"]} | {error_counts["fixed"]/len(results)*100:.0f}% | {", ".join(f"Q{q}" for q in error_queries["fixed"]) or "none"} |
-| GNN | {error_counts["gnn"]} | {error_counts["gnn"]/len(results)*100:.0f}% | {", ".join(f"Q{q}" for q in error_queries["gnn"]) or "none"} |
-
-Note: Error-state outputs score 0.0 and are excluded from mode averages and win counts.
-
----
-
 ## Detailed Results
 
 """
@@ -794,12 +652,9 @@ Note: Error-state outputs score 0.0 and are excluded from mode averages and win 
             mode_data = qr["modes"].get(mode, {})
             if "scores" in mode_data:
                 s = mode_data["scores"]
-                if s.get("error_flag", False):
-                    report += f"- **{mode.upper()}**: ERROR ({s.get('error_type', 'unknown')}) - scored 0.0\n"
-                else:
-                    report += f"- **{mode.upper()}**: Overall {s['overall']:.1f} | "
-                    report += f"Factual {s['factual']:.1f} | Comp {s['comprehensive']:.1f} | "
-                    report += f"Clarity {s['clarity']:.1f} | Useful {s['useful']:.1f} | Specific {s['specific']:.1f}\n"
+                report += f"- **{mode.upper()}**: Overall {s['overall']:.1f} | "
+                report += f"Factual {s['factual']:.1f} | Comp {s['comprehensive']:.1f} | "
+                report += f"Clarity {s['clarity']:.1f} | Useful {s['useful']:.1f} | Specific {s['specific']:.1f}\n"
             elif "error" in mode_data:
                 report += f"- **{mode.upper()}**: ERROR - {mode_data['error'][:100]}\n"
 
@@ -885,14 +740,14 @@ if __name__ == "__main__":
     # Generate report
     report = generate_report(results, total_time)
 
-    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_hard_queries.md")
+    output_path = "/Users/jleechan/Downloads/chimera/benchmark_hard_queries.md"
     with open(output_path, "w") as f:
         f.write(report)
 
     log(f"[COMPLETE] Report written to: {output_path}")
 
     # Save raw JSON
-    json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "benchmark_hard_queries.json")
+    json_path = "/Users/jleechan/Downloads/chimera/benchmark_hard_queries.json"
     with open(json_path, "w") as f:
         json.dump({
             "results": results,
